@@ -1,0 +1,598 @@
+<title>MUNERON — Aviation AI Operations</title>
+<meta name="description" content="MUNERON builds and runs AI automation for aviation parts companies — RFQ intake, quoting with human approval, records digitization, managed operations. Fixed published prices.">
+<meta property="og:title" content="MUNERON — Aviation AI Operations">
+<meta property="og:description" content="The back office, operated. AI automation for aviation parts companies with a human approving everything that leaves. Fixed published prices.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muneron.com/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='32' fill='%23070B12'/%3E%3Ccircle cx='80' cy='86' r='42' fill='none' stroke='%233FB8BB' stroke-width='17' stroke-linecap='round' stroke-dasharray='228 36' transform='rotate(-83 80 86)'/%3E%3Cline x1='80' y1='30' x2='80' y2='68' stroke='%233FB8BB' stroke-width='17' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fragment+Mono&display=swap">
+<style>
+  :root {
+    --bg0: #070B12;
+    --bg1: #0D1420;
+    --card: #1B2431;
+    --card-2: #222D3C;
+    --ink: #E9EEF4;
+    --dim: #94A1B0;
+    --dim-2: #6B7886;
+    --teal: #2C9DA0;
+    --teal-bright: #3FB8BB;
+    --teal-deep: #258588;
+    --cyan: #6DCCDC;
+    --line: rgba(233,238,244,0.09);
+    --line-soft: rgba(233,238,244,0.06);
+    --sans: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "Fragment Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg0);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--sans); line-height: 1.12; text-wrap: balance; margin: 0; font-weight: 700; }
+  p { margin: 0; }
+  a { color: inherit; }
+  .wrap { max-width: 78rem; margin: 0 auto; padding-inline: clamp(1.25rem, 4vw, 3rem); }
+  .kicker {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--teal-bright);
+  }
+
+  /* ---------- nav ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(7,11,18,0.92);
+    border-bottom: 1px solid var(--line-soft);
+    backdrop-filter: blur(8px);
+  }
+  .nav { display: flex; align-items: center; gap: 2rem; padding-block: 0.9rem; }
+  .logo-lockup { display: block; text-decoration: none; line-height: 1; }
+  .lm-row { display: inline-flex; align-items: center; }
+  .lm-row .t { font-weight: 800; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--ink); line-height: 1; }
+  .lm-row .t.on { color: var(--teal-bright); }
+  .lm-row svg { display: inline-block; margin: 0 0.06em 0 0.02em; transform: translateY(0.5px); }
+  .logo-tag { display: block; font-size: 0.5rem; font-weight: 600; letter-spacing: 0.34em; color: var(--teal-bright); text-transform: uppercase; margin-top: 0.28rem; }
+  .nav nav { display: flex; gap: 1.8rem; margin-left: auto; }
+  .nav nav a {
+    text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--dim);
+  }
+  .nav nav a:hover, .nav nav a:focus-visible { color: var(--ink); }
+  .btn {
+    font-weight: 600; font-size: 0.9rem;
+    background: var(--teal); color: #06181a;
+    padding: 0.7rem 1.4rem; border-radius: 999px;
+    text-decoration: none; display: inline-block;
+    transition: background 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn:hover, .btn:focus-visible { background: var(--teal-bright); }
+  .btn.ghost {
+    background: transparent; color: var(--ink);
+    border: 1px solid rgba(233,238,244,0.25);
+  }
+  .btn.ghost:hover, .btn.ghost:focus-visible { border-color: var(--teal-bright); color: var(--teal-bright); background: transparent; }
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; }
+  @media (max-width: 820px) { .nav nav { display: none; } .nav .btn { margin-left: auto; } }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(1100px 700px at 85% 10%, rgba(44,157,160,0.13), transparent 60%),
+      radial-gradient(800px 600px at 0% 100%, rgba(44,157,160,0.05), transparent 55%),
+      linear-gradient(180deg, #070B12 0%, #0C131E 70%, #070B12 100%);
+    border-bottom: 1px solid var(--line-soft);
+    overflow: hidden;
+  }
+  .hero-inner { position: relative; padding-block: clamp(4rem, 10vh, 7.5rem) clamp(3.5rem, 8vh, 6rem); }
+  .hero-grid {
+    display: grid; grid-template-columns: minmax(0, 6.6fr) minmax(0, 5.4fr);
+    gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
+  }
+  @media (max-width: 940px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero .kicker { display: block; max-width: 38rem; line-height: 1.9; }
+  .hero h1 {
+    margin-top: 1.1rem;
+    font-size: clamp(2.5rem, 5.6vw, 4.4rem);
+    font-weight: 800; letter-spacing: -0.01em;
+  }
+  .hero h1 .accent { color: var(--teal-bright); }
+  .hero .lede { margin-top: 1.4rem; max-width: 33rem; font-size: 1.06rem; color: var(--dim); font-weight: 300; }
+  .hero .lede strong { color: var(--ink); font-weight: 500; }
+  .hero-cta { margin-top: 2.4rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+  /* flight-path rail (family motif) */
+  .rail {
+    position: absolute; right: clamp(0.6rem, 2vw, 2rem); top: 0; bottom: 0;
+    display: flex; flex-direction: column; justify-content: center; gap: 0.6rem;
+    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.28em;
+    color: var(--dim-2); text-transform: uppercase;
+    pointer-events: none;
+  }
+  .rail span { writing-mode: vertical-rl; }
+  .rail .dotline { width: 1px; height: 3rem; background: linear-gradient(180deg, transparent, rgba(233,238,244,0.25), transparent); margin-inline: auto; }
+  .rail .on { color: var(--teal-bright); }
+  @media (max-width: 1200px) { .rail { display: none; } }
+
+  /* the operations ledger */
+  .ledger {
+    background: rgba(10,15,23,0.85);
+    border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    position: relative;
+  }
+  .ledger-bar {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--line-soft);
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--dim-2);
+    text-transform: uppercase;
+  }
+  .ledger-bar .live {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal-bright);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+  .ledger-body { padding: 1rem 1rem 1.1rem; overflow-x: auto; }
+  .ledger-body table { border-collapse: collapse; width: 100%; }
+  .ledger-body td {
+    font-family: var(--mono); font-size: 0.74rem; line-height: 1.55;
+    padding: 0.32rem 0.9rem 0.32rem 0;
+    white-space: nowrap; vertical-align: top;
+  }
+  .ledger-body td.t { color: var(--dim-2); font-variant-numeric: tabular-nums; }
+  .ledger-body td.agent { color: var(--cyan); }
+  .ledger-body td.msg { color: var(--dim); white-space: normal; min-width: 14rem; }
+  .ledger-body tr.held td.agent, .ledger-body tr.held td.msg { color: #E8A87C; }
+  .ledger-row { animation: tick 480ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+  .ledger-row:nth-child(1) { animation-delay: 120ms; }
+  .ledger-row:nth-child(2) { animation-delay: 280ms; }
+  .ledger-row:nth-child(3) { animation-delay: 440ms; }
+  .ledger-row:nth-child(4) { animation-delay: 600ms; }
+  .ledger-row:nth-child(5) { animation-delay: 760ms; }
+  .ledger-row:nth-child(6) { animation-delay: 920ms; }
+  @keyframes tick { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .ledger-note {
+    margin: 0; padding: 0 1rem 1rem;
+    font-size: 0.78rem; color: var(--dim-2); font-weight: 300;
+  }
+  .ledger-caption {
+    position: absolute; top: -1.6rem; right: 0.2rem;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.26em;
+    color: var(--dim-2); text-transform: uppercase;
+  }
+  .ledger-wrap { position: relative; }
+
+  /* ---------- sections ---------- */
+  section { padding-block: clamp(3.8rem, 9vh, 7rem); }
+  section + section { border-top: 1px solid var(--line-soft); }
+  .sec-head { max-width: 48rem; }
+  .hatch { display: inline-flex; gap: 0.35rem; margin-right: 1rem; vertical-align: 0.35rem; }
+  .hatch i { width: 1.15rem; height: 0.5rem; background: var(--teal); transform: skewX(-38deg); border-radius: 1px; }
+  .hatch i:nth-child(2) { background: var(--teal-bright); }
+  .hatch i:nth-child(3) { background: rgba(44,157,160,0.45); }
+  .sec-head h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -0.01em;
+    display: inline;
+  }
+  .sec-head .kicker { display: block; margin-top: 1.1rem; }
+  .sec-head .sub { margin-top: 1rem; color: var(--dim); font-size: 1.04rem; max-width: 42rem; }
+
+  /* problem - hairline 3-col (LGL motif) */
+  .cols3 {
+    margin-top: 2.8rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .cols3 > div {
+    padding: 2rem 1.8rem 2.2rem;
+    border-left: 1px solid var(--line);
+  }
+  .cols3 > div:first-child { border-left: none; padding-left: 0.2rem; }
+  .cols3 h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.5; }
+  .cols3 h3 .dash { display: inline-block; width: 0.85rem; height: 0.3rem; border-radius: 2px; background: var(--teal-bright); margin-right: 0.55rem; vertical-align: 0.22rem; }
+  .cols3 p { margin-top: 0.8rem; font-size: 0.94rem; color: var(--dim); }
+
+  /* products - ghost numerals ladder */
+  .products { margin-top: 3rem; }
+  .product {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(4.5rem, 6.5rem) minmax(10rem, 16rem) minmax(0, 1fr) minmax(8rem, 10rem);
+    gap: clamp(1rem, 2.5vw, 2.4rem);
+    padding-block: 2rem;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .product:last-child { border-bottom: 1px solid var(--line); }
+  @media (max-width: 860px) { .product { grid-template-columns: minmax(3rem, 4rem) 1fr; } .product .desc { grid-column: 2; } .product .price { grid-column: 2; text-align: left; } }
+  .product .no {
+    font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1;
+    color: transparent; -webkit-text-stroke: 1px rgba(233,238,244,0.22);
+    font-variant-numeric: tabular-nums; padding-top: 0.2rem;
+  }
+  .product h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.02em; }
+  .product h3 small { display: block; font-size: 0.82rem; font-weight: 400; letter-spacing: 0; color: var(--dim); margin-top: 0.35rem; }
+  .product .desc { font-size: 0.95rem; color: var(--dim); max-width: 56ch; font-weight: 300; }
+  .product .desc b { color: var(--ink); font-weight: 500; }
+  .product .price { font-family: var(--mono); font-size: 0.82rem; color: var(--dim); text-align: right; font-variant-numeric: tabular-nums; }
+  .product .price b { color: var(--ink); font-weight: 400; display: block; font-size: 0.95rem; }
+  .product.flag {
+    background: linear-gradient(135deg, rgba(44,157,160,0.16), rgba(44,157,160,0.05));
+    border-top-color: rgba(63,184,187,0.4);
+    margin-inline: -1.2rem; padding-inline: 1.2rem; border-radius: 8px;
+  }
+  .product.flag .no { -webkit-text-stroke-color: rgba(63,184,187,0.6); }
+  .product.flag h3 { color: var(--teal-bright); }
+  .products-note { margin-top: 1.5rem; font-size: 0.9rem; color: var(--dim-2); max-width: 60ch; }
+
+  /* commitments */
+  .commit-band {
+    background:
+      radial-gradient(900px 500px at 100% 0%, rgba(44,157,160,0.1), transparent 55%),
+      linear-gradient(180deg, #0A101A 0%, #0D1420 100%);
+  }
+  .commit-grid {
+    margin-top: 2.8rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1.2rem, 2.5vw, 2rem);
+  }
+  .commit {
+    background: var(--card);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    padding: 1.7rem 1.6rem 1.8rem;
+    position: relative; overflow: hidden;
+  }
+  .commit::before { content: ''; position: absolute; top: 0; left: 0; width: 2.4rem; height: 0.28rem; background: var(--teal-bright); }
+  .commit .k { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.26em; color: var(--teal-bright); text-transform: uppercase; display: block; margin-bottom: 0.7rem; }
+  .commit h3 { font-size: 1.1rem; font-weight: 700; }
+  .commit p { font-size: 0.92rem; color: var(--dim); margin-top: 0.65rem; }
+  .commit.fill { background: linear-gradient(150deg, #2E8C8F, #23787B); border-color: transparent; }
+  .commit.fill .k { color: rgba(255,255,255,0.75); }
+  .commit.fill p { color: rgba(255,255,255,0.85); }
+  .commit-foot { margin-top: 2.2rem; font-size: 0.95rem; color: var(--dim); max-width: 62ch; }
+  .commit-foot b { color: var(--ink); font-weight: 500; }
+
+  /* proof stats */
+  .stat-grid {
+    margin-top: 2.8rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    padding: 1.4rem 1.4rem 1.5rem;
+    position: relative; overflow: hidden;
+  }
+  .stat::before { content: ''; position: absolute; top: 0; left: 0; width: 2rem; height: 0.26rem; background: var(--teal-bright); }
+  .stat .num { font-weight: 800; font-size: 2.1rem; line-height: 1.1; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .stat .num span { color: var(--teal-bright); }
+  .stat .label { margin-top: 0.45rem; font-size: 0.85rem; color: var(--dim); line-height: 1.5; }
+  .stat-note { margin-top: 1.4rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim-2); }
+
+  /* proof */
+  .proof-log { margin-top: 2.8rem; max-width: 56rem; }
+  .proof-item {
+    display: grid; grid-template-columns: minmax(7rem, 10rem) minmax(0, 1fr);
+    gap: 1.5rem; padding-block: 1.25rem;
+    border-top: 1px solid var(--line);
+  }
+  .proof-item:last-of-type { border-bottom: 1px solid var(--line); }
+  @media (max-width: 560px) { .proof-item { grid-template-columns: 1fr; gap: 0.2rem; } }
+  .proof-item .when { font-family: var(--mono); font-size: 0.78rem; color: var(--teal-bright); padding-top: 0.25rem; letter-spacing: 0.08em; }
+  .proof-item .what { font-size: 0.99rem; color: var(--dim); font-weight: 300; }
+  .proof-item .what b { color: var(--ink); font-weight: 600; }
+  .proof-foot { margin-top: 1.5rem; font-size: 0.85rem; color: var(--dim-2); max-width: 58ch; }
+
+  /* founder */
+  .founder { max-width: 46rem; }
+  .founder blockquote { margin: 2rem 0 0; font-size: 1.12rem; line-height: 1.75; font-weight: 300; color: var(--ink); }
+  .founder blockquote p + p { margin-top: 1.1rem; }
+  .founder .sig { margin-top: 1.8rem; font-size: 0.92rem; color: var(--dim); }
+  .founder .sig b { color: var(--ink); font-weight: 600; }
+
+  /* final cta */
+  .final h2 { font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 800; max-width: 26ch; }
+  .final h2 .accent { color: var(--teal-bright); }
+  .final p { margin-top: 1.2rem; color: var(--dim); max-width: 44rem; font-size: 1.05rem; }
+  .final .hero-cta { margin-top: 2.3rem; }
+  .final .loc { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim-2); }
+
+  /* footer */
+  footer.site {
+    border-top: 1px solid var(--line-soft);
+    padding-block: 2.1rem 2.6rem;
+    font-size: 0.82rem; color: var(--dim-2); font-weight: 300;
+  }
+  footer.site .cols { display: flex; flex-wrap: wrap; gap: 1rem 3rem; justify-content: space-between; align-items: center; }
+  footer.site .pills { display: inline-flex; gap: 0.3rem; margin-right: 0.7rem; vertical-align: -0.1rem; }
+  footer.site .pills i { width: 1.4rem; height: 0.42rem; border-radius: 999px; background: var(--teal); display: block; }
+  footer.site .pills i + i { background: #39434F; }
+  footer.site .draft { color: var(--teal-bright); font-weight: 500; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .ledger-row { animation: none; }
+    .ledger-bar .live { animation: none; }
+    .btn { transition: none; }
+  }
+</style>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo-lockup" href="#" aria-label="MUNERON home">
+      <span class="lm-row">
+        <span class="t">MUNER</span><svg width="15.7" height="21" viewBox="0 0 16.5 22" aria-hidden="true"><circle cx="8.2" cy="11.3" r="5.9" fill="none" stroke="#3FB8BB" stroke-width="3.7" stroke-linecap="round" stroke-dasharray="32 5.1" transform="rotate(-83 8.2 11.3)"/><line x1="8.2" y1="3.4" x2="8.2" y2="8.7" stroke="#3FB8BB" stroke-width="3.7" stroke-linecap="round"/></svg><span class="t on">N</span>
+      </span>
+      <span class="logo-tag">Aviation AI Operations</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#how">How we work</a>
+      <a href="#proof">Proof</a>
+      <a href="#founder">Founder</a>
+    </nav>
+    <a class="btn ghost" href="#contact">Request a demo</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="rail" aria-hidden="true">
+      <span>Intake</span><div class="dotline"></div>
+      <span>Draft</span><div class="dotline"></div>
+      <span class="on">Approve</span><div class="dotline"></div>
+      <span>Sent</span>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="hero-grid">
+        <div>
+          <span class="kicker">AI implementation and managed operations for aviation parts companies &mdash; websites, RFQ intake, quoting, back office.</span>
+          <h1>Your back office,<br><span class="accent">operated.</span></h1>
+          <p class="lede">We build and run the automation layer of parts trading &mdash; from the
+          website that sells parts to the quote desk that answers every RFQ.
+          <strong>Fixed published prices. A human approves everything that leaves.</strong></p>
+          <div class="hero-cta">
+            <a class="btn" href="#contact">Request a demo</a>
+            <a class="btn ghost" href="#products">Products &amp; prices</a>
+          </div>
+        </div>
+        <div class="ledger-wrap">
+          <span class="ledger-caption">Live view &middot; illustrative</span>
+          <div class="ledger" role="img" aria-label="Illustrative operations log showing an RFQ parsed from email, a draft quote held for human approval, a price guard catching an outlier, and pipeline monitoring">
+            <div class="ledger-bar"><span class="live" aria-hidden="true"></span>operations ledger</div>
+            <div class="ledger-body">
+              <table>
+                <tr class="ledger-row"><td class="t">07:02:14</td><td class="agent">rfq.intake</td><td class="msg">RFQ 4821 &middot; P/N 2606541-3 &middot; parsed from email &middot; routed &rarr; sales owner</td></tr>
+                <tr class="ledger-row"><td class="t">07:02:31</td><td class="agent">quote.draft</td><td class="msg">stock matched &middot; draft ready &middot; held for approval</td></tr>
+                <tr class="ledger-row held"><td class="t">07:03:09</td><td class="agent">guard.price</td><td class="msg">line price 4.2x above 90-day median &rarr; HELD &middot; human review required</td></tr>
+                <tr class="ledger-row"><td class="t">07:04:02</td><td class="agent">records.check</td><td class="msg">8130-3 &middot; trace chain verified &middot; 0 open items</td></tr>
+                <tr class="ledger-row"><td class="t">07:05:48</td><td class="agent">pipeline.watch</td><td class="msg">14 sent quotes &gt;10 days without outcome &rarr; owner nudged</td></tr>
+                <tr class="ledger-row"><td class="t">07:06:12</td><td class="agent">brake.check</td><td class="msg">all lanes fail-closed &middot; kill switches armed &middot; OK</td></tr>
+              </table>
+            </div>
+            <p class="ledger-note">What an operated back office looks like from the inside.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="problem">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="hatch" aria-hidden="true"><i></i><i></i><i></i></span><h2>The quoting problem, named.</h2>
+        <span class="kicker">Hundreds of RFQs &middot; minutes to answer &middot; half never answered</span>
+      </div>
+      <div class="cols3">
+        <div>
+          <h3><span class="dash" aria-hidden="true"></span>The flood is constant.</h3>
+          <p>Email, ILS, PartsBase &mdash; every request means checking stock, condition, trace and
+          price before a competitive quote goes out. For an AOG, within minutes. Even well-tooled
+          shops leave nearly half of RFQs unanswered.</p>
+        </div>
+        <div>
+          <h3><span class="dash" aria-hidden="true"></span>Autoquote exists. It's off.</h3>
+          <p>Your ERP probably has the checkbox. Rule-based tools match exact part numbers, miss
+          alternates, and can't be trusted with prices &mdash; a wrong quote to a good customer
+          costs more than a slow one. So it stays off.</p>
+        </div>
+        <div>
+          <h3><span class="dash" aria-hidden="true"></span>The gap is trust, not tech.</h3>
+          <p>The distance between owning automation and trusting it is where deals are lost.
+          Closing that gap &mdash; with guards, approval lanes and measured outcomes &mdash; is
+          exactly what MUNERON does.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="hatch" aria-hidden="true"><i></i><i></i><i></i></span><h2>Products, with prices on them.</h2>
+        <p class="sub">Six fixed-price products, one direction &mdash; each builds on the last,
+        from your shop window to a back office that runs under human control. Nobody else in this
+        market publishes prices. We think that says something.</p>
+      </div>
+      <div class="products">
+        <div class="product">
+          <span class="no" aria-hidden="true">00</span>
+          <h3>Flight Check<small>AI readiness audit</small></h3>
+          <p class="desc">Two weeks. We measure your reality: RFQ volume, unanswered share, quote
+          cycle time, data health, what your ERP&rsquo;s own AI can and cannot do for you. You get
+          a findings report in your numbers and a prioritized plan &mdash; whether or not you buy
+          anything else.</p>
+          <p class="price"><b>&euro;3,500</b>credited against<br>any other product</p>
+        </div>
+        <div class="product">
+          <span class="no" aria-hidden="true">01</span>
+          <h3>MunSite<small>the website that sells parts</small></h3>
+          <p class="desc">A modern site with a page per part number, live inventory, and an RFQ
+          form that arrives as structured data instead of email mush. Buyers google part numbers
+          &mdash; almost nobody in this industry is there to be found.</p>
+          <p class="price"><b>&euro;9,500</b>3&ndash;4 weeks</p>
+        </div>
+        <div class="product">
+          <span class="no" aria-hidden="true">02</span>
+          <h3>MunQ Inbox<small>every RFQ in one queue</small></h3>
+          <p class="desc">Every RFQ &mdash; email, ILS, PartsBase, your website &mdash; parsed into
+          one prioritized queue: deduplicated, routed to a named owner, urgent flagged, unanswered
+          counted. Includes baseline cleanup of your customer data. Works alongside any ERP.
+          <b>Reads everything, sends nothing.</b></p>
+          <p class="price"><b>&euro;14,500</b>4&ndash;6 weeks</p>
+        </div>
+        <div class="product flag">
+          <span class="no" aria-hidden="true">03</span>
+          <h3>MunQ Desk<small>drafts a human approves</small></h3>
+          <p class="desc">From the queue to draft quotes inside your ERP: intelligent matching
+          including alternates and condition, context-aware pricing with a sanity guard, and a
+          <b>human approval click before anything leaves</b>. Calibrated on your own quoting
+          history. Training included, then 30 days of stabilization. Staged payments and a stop
+          clause at week two if your data says stop.</p>
+          <p class="price"><b>&euro;45,000</b>90 days</p>
+        </div>
+        <div class="product">
+          <span class="no" aria-hidden="true">04</span>
+          <h3>MunTrace<small>records &amp; back-to-birth engine</small></h3>
+          <p class="desc">Aircraft records digitization and documentation review for landing gear
+          and components: trace chains checked, gaps named, an exception list your team can act
+          on. Built on an engine with <b>500+ codified records rules under 600+ automated
+          tests</b>. Sold per package, scoped before we start.</p>
+          <p class="price"><b>per package</b>fixed quote<br>before start</p>
+        </div>
+        <div class="product">
+          <span class="no" aria-hidden="true">05</span>
+          <h3>MunFlow<small>pipeline visibility &amp; back-office packs</small></h3>
+          <p class="desc">Outcome capture, stalled-quote detection, a daily flow report &mdash;
+          the numbers nobody in this market has. Plus fixed-scope packs: finance reconciliation
+          with verified figures, KYC and forms automation.</p>
+          <p class="price"><b>&euro;5&ndash;20k</b>per pack</p>
+        </div>
+        <div class="product">
+          <span class="no" aria-hidden="true">06</span>
+          <h3>The Operator<small>managed operations</small></h3>
+          <p class="desc">We run what we built: monitoring, tuning, extending &mdash; and a monthly
+          outcome report in business numbers: quotes sent, hours saved, errors caught. A named
+          human owner on every loop.</p>
+          <p class="price"><b>&euro;3&ndash;10k / mo</b>by scope</p>
+        </div>
+      </div>
+      <p class="products-note">Typical path: start with a Flight Check or MunSite, climb when each
+      rung has earned its keep. Every product feeds the next one&rsquo;s data.</p>
+    </div>
+  </section>
+
+  <section id="how" class="commit-band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="hatch" aria-hidden="true"><i></i><i></i><i></i></span><h2>Three commitments.</h2>
+        <p class="sub">Aviation businesses are right to be cautious about AI. These are the rules
+        we run on &mdash; the same ones the platform we built for ourselves runs on every day.</p>
+      </div>
+      <div class="commit-grid">
+        <div class="commit">
+          <span class="k">01 &middot; Control</span>
+          <h3>A human approves everything that leaves.</h3>
+          <p>Draft-not-send is the default on every lane. Every action logged, every lane with a
+          kill switch. The system never signs and never moves money. Autonomy is earned, workflow
+          by workflow &mdash; never assumed.</p>
+        </div>
+        <div class="commit fill">
+          <span class="k">02 &middot; Price</span>
+          <h3>Prices are published and identical for everyone.</h3>
+          <p>No custom quotes, no discovery-call pricing dance. The price list on this page is the
+          price. Staged payments and a week-two stop clause protect you, not us.</p>
+        </div>
+        <div class="commit">
+          <span class="k">03 &middot; Proof</span>
+          <h3>Outcomes are measured, monthly, in your numbers.</h3>
+          <p>Quotes sent, hours saved, bad prices caught, RFQs no longer ignored. If the numbers
+          stop earning the fee, you should fire us &mdash; and you&rsquo;ll have the report to
+          decide with.</p>
+        </div>
+      </div>
+      <p class="commit-foot"><b>Why this matters:</b> most AI projects fail quietly &mdash; a wrong
+      price sent to a good customer, a job that reports success while doing nothing. We made those
+      mistakes on our own company first. The guardrails above are what came out of them.</p>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="hatch" aria-hidden="true"><i></i><i></i><i></i></span><h2>Measured, not promised.</h2>
+        <p class="sub">The platform MUNERON&rsquo;s products are modeled on has run the back office
+        of a working US&ndash;European aviation parts trading group, daily, on live systems.
+        These are its measured results &mdash; not projections.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat"><p class="num">7.1<span>x</span></p><p class="label">faster RFQ-to-quote on the automated path &mdash; 3.6 working hours vs 25.9 by hand</p></div>
+        <div class="stat"><p class="num">229</p><p class="label">bad prices caught by the price sanity guard in its first week alone</p></div>
+        <div class="stat"><p class="num">&minus;23<span>%</span></p><p class="label">median quote cycle time in the first month of supervised auto-quoting</p></div>
+        <div class="stat"><p class="num">0</p><p class="label">humans on shift while full weekends of quotes went out &mdash; every one through the approval lane</p></div>
+        <div class="stat"><p class="num">4.5<span>x</span></p><p class="label">more quote outcomes recorded per day once pipeline nudges went live</p></div>
+        <div class="stat"><p class="num">200<span>+</span></p><p class="label">agents in daily production, governed by kill switches and a fail-closed master brake</p></div>
+      </div>
+      <p class="stat-note">All figures measured on the founder&rsquo;s own trading group, 2026 &middot; counts rounded down</p>
+      <div class="proof-log">
+        <div class="proof-item"><span class="when">SPRING 2026</span><p class="what"><b>First agents in daily production</b> &mdash; on a real trading company&rsquo;s live ERP, accounting, email and marketplaces.</p></div>
+        <div class="proof-item"><span class="when">MID 2026</span><p class="what"><b>Full quoting workflow live</b> &mdash; RFQ intake, draft quotes, human approval lanes, price sanity guards, weekend coverage with nobody on shift.</p></div>
+        <div class="proof-item"><span class="when">AUG 2026</span><p class="what"><b>200+ agents in daily production</b> across four machines; 500+ codified records rules under 600+ automated tests; every send-capable engine wired to a master brake, fail-closed.</p></div>
+      </div>
+      <p class="proof-foot">Counts are point-in-time and rounded down. We would rather understate
+      than impress.</p>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="wrap founder">
+      <div class="sec-head">
+        <span class="hatch" aria-hidden="true"><i></i><i></i><i></i></span><h2>A note from the founder.</h2>
+      </div>
+      <blockquote>
+        <p>I have spent my career trading aviation parts &mdash; quoting, procurement, records,
+        export discipline. I built this platform because my own back office needed it, and I ran it
+        on my own company&rsquo;s live systems long before offering it to anyone else.</p>
+        <p>MUNERON exists to bring that same machinery to yours &mdash; at a published price, with
+        a human hand on every send. If someone shows you agents without brakes, walk away.
+        I would.</p>
+      </blockquote>
+      <p class="sig"><b>Deividas Jurkstas</b> &middot; Founder, MUNERON, S.L. &middot; Sotogrande, Spain</p>
+    </div>
+  </section>
+
+  <section id="contact" class="final">
+    <div class="wrap">
+      <h2>See it run on <span class="accent">real work.</span></h2>
+      <p>A working demo on realistic trading data &mdash; an RFQ email becoming an approved draft
+      quote, or a records check on a sample package. Thirty minutes, no slides.</p>
+      <div class="hero-cta">
+        <a class="btn" href="mailto:hello@muneron.com">Request a demo</a>
+        <span class="loc">Sotogrande &middot; San Roque &middot; Andalusia, Spain</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <span><span class="pills" aria-hidden="true"><i></i><i></i></span> &copy; 2026 MUNERON, S.L. (en formaci&oacute;n) &middot; Sotogrande / San Roque, Andalusia, Spain</span>
+    <span>hello@muneron.com</span>
+  </div>
+</footer>
