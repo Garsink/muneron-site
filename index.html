@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MUNERON — The Operating Layer for Aviation</title>
-<meta name="description" content="An AI operating layer for aviation businesses - parts trading, leasing, MRO. It reads everything you grant it, finds the money, drafts the quote - and does nothing without your yes.">
+<title>MUNERON — RFQ inbox to approved quotes, inside AvSight</title>
+<meta name="description" content="One RFQ mailbox to human-approved quote drafts inside AvSight. For independent parts shops and component MROs that switched autoquote off. Fixed EUR 45,000, 90 days, a person sends every quote.">
 <meta property="og:title" content="MUNERON - it reads everything. It moves nothing without your yes.">
 <meta property="og:description" content="Grown inside a real aviation trading group. It finds the money, drafts the quote, checks the records - and waits for one word from you.">
 <meta property="og:type" content="website">
@@ -423,22 +423,44 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
   html.braked .owner-line .led,.card-top .st::before{animation:none}
 }
 </style>
+<style>
+/* v4 overrides: mobile hero, CTA density */
+@media (max-width:760px){
+  #scene{display:none !important}
+  .hero{flex-direction:column;align-items:stretch;justify-content:center}
+  .hero-in{padding-bottom:36px}
+  .hero-strip{position:relative;margin-top:auto}
+  .hero-tag{display:none}
+  .step{grid-template-columns:74px minmax(0,1fr)}
+  .step .lbl{white-space:nowrap}
+  .hero-in{position:relative;z-index:3}
+  .hero-actions{flex-wrap:wrap;gap:10px}
+  .hero-actions .btn{width:100%;text-align:center}
+  .hero-strip .in{flex-wrap:wrap;gap:8px 18px}
+  .nav-cta{display:none}
+  .sticky-cta span{display:none}
+  .hero h1{font-size:clamp(2rem,9.5vw,3rem)}
+}
+@media (max-width:1100px) and (min-width:761px){
+  #scene{opacity:.55}
+}
+</style>
 </head>
 <body>
 
 
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <span>It moves nothing without your yes.</span>
-  <a class="btn btn-solid" href="#close">Request an introduction</a>
+  <span>One workflow. Fixed price. A human sends every quote.</span>
+  <a class="btn btn-solid" href="#close">Check whether your shop qualifies</a>
 </div>
 <nav aria-label="Main">
   <div class="nav-in">
     <div class="mark h-load">MUNER<b>ON</b></div>
     <div class="nav-links h-load h1d">
-      <a href="#why">Why MUNERON</a><a href="#day">Your day</a><a href="#demo">See it work</a>
-      <a href="#sovereign">Sovereignty</a><a href="#start">How it starts</a>
+      <a href="#why">Who it's for</a><a href="#scope">The scope</a><a href="#demo">See it work</a>
+      <a href="#sovereign">Your data</a><a href="#start">How it starts</a>
     </div>
-    <a class="nav-cta h-load h1d" href="#close">Request an introduction</a>
+    <a class="nav-cta h-load h1d" href="#close">Check if you qualify</a>
   </div>
 </nav>
 
@@ -450,13 +472,13 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
   <div class="hero-in">
     <div>
     <h1 class="h-load h1d">It reads everything.<br>It moves nothing<br>without your <em>yes.</em></h1>
-    <p class="hero-sub h-load h2d">MUNERON lives inside your aviation business - parts trading,
-    leasing, MRO - reads every system you grant it, and answers only from evidence. It finds the
-    money, drafts the quote, checks the paperwork - and waits for you. One word from you, and it
-    acts. Silence changes nothing.</p>
-    <p class="hero-note h-load h3d">muner·<i>on</i> - from Latin <i>munus</i>, duty. The ON is yours to give - and yours to take away.</p>
+    <p class="hero-sub h-load h2d"><b style="color:var(--ink)">One RFQ mailbox to human-approved
+    quote drafts inside AvSight.</b> For independent parts shops and component MROs that switched
+    autoquote off - or never trusted it. One site, your own quoting history, 90 days, fixed
+    &euro;45,000. A human sends every quote.</p>
+    <p class="hero-note h-load h3d">MUNERON is building the governed operating layer for aviation. It starts with one workflow.</p>
     <div class="hero-actions h-load h4d">
-      <a class="btn btn-solid" href="#demo">See it work</a>
+      <a class="btn btn-solid" href="#close">Check whether your shop qualifies</a>
       <a class="btn btn-red" href="#brake">Press the red button</a>
     </div>
     </div>
@@ -464,44 +486,46 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
   <canvas id="scene" aria-hidden="true"></canvas>
   <div class="hero-strip">
     <div class="in h-load h4d">
-      <span><b>Born in aviation</b> - parts, gear, records</span>
-      <span><b>Every figure</b> cites its source row</span>
+      <span><b>AvSight shops</b> - one workflow</span>
+      <span><b>&euro;45,000</b> - fixed, staged, week-two stop clause</span>
+      <span><b>90 days</b> - to an approval lane your team runs</span>
       <span><b>One red button</b> stops everything</span>
-      <span><b>Sovereign mode</b> - nothing leaves your machines</span>
     </div>
   </div>
 </header>
 
-<!-- ============ WHY ============ -->
+<!-- ============ WHO IT'S FOR ============ -->
 <section id="why">
   <span class="ghost" aria-hidden="true">01</span>
   <div class="wrap dimmable">
-    <div class="eyebrow" data-reveal>Why MUNERON</div>
-    <h2 class="sec-head" data-reveal>The owner's problem,<br><em>solved at the root.</em><span class="stopchip">⛔ stopped</span></h2>
-    <p class="sec-lede" data-reveal>You built the company, but the truth about it lives scattered
-    across the ERP, the marketplaces, the bank, the mail and a records archive nobody has read
-    end to end - and every answer costs someone a day of digging.</p>
+    <div class="eyebrow" data-reveal>Who it's for</div>
+    <h2 class="sec-head" data-reveal>Built for one kind of shop.<br><em>Say no to the rest.</em><span class="stopchip">⛔ stopped</span></h2>
+    <p class="sec-lede" data-reveal>Your ERP has an autoquote checkbox. You know why it's off:
+    exact part numbers only, no feel for alternates or condition, a wrong price to a good customer.
+    The gap between owning automation and trusting it is the only thing we sell into.</p>
     <div class="why-grid">
-      <div class="why-card" data-reveal><h3>It reads what nobody has time to.</h3>
-        <p>Every RFQ, invoice, payment, thread, trace document and tag it is granted - read-only,
-        continuously, without ever getting tired or skipping the boring parts.</p></div>
-      <div class="why-card" data-reveal><h3>It finds the money first.</h3>
-        <p>RFQs nobody answered, quotes sent and never followed, stock priced 4x off the market,
-        cash the bank received that the books still chase. Found in hours, each with proof
-        attached.</p></div>
-      <div class="why-card" data-reveal><h3>It answers to you alone.</h3>
-        <p>Not a platform you adapt to - an intelligence raised inside your company that proposes,
-        waits for your yes, and remembers every correction forever.</p></div>
+      <div class="why-card" data-reveal><h3>You qualify if</h3>
+        <p>You run AvSight, dozens of RFQs a day arrive by email and marketplace, two or more people
+        copy-paste them by hand, and native autoquote is off or barely used. Messy customer data is
+        fine - that is the job.</p></div>
+      <div class="why-card" data-reveal><h3>You don't, yet, if</h3>
+        <p>You are happy with AvSight Intelligence as configured, you run Quantum, Pentagon or
+        spreadsheets (second lane - later), or you are an airline, a lessor or a records buyer.
+        We will tell you so in the first call.</p></div>
+      <div class="why-card" data-reveal><h3>What you actually get</h3>
+        <p>Every RFQ parsed into one queue, matched with alternates and condition, priced inside
+        guards, and placed as a draft in a named approval lane. Your person clicks send. Nothing
+        leaves on its own.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============ PROOF ============ -->
-<div class="proof dimmable" role="region" aria-label="Verified numbers">
+<div class="proof dimmable" role="region" aria-label="Measured numbers">
   <div class="wrap">
-    <div class="proof-item" data-reveal><b>200<i>+</i></b><span>agents in daily production at the origin company</span></div>
-    <div class="proof-item" data-reveal><b>7.1<i>x</i></b><span>faster RFQ-to-quote on its automated path - measured, not promised</span></div>
-    <div class="proof-item" data-reveal><b>15</b><span>minutes of you a day - the whole ritual</span></div>
+    <div class="proof-item" data-reveal><b>7.1<i>x</i></b><span>faster RFQ-to-quote on the automated path - measured on the founder's own trading group, 2026</span></div>
+    <div class="proof-item" data-reveal><b>229</b><span>bad prices caught by the price guard in its first week alone</span></div>
+    <div class="proof-item" data-reveal><b>0</b><span>quotes sent by the system itself - a person sends every one</span></div>
     <div class="proof-item" data-reveal><b><i>1</i></b><span>red button stops everything - except the alert to you</span></div>
     <div class="proof-item" data-reveal><b>0</b><span>figures published without a source row - it says "I don't know" instead</span></div>
   </div>
@@ -511,158 +535,70 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
 <section id="day">
   <span class="ghost" aria-hidden="true">02</span>
   <div class="wrap dimmable">
-    <div class="eyebrow" data-reveal>See your day with MUNERON</div>
+    <div class="eyebrow" data-reveal>Your day with the quote desk</div>
     <h2 class="sec-head" data-reveal>Tomorrow,<br><em>minute by minute.</em><span class="stopchip">⛔ stopped</span></h2>
     <div class="steps" style="margin-top:38px">
       <div class="step" data-reveal><span class="no">07:02</span><span class="in"><h3>While you slept.</h3>
-        <p> It read the books, the bank, the RFQs that arrived overnight and the market outside -
-        and did <b>nothing</b> about any of it. Understanding alone, acting only with you.</p></span></div>
+        <p> It read the RFQs that arrived overnight, matched them against your stock and history -
+        and sent <b>nothing</b>. Drafts wait in the lane; understanding alone, acting only with you.</p></span></div>
       <div class="step" data-reveal><span class="no">07:06</span><span class="in"><h3>Coffee in hand.</h3>
-        <p> Three things deserve you: an AOG request worth answering first, a draft quote holding a
-        price 4.2x off the 90-day median, a lease return missing one record - each in plain language
-        with the reason and the source attached - <a href="#demo">the real surface is below</a>.</p></span></div>
+        <p> Three things deserve you: an AOG request worth answering first, a draft holding a price
+        4.2x off the 90-day median, a customer with two spellings in the books - <a href="#demo">the
+        real surface is below</a>.</p></span></div>
       <div class="step" data-reveal><span class="no">07:07</span><span class="in"><h3>You answer in five words.</h3>
-        <p> "yes 1 and 3, no 2." Two things change, one stays refused - and stays refused tomorrow
+        <p> "yes 1 and 3, no 2." Two things move, one stays refused - and stays refused tomorrow
         too. A no it respects is how you know the yes means something.</p></span></div>
       <div class="step" data-reveal><span class="no">07:09</span><span class="in"><h3>The thought every owner has.</h3>
         <p> <i>"And what if it goes too far?"</i> Then you <a href="#brake">hold the red button</a> -
         everything stops, except the alert that tells you so.</p></span></div>
-      <div class="step" data-reveal><span class="no">07:11</span><span class="in"><h3>And it all lives in your house.</h3>
-        <p> Raw data stays on your machines; credentials and anything medical never leave. Not a
-        setting - a law.</p></span></div>
       <div class="step" data-reveal><span class="no">07:17</span><span class="in"><h3>Phone down. It keeps working.</h3>
-        <p> Quotes drafted into the approval lane all day - weekends too. Your team asks it directly
-        - each inside their role. Anything new waits for tomorrow's coffee.</p></span></div>
-      <div class="step" data-reveal><span class="no">Day 500</span><span class="in"><h3>Why it compounds.</h3>
-        <p> Every correction becomes a permanent test, every yes teaches it your judgment, and every
-        surfaced euro is tracked: found &rarr; your call &rarr; recovered, back to its source row.</p></span></div>
+        <p> Drafts land in the approval lane all day - weekends too. Your reps click send in their
+        own name. Every send, hold and correction is in the journal.</p></span></div>
     </div>
-    <p class="story-cta" data-reveal>Tomorrow could start at 07:02. <a href="#close">Ask for an
-    introduction.</a></p>
   </div>
 </section>
 
-<!-- ============ WHAT IT GROWS INTO ============ -->
-<section id="grows">
+<!-- ============ THE SCOPE ============ -->
+<section id="scope">
   <span class="ghost" aria-hidden="true">03</span>
   <div class="wrap dimmable">
-    <div class="eyebrow" data-reveal>What it grows into</div>
-    <h2 class="sec-head" data-reveal>It starts with quotes.<br>It doesn't <em>stop there.</em><span class="stopchip">⛔ stopped</span></h2>
-    <p class="sec-lede" data-reveal>Everything below actually happened in the origin deployment -
-    asked in plain words, delivered the same way. Reconstructed; identifiers removed.</p>
-    <p class="sec-lede" data-reveal style="margin-top:14px"><b style="color:var(--ink)">One posture,
-    three rungs.</b> It <b style="color:var(--ink)">reads</b> everything you grant it - always
-    read-only. It <b style="color:var(--ink)">drafts</b> - quotes, replies, forms, packs - and hands
-    them to you. It <b style="color:var(--ink)">writes</b> only where you have named the system, the
-    action and the limit; each named grant gets its own off switch, and all of them sit behind the
-    one red button. Nothing is ever granted by default.</p>
+    <div class="eyebrow" data-reveal>The scope - fixed, written, identical for everyone</div>
+    <h2 class="sec-head" data-reveal>What is in the box.<br><em>What is not.</em><span class="stopchip">⛔ stopped</span></h2>
+    <p class="sec-lede" data-reveal>Same scope, same price, same acceptance tests for every
+    client. If your shop needs something else, we say so in the first call - we don't stretch the
+    box to fit.</p>
 
-    <div class="jobs">
-      <div class="cluster" data-reveal><b>The quotes</b><span>the flood every parts desk knows - and mostly loses</span></div>
-      <div class="job" data-reveal><q>How many RFQs did we never answer last month?</q>
-        <p>Counted, named and priced - then triaged continuously: parsed from email and the
-        marketplaces into one queue, <b>drafts ready for a human click.</b></p></div>
-      <div class="job" data-reveal><q>Don't ever let a wrong price reach a customer again.</q>
-        <p>A sanity guard on every line - stale carryovers, 4x outliers, condition mismatches
-        held for review. <b>229 bad prices caught in its first week.</b></p></div>
-      <div class="job" data-reveal><q>Which of our sent quotes are dying quietly?</q>
-        <p>Every sent quote tracked to an outcome; the stalled ones surfaced with a nudge to their
-        owner - <b>pipeline visibility this market simply doesn't have.</b></p></div>
+    <div class="do-row" data-reveal><div class="do-no">In</div>
+      <h3>Inputs</h3>
+      <div class="body">One RFQ mailbox plus your marketplace feeds (ILS, PartsBase); read access to
+      AvSight inventory, customers and quote history; <b>100-250 of your historical RFQs</b> with the
+      quotes you actually sent, for calibration.</div></div>
 
-      <div class="cluster" data-reveal><b>The paperwork</b><span>where gear deals, lease returns and part-outs are won or lost</span></div>
-      <div class="job" data-reveal><q>Check this landing gear's trace before we wire the money.</q>
-        <p>Back-to-birth documentation read page by page against a codified rulebook - the gaps
-        named, the exceptions listed, <b>in days, not weeks.</b></p></div>
-      <div class="job" data-reveal><q>The lease return is coming. What's missing?</q>
-        <p>The records package checked against the return conditions before the deadline gets
-        expensive - <b>a disputed redelivery costs seven figures; a read one doesn't.</b></p></div>
-      <div class="job" data-reveal><q>Read every contract in the archive and tell me which deals
-        have no signed paper behind them.</q>
-        <p>About 1,500 documents read overnight. <b>A living register since.</b></p></div>
+    <div class="do-row" data-reveal><div class="do-no">Out</div>
+      <h3>Outputs</h3>
+      <div class="body">One prioritized RFQ queue; draft quotes created in AvSight with alternates
+      and condition handled; a price guard that holds outliers, stale carryovers and condition
+      mismatches; a named approval lane; a journal of every draft, hold and send; monthly outcome
+      numbers.</div></div>
 
-      <div class="cluster extra" data-reveal><b>The week</b><span>the admin that eats the owner's evenings</span></div>
-      <div class="job extra" data-reveal><q>My inbox is where my day goes to die.</q>
-        <p>Triaged continuously: tasks extracted, drafts prepared, noise held back -
-        <b>only what needs you reaches you.</b></p></div>
-      <div class="job extra" data-reveal><q>Partners keep sending KYC and compliance forms. Make
-        them stop eating my week.</q>
-        <p>Staff forward the form to MUNERON's own mailbox; it comes back filled from company
-        records, <b>ready to check and sign.</b></p></div>
-      <div class="job extra" data-reveal><q>Sit in the weekly meeting.</q>
-        <p>Transcript, decisions, who-owes-what - <b>in the task tracker before lunch.</b></p></div>
-      <div class="job extra" data-reveal><q>Answer this customer - but properly, in their language.</q>
-        <p>Outbound drafted in your voice, in the recipient's language, <b>house style kept.</b></p></div>
-      <div class="job extra" data-reveal><q>Audit two years of our export filings.</q>
-        <p>Every filing read and cross-checked against the shipping records -
-        <b>the gaps found and closed in-house.</b></p></div>
+    <div class="do-row" data-reveal><div class="do-no">Not</div>
+      <h3>Exclusions</h3>
+      <div class="body">No autonomous sending. No changes to pricing policy, payments, contracts or
+      customer records without a named grant. No vendor-side RFQs, no records work, no other ERP -
+      those are separate offers with their own scope.</div></div>
 
-      <div class="cluster extra" data-reveal><b>The money</b><span>the part accountants see last</span></div>
-      <div class="job extra" data-reveal><q>Who actually owes us right now - and who has quietly already paid?</q>
-        <p>Books against bank, both directions: money still owed, money received that the books
-        still chase, <b>and double payments nobody meant to make.</b></p></div>
-      <div class="job extra" data-reveal><q>Where exactly is our cash sitting?</q>
-        <p>Across accounts, deposits and receivables - one honest map by evening,
-        <b>every figure to its source row.</b></p></div>
-      <div class="job extra" data-reveal><q>The bank wants numbers by Thursday.</q>
-        <p>A lender-ready pack built straight from the ledgers, every figure traceable -
-        <b>on your desk before the meeting.</b></p></div>
-      <div class="job extra" data-reveal><q>Something feels off about this "our bank details changed"
-        email.</q>
-        <p>It noticed the reply came from a lookalike domain one letter off - and froze the thread
-        before money moved. <b>Fraud caught by reading carefully.</b></p></div>
-      <div class="job extra" data-reveal><q>Before we sign - who exactly are we dealing with?</q>
-        <p>The public record assembled in an evening: registries, filings, court records, the people
-        behind the company - <b>so the humans decide with the facts in front of them.</b></p></div>
+    <div class="do-row" data-reveal><div class="do-no">Pass</div>
+      <h3>Acceptance</h3>
+      <div class="body">Agreed in writing before day one: share of inbound RFQs that reach the lane
+      as a usable draft, median time from RFQ to draft, guard precision on your own history, and a
+      shadow run where <b>your reps grade the drafts before anything goes live</b>. Miss the bar - you
+      don't pay the final stage.</div></div>
 
-      <div class="cluster extra" data-reveal><b>The growth</b><span>finding customers without buying them</span></div>
-      <div class="job extra" data-reveal><q>We meet this airline at nine. Build the deck.</q>
-        <p>A board-grade presentation tailored to that exact company - their fleet, their pain,
-        your numbers - <b>in your brand, in minutes.</b></p></div>
-      <div class="job extra" data-reveal><q>Draft a tailored offer for every prospect on this list -
-        all 137 of them.</q>
-        <p>In the rep's drafts folder by morning, each one specific. <b>Not one sent by itself.</b></p></div>
-      <div class="job extra" data-reveal><q>Could this new sales channel work for us?</q>
-        <p>Idea on Monday, listed and answering enquiries by Wednesday - <b>a channel tested
-        end-to-end in 48 hours,</b> not debated for a quarter.</p></div>
-      <div class="job extra" data-reveal><q>Watch the market for me.</q>
-        <p>Fleets, competitors, prices. A brief lands <b>only when something actually moves.</b></p></div>
-
-      <div class="cluster extra" data-reveal><b>The owner</b><span>when everything runs through one head</span></div>
-      <div class="job extra" data-reveal><q>We're hiring. I don't have time to be fooled again.</q>
-        <p>An interview kit for the role: the five questions that separate players from polished
-        talkers, <b>and the red flag most people catch in month three.</b></p></div>
-      <div class="job extra" data-reveal><q>If I disappeared for a month - what does my team lose?</q>
-        <p>Everything it believes lives on readable pages: facts, rules, capabilities.
-        <b>Institutional memory that doesn't live in one head.</b></p></div>
-      <div class="job extra" data-reveal><q>Make the landing page for our company.</q>
-        <p>The page you are reading. It even hired its own critic - <b>and lost an argument to it
-        twice.</b></p></div>
-    </div>
-    <div class="jobs-more"><button class="btn btn-line" id="moreJobs" aria-expanded="false">
-      Show the other 15 - the week, the money, the growth, the owner</button></div>
-    <div class="limitless" data-reveal>
-      <p>Twenty-one examples. One pattern: each began as a plain sentence, said out loud -
-      and became a capability. Tested, governed, permanent.</p>
-      <p class="big">It has never once said <em>"that's not my job."</em><br>
-      This list has no bottom - the only ceiling we've found is the imagination
-      of the person asking.</p>
-    </div>
-
-    <div class="steps" style="margin-top:56px">
-      <div class="step" data-reveal><span class="no">Weeks 1-2</span><span class="in"><h3>It reads and finds.</h3>
-        <p> X-rays the company, grades its own data, surfaces the first recoverable money.
-        Read-only, every claim cited.</p></span></div>
-      <div class="step" data-reveal><span class="no">Month 2-3</span><span class="in"><h3>It drafts.</h3>
-        <p> Quotes, replies, filled forms, reports - ready in your team's hands. You send;
-        it never does.</p></span></div>
-      <div class="step" data-reveal><span class="no">Month 4-6</span><span class="in"><h3>It runs the rituals.</h3>
-        <p> Morning briefs, registers, dashboards, meeting notes. The whole team asks it directly -
-        each inside their role.</p></span></div>
-      <div class="step" data-reveal><span class="no">Year 1+</span><span class="in"><h3>It runs workflows - on named grants.</h3>
-        <p> Entire flows (quoting, listings, records checks) run through it, each behind its own kill
-        switch, all behind the one red button. <b>It grows the way an employee grows: by earning
-        trust, one grant at a time.</b></p></span></div>
-    </div>
+    <p class="sec-lede" data-reveal style="margin-top:34px"><b style="color:var(--ink)">Why the
+    native checkbox didn't solve it.</b> Rule-based autoquote matches exact part numbers and exact
+    company names, has no idea what an alternate or a condition code is worth, and prices from
+    tables most shops never filled. It also can't be overruled gracefully: one wrong pick reaches
+    a customer. We built the layer that closes exactly those gaps - on our own shop first.</p>
   </div>
 </section>
 
@@ -670,35 +606,38 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
 <section id="what">
   <span class="ghost" aria-hidden="true">04</span>
   <div class="wrap dimmable">
-    <div class="eyebrow" data-reveal>What it does</div>
-    <h2 class="sec-head" data-reveal>Four laws, <em>written in code.</em><span class="stopchip">⛔ stopped</span></h2>
+    <div class="eyebrow" data-reveal>How it is governed</div>
+    <h2 class="sec-head" data-reveal>Four controls, <em>written in code.</em><span class="stopchip">⛔ stopped</span></h2>
     <p class="sec-lede" data-reveal style="margin-bottom:14px">Not a policy document - enforced gates,
-    each shipped with the test that proves it is connected.</p>
+    each shipped with the test that proves it is connected. Bounded, monitored, and honest about
+    what they cannot catch.</p>
 
     <div class="do-row" data-reveal><div class="do-no">01</div>
       <h3>Ground everything</h3>
-      <div class="body">It connects to the ERP, accounting, bank, mail and marketplaces <b>read-only</b>,
-      and answers from what is actually there. Every figure traces to its source row - <i>unanswered
-      RFQs 41 ← intake queue, rows 214-229</i> <span style="color:var(--faint)">(sample, figures
-      changed)</span>. A number that can't show its origin doesn't ship.</div></div>
+      <div class="body">It reads AvSight, the mailbox and the marketplaces <b>read-only</b>, and
+      answers from what is there. Every figure traces to its source row - <i>unanswered RFQs 41 ←
+      intake queue, rows 214-229</i> <span style="color:var(--faint)">(sample, figures changed)</span>.
+      A number that can't show its origin doesn't ship.</div></div>
 
     <div class="do-row" data-reveal><div class="do-no">02</div>
-      <h3>Recommend, never act</h3>
-      <div class="body">It finds the money, drafts the move, and stops. Orders hidden inside your data
-      ("urgent - wire the deposit") are treated as <b>content, never commands</b>. The only thing it may
-      change without asking is its own understanding.</div></div>
+      <h3>Draft, don't send</h3>
+      <div class="body">It matches, prices and drafts, then stops. Orders hidden inside your data
+      ("urgent - wire the deposit") are treated as <b>content, never commands</b>. Sending is a
+      person's click, in their name, every time.</div></div>
 
     <div class="do-row" data-reveal><div class="do-no">03</div>
       <h3>Tell it once</h3>
-      <div class="body">Correct it one time - <i>"that's a lender, not a vendor"</i> - and the correction
-      becomes a <b>permanent, re-run test</b>. If the mistake ever tries to come back, the system shouts
-      before you see it. Years of corrections is why it feels like a colleague, not a tool.</div></div>
+      <div class="body">Correct it - <i>"that's a lender, not a vendor"</i> - and the correction becomes
+      a <b>re-run test</b>. If the mistake tries to come back, the system flags it before you see it.
+      Corrections are logged and reviewed; some classes of error still need a human eye, and we say
+      which.</div></div>
 
     <div class="do-row" data-reveal><div class="do-no">04</div>
-      <h3>The whole team can ask</h3>
-      <div class="body">MUNERON has its own inbox. Your sales lead asks about a customer and gets a cited
-      answer - <b>inside their role</b>. Margins, payroll and your private matters stay yours, and
-      withholding is stated, never silent: <i>"an answer exists, but it is outside your scope."</i></div></div>
+      <h3>Monitored, with known failure modes</h3>
+      <div class="body">Silent failure is the enemy we know best: jobs that report success while
+      doing nothing, prices that drift, corrections nobody read. Every lane has a heartbeat, a
+      kill switch and a monthly outcome report - and the list of what the guards <b>do not</b>
+      catch is part of the contract.</div></div>
   </div>
 </section>
 
@@ -713,11 +652,11 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
       You answer the way you'd answer a person.</p>
       <ul class="demo-points">
         <li data-reveal><span class="t">✓</span><span><b>Silence is safe.</b> An unanswered queue
-          changes nothing, forever.</span></li>
+          changes nothing.</span></li>
         <li data-reveal><span class="t">✓</span><span><b>Messy replies work.</b> "yes 1 and 3, no 2" -
           parsed exactly; anything unreadable approves nothing.</span></li>
-        <li data-reveal><span class="t">✓</span><span><b>Every change is reversible</b>, journalled
-          with who, what, when - and how to undo.</span></li>
+        <li data-reveal><span class="t">✓</span><span><b>Internal changes are journalled</b> with who,
+          what, when - and how to undo. A sent quote is a sent quote; that is why a person sends it.</span></li>
       </ul>
     </div>
     <div class="card dimmable" data-reveal role="img"
@@ -726,19 +665,17 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
         <div class="st" id="cardSt">replay</div></div>
       <div class="card-body" id="feed">
         <div class="msg">Good morning. <b>Three things need one yes or no</b> - nothing happens until you answer.</div>
-        <div class="msg"><b>1 · Send the overnight AOG quote first.</b>
-          <span class="why">Draft ready, stock confirmed, price inside the 90-day band - the buyer's
-          clock is running.</span></div>
+        <div class="msg"><b>1 · Release the overnight AOG draft to the rep to send.</b>
+          <span class="why">Stock confirmed, price inside the 90-day band - the buyer's clock is running.</span></div>
         <div class="msg"><b>2 · Release quote QU-118 as drafted.</b>
-          <span class="why">Its line price is 4.2x the 90-day median - the guard held it for your
-          eyes; I recommend re-pricing first.</span></div>
+          <span class="why">Its line price is 4.2x the 90-day median - the guard held it; I recommend re-pricing first.</span></div>
         <div class="msg"><b>3 · Merge "Korventa Aero Ltd" into Korventa Aerospace.</b>
           <span class="why">Same customer, two spellings in the books.</span></div>
         <div class="msg reply">yes 1 and 3, no 2</div>
-        <div class="msg result"><span class="ok">✓ 1 applied</span> - AOG quote released to the buyer<br>
+        <div class="msg result"><span class="ok">✓ 1 released</span> - draft in the rep's queue, rep sends<br>
           <span class="ok">✓ 3 applied</span> - one customer, one name<br>
           <span class="no">✗ 2 refused</span> - QU-118 stays held for re-pricing</div>
-        <div class="msg">Both changes are reversible - the journal holds the undo. <b>Corrections still
+        <div class="msg">Internal changes are reversible - the journal holds the undo. <b>Corrections
           holding: 12 of 12.</b></div>
       </div>
       <div class="card-foot">Reconstruction of a real owner session · names and figures changed</div>
@@ -770,36 +707,38 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
   </div>
 </section>
 
-<!-- ============ SOVEREIGN ============ -->
+<!-- ============ SOVEREIGN + PROCUREMENT ============ -->
 <section id="sovereign">
   <span class="ghost" aria-hidden="true">05</span>
   <div class="wrap sov-grid dimmable">
     <div>
-      <div class="eyebrow" data-reveal>Sovereignty</div>
+      <div class="eyebrow" data-reveal>Your data, and the paperwork behind it</div>
       <h2 class="sec-head" data-reveal>Your data is <em>territory.</em><span class="stopchip">⛔ stopped</span></h2>
-      <p class="sec-lede" data-reveal>Built for owners who treat it that way - RFQ flow, pricing
-      logic and counterparty lists are the most commercially sensitive data a trader has.</p>
+      <p class="sec-lede" data-reveal>RFQ flow, pricing logic and customer lists are the most
+      commercially sensitive data a trader has. Nothing is touched before the paperwork.</p>
       <ul class="sov-list">
-        <li data-reveal><span class="tick">✓</span><span><b>Everything is read in your house.</b>
-          Raw files and systems never leave your machines. In the default setup one thing leaves: a
-          summary sent for reasoning. You can see exactly what it contains - it is logged like
-          everything else.</span></li>
-        <li data-reveal><span class="tick">✓</span><span><b>A floor no setting can lower.</b>
-          Credentials and anything medical never reach an external model. Not a preference - a law.</span></li>
-        <li data-reveal><span class="tick">✓</span><span><b>Sovereign mode.</b> One line in the
-          constitution and the entire system runs on local ground. Nothing leaves. Not even the weather.</span></li>
-        <li data-reveal><span class="tick">✓</span><span><b>Everything it believes is on paper.</b>
-          Facts, laws and capabilities render to plain pages a human can read and challenge.</span></li>
+        <li data-reveal><span class="tick">✓</span><span><b>Read in your house.</b> Raw files and
+          systems stay on your machines. One thing leaves in the default setup: a summary sent for
+          reasoning. What it contains is logged and inspectable. A local-only mode exists.</span></li>
+        <li data-reveal><span class="tick">✓</span><span><b>Access only after contract.</b> No
+          systems access, no "look around", before the scope, the data-processing agreement, the
+          access model and the first payment are signed.</span></li>
+        <li data-reveal><span class="tick">✓</span><span><b>Conflicts checked first.</b> The founder
+          owns a trading company. We check your counterparties against that before the first call
+          and decline where they overlap. In writing.</span></li>
+        <li data-reveal><span class="tick">✓</span><span><b>The procurement pack is real, not a
+          badge.</b> Data flows, retention and deletion, incident process, access and MFA, exit
+          terms, insurance status - handed over at qualification, current status stated honestly.</span></li>
       </ul>
     </div>
-    <div class="sov-panel" data-reveal role="img" aria-label="Data locality policy panel">
-      <div class="row"><span class="k">ERP · books · bank · mail</span><span class="v">read on-premise</span></div>
+    <div class="sov-panel" data-reveal role="img" aria-label="Data and procurement panel">
+      <div class="row"><span class="k">AvSight · mailbox · marketplaces</span><span class="v">read on-premise</span></div>
       <div class="row"><span class="k">Credentials</span><span class="v deny">never leave · not configurable</span></div>
-      <div class="row"><span class="k">Anything medical</span><span class="v deny">never routed · to anyone</span></div>
-      <div class="row"><span class="k">Reasoning (default)</span><span class="v">a summary leaves; raw data never does</span></div>
-      <div class="row"><span class="k">Reasoning (sovereign)</span><span class="v">local model - nothing leaves</span></div>
-      <div class="row"><span class="k">Audit trail</span><span class="v">yours · complete · forever</span></div>
-      <div class="row"><span class="k">Integrity checks</span><span class="v">43/43 green</span></div>
+      <div class="row"><span class="k">Systems access</span><span class="v">after DPA + first payment</span></div>
+      <div class="row"><span class="k">Sending</span><span class="v">a named person, every quote</span></div>
+      <div class="row"><span class="k">Conflict check</span><span class="v">before the first call · written</span></div>
+      <div class="row"><span class="k">Audit trail</span><span class="v">yours · complete · exportable</span></div>
+      <div class="row"><span class="k">Exit</span><span class="v">your data and journal leave with you</span></div>
     </div>
   </div>
 </section>
@@ -808,65 +747,58 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
 <section class="demo" id="start" style="border-bottom:0">
   <span class="ghost" aria-hidden="true">06</span>
   <div class="wrap dimmable">
-    <div class="eyebrow" data-reveal>How it starts</div>
-    <h2 class="sec-head" data-reveal>From first conversation<br>to <em>first found money.</em><span class="stopchip">⛔ stopped</span></h2>
+    <div class="eyebrow" data-reveal>How it starts - 90 days, named roles</div>
+    <h2 class="sec-head" data-reveal>From one call<br>to <em>an approval lane your team runs.</em><span class="stopchip">⛔ stopped</span></h2>
     <div class="steps">
-      <div class="step" data-reveal><span class="no">01</span><span class="in"><h3>It interviews you.</h3>
-        <p> An hour of your time - who you are, what you run, where it hurts. It asks only what it
-        cannot discover itself.</p></span></div>
-      <div class="step" data-reveal><span class="no">02</span><span class="in"><h3>You grant access - read-only.</h3>
-        <p> An ERP export, bank statements, a mailbox, a records folder. Everything stays on your
-        machines.</p></span></div>
-      <div class="step" data-reveal><span class="no">03</span><span class="in"><h3>It builds its picture.</h3>
-        <p> Hours, not months: it maps the company, grades its own data quality, and names its blind
-        spots out loud.</p></span></div>
-      <div class="step" data-reveal><span class="no">04</span><span class="in"><h3>First findings, with proof.</h3>
-        <p> The first brief lands with recoverable money in it - every figure traceable to its row.</p></span></div>
-      <div class="step" data-reveal><span class="no">05</span><span class="in"><h3>It compounds.</h3>
-        <p> <b>Fifteen minutes of you a day</b> - read, answer in one line, correct one thing - and day
-        500 is unrecognizable from day 1.</p></span></div>
+      <div class="step" data-reveal><span class="no">Day 0</span><span class="in"><h3>Qualification call - 30 minutes.</h3>
+        <p> Your ERP, your RFQ volume, who sends today, whether autoquote is on, a conflict check.
+        We tell you the same day whether you qualify. Nothing is accessed.</p></span></div>
+      <div class="step" data-reveal><span class="no">Day 0-10</span><span class="in"><h3>Fixed scope signed.</h3>
+        <p> The scope above, acceptance tests, the data-processing agreement, staged payments
+        (half on signature), and the week-two stop clause: if your data cannot support it, we
+        stop and you keep the discovery findings.</p></span></div>
+      <div class="step" data-reveal><span class="no">Week 1-4</span><span class="in"><h3>Calibration on your history.</h3>
+        <p> Your 100-250 historical RFQs and the quotes you sent become the test set. Matching,
+        alternates, condition and price guards are tuned against what your people actually did.</p></span></div>
+      <div class="step" data-reveal><span class="no">Week 5-8</span><span class="in"><h3>Shadow run.</h3>
+        <p> Drafts are produced next to your live work; your reps grade them. No customer sees a
+        draft until the acceptance bar is met on your own numbers.</p></span></div>
+      <div class="step" data-reveal><span class="no">Week 9-13</span><span class="in"><h3>Approval lane live, then 30 days of stabilization.</h3>
+        <p> Reps send from the lane. Heartbeats, guards and the journal are on. First monthly
+        outcome report: RFQs answered, time to draft, holds, sends.</p></span></div>
+      <div class="step" data-reveal><span class="no">Then</span><span class="in"><h3>The Operator - optional, annual.</h3>
+        <p> We keep running it: monitoring, tuning, extending, a monthly outcome report in your
+        numbers, a named human on every loop. From &euro;3,000 a month, billed annually. Most
+        clients take it at signature; nobody has to.</p></span></div>
     </div>
-    <p class="sec-lede" data-reveal style="margin-top:44px"><b style="color:var(--ink)">Fixed doors
-    in, with prices on them.</b> Nobody else in this market publishes prices. We think that says
-    something.</p>
-    <div class="steps" style="margin-top:18px">
-      <div class="step" data-reveal><span class="no">€3,500</span><span class="in"><h3>Flight Check - the readiness audit.</h3>
-        <p> Two weeks. Your RFQ volume, unanswered share, cycle times and data health measured -
-        a findings report in your numbers and a plan. Credited in full against anything else.</p></span></div>
-      <div class="step" data-reveal><span class="no">€45,000</span><span class="in"><h3>The quote desk, installed and governed.</h3>
-        <p> Ninety days: RFQ intake to draft quotes inside your ERP, price guard, approval lane,
-        audit log, kill switch. Staged payments; a stop clause at week two if your data says stop.</p></span></div>
-      <div class="step" data-reveal><span class="no">Per package</span><span class="in"><h3>Records &amp; back-to-birth checks.</h3>
-        <p> Landing gear and component packages read against a codified rulebook - for traders,
-        lessors and the people financing them. Fixed quote before we start.</p></span></div>
-      <div class="step" data-reveal><span class="no">€3-10k/mo</span><span class="in"><h3>The Operator - we run what we built.</h3>
-        <p> Monitoring, tuning, extending - and a monthly outcome report in business numbers:
-        quotes sent, hours saved, errors caught. A named human owner on every loop.</p></span></div>
-    </div>
+    <p class="sec-lede" data-reveal style="margin-top:34px"><b style="color:var(--ink)">Not sure you
+    qualify?</b> A paid Flight Check - &euro;3,500, two weeks - measures your RFQ volume, unanswered
+    share, cycle times and data health and gives you a written plan. Credited in full if you go on
+    to the quote desk. No free looks inside your systems: paid, contracted, and yours to keep.</p>
   </div>
 </section>
 
-<!-- ============ GROUP ============ -->
+<!-- ============ ORIGIN ============ -->
 <section class="group">
   <div class="wrap group-grid dimmable">
     <div>
       <div class="eyebrow" data-reveal>Origin</div>
-      <h2 class="sec-head" data-reveal>Grown inside<br>a <em>real company.</em><span class="stopchip">⛔ stopped</span></h2>
-      <p class="sec-lede" data-reveal>MUNERON wasn't built in a lab. The platform it deploys grew
-      inside a working US-European aviation parts trading group - reading its mail, quoting its
-      parts, checking its landing gear records, earning autonomy one correction at a time - before
-      it had a website. It is deployed the way it was born: seeded into your company, raised on
-      your data, answering to you alone.</p>
-      <p class="sec-lede" data-reveal style="margin-top:16px"><b style="color:var(--ink)">The founder
-      is not anonymous.</b> Deividas Jurkstas has spent his career trading aviation parts - quoting,
-      procurement, records, export discipline - and built this because his own back office needed
-      it. Customer names and live numbers come in the conversation, under NDA - not on a public URL.</p>
+      <h2 class="sec-head" data-reveal>Built on our own shop,<br><em>first.</em><span class="stopchip">⛔ stopped</span></h2>
+      <p class="sec-lede" data-reveal>Deividas Jurkstas has spent his career trading aviation parts
+      - quoting, procurement, records, export discipline. The quote desk described on this page is
+      the workflow he ran for his own trading company on AvSight: the same flood of RFQs, the same
+      switched-off autoquote, the same wrong price that once reached a good customer. MUNERON's
+      product is built independently for clients, on their data, in their ERP.</p>
+      <p class="sec-lede" data-reveal style="margin-top:16px"><b style="color:var(--ink)">What we
+      will not claim:</b> a long client list. There isn't one yet. What we will show you: the
+      measured numbers above, a reconstructed session, the fixed scope, and the founder's phone
+      number.</p>
     </div>
     <div data-reveal>
-      <div class="fact"><div class="k">Origin deployment</div><div class="v">US-European aviation parts group</div></div>
       <div class="fact"><div class="k">Founder</div><div class="v">Deividas Jurkstas · Sotogrande, Spain</div></div>
-      <div class="fact"><div class="k">Posture</div><div class="v">Read-only · acts only on your yes</div></div>
-      <div class="fact"><div class="k">Deployment</div><div class="v">By introduction · aviation first</div></div>
+      <div class="fact"><div class="k">Experience</div><div class="v">Aviation parts trading, US-European group</div></div>
+      <div class="fact"><div class="k">Posture</div><div class="v">Read-only · drafts · a person sends</div></div>
+      <div class="fact"><div class="k">Deployment</div><div class="v">One workflow · AvSight shops first</div></div>
     </div>
   </div>
 </section>
@@ -875,18 +807,17 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
 <section class="close-sec" id="close">
   <div class="close-glow" aria-hidden="true"></div>
   <div class="wrap dimmable">
-    <h2 class="sec-head" data-reveal>Grown, <em>not installed.</em></h2>
-    <p class="close-note" data-reveal>No self-serve. No trial tier. One company at a time,
-    by introduction.</p>
+    <h2 class="sec-head" data-reveal>Check whether <em>your shop qualifies.</em></h2>
+    <p class="close-note" data-reveal>One call, thirty minutes, an honest answer the same day.
+    No systems access, no pitch deck.</p>
     <button class="btn btn-solid" id="introBtn" data-reveal aria-expanded="false"
-      aria-controls="introPanel">Request an introduction</button>
+      aria-controls="introPanel">Request the qualification call</button>
     <div class="intro-panel" id="introPanel" hidden>
-      <p class="intro-lead">Introductions are personal. Tell us who you are and what you run -
-      two lines is enough.</p>
+      <p class="intro-lead">Two lines is enough: what you run, and roughly how many RFQs a day.</p>
       <ol class="intro-steps">
-        <li>A conversation. Not a demo, not a pitch deck.</li>
-        <li>If it fits: a read-only look at your systems, and it tells you what it found.</li>
-        <li>You see the findings <b>before</b> anything is agreed, scoped or installed.</li>
+        <li>A 30-minute call: ERP, volume, who sends, conflicts.</li>
+        <li>If it fits: the fixed scope and acceptance tests in writing.</li>
+        <li>Then, and only then, access - under contract.</li>
       </ol>
       <div class="intro-actions">
         <a class="btn btn-solid" id="introMail" href="#">Open a pre-filled email</a>
@@ -894,12 +825,12 @@ html[data-theme="light"] .theme-toggle{border-color:rgba(23,48,77,.14)}
       </div>
       <p class="intro-note">It drafts, you send: same rule as the product.</p>
     </div>
-    <div class="close-annot" data-reveal>Reads everything · moves nothing without your yes</div>
+    <div class="close-annot" data-reveal>One workflow · fixed price · a person sends every quote</div>
   </div>
 </section>
 
 <footer>
-  <div class="in"><b>MUNER<span style="color:var(--teal,#2C9DA0)">ON</span></b><span>The operating layer for aviation businesses</span>
+  <div class="in"><b>MUNER<span style="color:var(--teal,#2C9DA0)">ON</span></b><span>The operating layer for aviation - one workflow at a time</span>
     <span>© 2026 MUNERON, S.L. (en formación) · Sotogrande, Spain</span>
     <div class="theme-toggle" role="group" aria-label="Theme">
       <button id="thLight" aria-pressed="false">Light</button>
@@ -1232,10 +1163,10 @@ var introBtn=document.getElementById('introBtn'),
     introPanel=document.getElementById('introPanel'),
     introMail=document.getElementById('introMail'),
     introCopy=document.getElementById('introCopy');
-var INTRO_SUBJECT='Introduction request - MUNERON';
-var INTRO_BODY='I run '+String.fromCharCode(91)+'company'+String.fromCharCode(93)+
-  ' ('+String.fromCharCode(91)+'what we do, roughly how big'+String.fromCharCode(93)+').\n'+
-  'What made me write: '+String.fromCharCode(91)+'the part of the page that landed'+String.fromCharCode(93)+'.\n\n'+
+var INTRO_SUBJECT='Qualification call - MUNERON quote desk';
+var INTRO_BODY='We run '+String.fromCharCode(91)+'company, ERP'+String.fromCharCode(93)+
+  ' - roughly '+String.fromCharCode(91)+'N'+String.fromCharCode(93)+' RFQs a day, '+String.fromCharCode(91)+'N'+String.fromCharCode(93)+' people quoting.\n'+
+  'Autoquote today: '+String.fromCharCode(91)+'off / on / never configured'+String.fromCharCode(93)+'.\n\n'+
   'Best way to reach me: ';
 if(introBtn){
   if(CONTACT){
