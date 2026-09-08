@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<script>(function(){try{var t=localStorage.getItem("muneron-theme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark");}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The Boundary Test - eleven questions for the AI your people already use</title>
 <meta name="description" content="Eleven questions you can put to the AI assistant your people already use, in about ten minutes, on your own machine. It shows you what it can see, what it can send, and what it can prove. Free, nothing to install, nothing leaves your computer.">
@@ -23,6 +24,16 @@
   --eo:cubic-bezier(0.19,1,0.22,1);
   --max:760px;
 }
+html[data-theme="light"]{
+  --navy:#eef3f9;--navy-2:#e6edf6;--panel:rgba(255,255,255,.66);
+  --line:rgba(23,48,77,.12);--line-2:rgba(23,48,77,.24);
+  --ink:#0f2036;--dim:#43607f;--faint:#7b91a9;
+  --teal:#149a90;--teal-soft:#0f7d74;--sky:#4a97d4;--pass:#0f8a5f;
+}
+html[data-theme="light"] .score{background:linear-gradient(180deg,rgba(238,243,249,0) 0%,var(--navy) 22%)}
+html[data-theme="light"] .mark button[aria-pressed="true"][data-v="1"]{background:rgba(15,138,95,.14);color:#0b5c40}
+html[data-theme="light"] .mark button[aria-pressed="true"][data-v="0"]{background:rgba(200,50,40,.12);color:#8a2018}
+html[data-theme="light"] .rule{background:rgba(20,154,144,.09)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--navy);color:var(--ink);font-family:var(--font);
@@ -97,6 +108,13 @@ nav{position:static}
 .nav-links a:hover{color:var(--teal-soft)}
 .nav-cta{text-decoration:none}
 @media(max-width:640px){.nav-links{display:none}}
+.theme-toggle{position:fixed;right:16px;bottom:16px;z-index:80;display:flex;gap:3px;background:var(--navy-2);
+  border:1px solid var(--line);border-radius:999px;padding:3px}
+.theme-toggle button{border:0;background:transparent;cursor:pointer;font-family:var(--font);font-size:12px;
+  font-weight:600;color:var(--faint);padding:6px 13px;border-radius:999px}
+.theme-toggle button[aria-pressed="true"]{background:var(--teal);color:#04231f}
+html[data-theme="light"] .theme-toggle button[aria-pressed="true"]{color:#fff}
+@media(max-width:520px){.theme-toggle{right:10px;bottom:10px}}
 </style>
 </head>
 <body>
@@ -221,6 +239,7 @@ or apologises instead, mark it failed. That is the whole method.</p></div>
   MUNERON, S.L. &middot; Sotogrande, Spain &middot; <a href="/">muneron.com</a><br>
   Version 1.0, 8 September 2026. This page collects nothing.
 </footer>
+<div class="theme-toggle" aria-label="Theme"><button id="thLight" type="button" aria-pressed="false">Light</button><button id="thDark" type="button" aria-pressed="true">Dark</button></div>
 
 </div>
 <script>
@@ -254,6 +273,14 @@ or apologises instead, mark it failed. That is the whole method.</p></div>
     });
   });
   render();
+  var tl=document.getElementById('thLight'), td=document.getElementById('thDark');
+  function setTheme(m){ document.documentElement.setAttribute('data-theme',m);
+    try{localStorage.setItem('muneron-theme',m)}catch(x){}
+    tl.setAttribute('aria-pressed',m==='light'?'true':'false');
+    td.setAttribute('aria-pressed',m==='dark'?'true':'false'); }
+  tl.addEventListener('click',function(){setTheme('light')});
+  td.addEventListener('click',function(){setTheme('dark')});
+  setTheme(document.documentElement.getAttribute('data-theme')||'dark');
 })();
 </script>
 </body>
