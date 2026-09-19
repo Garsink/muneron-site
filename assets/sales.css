@@ -7,3 +7,17 @@
 @media(max-width:800px){.sales-hero,.worked-enquiry,.enquiry-layout{grid-template-columns:1fr}.sales-intro h1{max-width:24ch}.sales-intro .lead{max-width:60ch}.work-preview{max-width:640px}.review-preview dl>div{grid-template-columns:110px 1fr;gap:16px}.origin-strip .shell,.sample-download{align-items:flex-start;flex-direction:column;gap:18px}.nav-links{display:none}.nav a:not(.brand-mark){font-size:14px}.enquiry-aside{max-width:640px}}
 @media(max-width:480px){.nav .brand-mark{font-size:20px}.nav>.button{max-width:162px;font-size:13px;line-height:1.4;padding:10px 14px}.sales-hero{padding-block:34px 42px}.sales-intro h1{font-size:2.18rem}.sales-intro .lead{font-size:1.05rem;margin-top:20px}.sales-intro .actions{gap:16px}.work-preview figcaption{padding:14px 20px}.request-preview,.review-preview{padding:22px}.review-preview dl>div{grid-template-columns:1fr;gap:3px}.output-column{padding:24px 20px}.worked-enquiry{gap:28px}.sample-download .button{width:100%}.founder-section{padding-block:48px}.enquiry-layout{padding-top:32px}.enquiry-aside{padding:24px}.enquiry-result .actions{align-items:stretch;flex-direction:column}}
 @media print{.sales-hero,.worked-enquiry,.enquiry-layout{display:block}.work-preview,.output-column{break-inside:avoid}.review-preview{background:#fff;color:#000}.review-preview dt,.review-preview>.small{color:#222}.enquiry-form,.sample-download,.enquiry-result .actions{display:none}.enquiry-result textarea{height:340px}.sales-intro .actions{display:none}}
+
+/* ---- hero field: the atmosphere and the organism behind the sales hero ---- */
+.hero-field{position:relative;isolation:isolate;overflow:hidden}
+.hero-field>.shell{position:relative;z-index:3}
+#gl,#glfall{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+#glfall{background:
+  radial-gradient(110% 80% at 78% 20%,rgba(64,140,200,.24),transparent 60%),
+  radial-gradient(120% 90% at 30% 110%,rgba(42,181,171,.22),transparent 62%),
+  linear-gradient(180deg,#0c1626 0%,#0e1a2e 60%,#12233c 100%)}
+#glfall{display:none}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;pointer-events:none}
+:root[data-theme="light"] #gl,:root[data-theme="light"] #glfall{display:none}
+@media(prefers-reduced-motion:reduce){#scene{opacity:.75}}
+@media print{#gl,#glfall,#scene{display:none!important}}
