@@ -19,6 +19,11 @@
 #glfall{display:none}
 .hero-veil{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(95deg,var(--ground) 0%,color-mix(in srgb,var(--ground) 88%,transparent) 34%,color-mix(in srgb,var(--ground) 40%,transparent) 62%,transparent 88%)}
 @supports not (background:color-mix(in srgb,red 50%,transparent)){.hero-veil{background:linear-gradient(95deg,var(--ground) 0%,var(--ground) 30%,transparent 86%)}}
+
+/* single column: the copy spans the full width, so the veil has to run down, not across.
+   Measured 2026-09-19: the sideways veil left the heading at 1.9:1 over the organism. */
+@media(max-width:900px){.hero-veil{background:linear-gradient(180deg,color-mix(in srgb,var(--ground) 95%,transparent) 0%,color-mix(in srgb,var(--ground) 95%,transparent) 64%,color-mix(in srgb,var(--ground) 55%,transparent) 84%,transparent 100%)}
+@supports not (background:color-mix(in srgb,red 50%,transparent)){.hero-veil{background:linear-gradient(180deg,var(--ground) 0%,var(--ground) 66%,transparent 100%)}}}
 #scene{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;pointer-events:none}
 :root[data-theme="light"] #gl,:root[data-theme="light"] #glfall{display:none}
 @media(prefers-reduced-motion:reduce){#scene{opacity:.75}}
