@@ -10,7 +10,7 @@
   <meta name="twitter:card" content="summary"><link rel="canonical" href="https://muneron.com/">
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css">
   <script src="/assets/theme.js"></script><script src="/assets/hero-field.js" defer></script>
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js" defer></script><script type="module" src="/assets/reply.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -49,13 +49,29 @@
     <div class="section-heading"><h2 id="example-heading">The answer is only useful if the facts behind it hold up.</h2><p class="lead">Here is the kind of handover we mean: a reply draft, its sources and the questions that still need a person. Open the source notes and check the example yourself.</p></div>
     <div class="worked-enquiry">
       <div class="source-column"><h3>What the assistant is given</h3>
-        <details open><summary>The customer's request</summary><p>12 PX-40 units needed by Friday. Confirm price, delivery and payment instructions.</p></details>
+        <form id="reply-form" hidden>
+          <p class="small muted">Put your own numbers in. It runs in this browser, nothing is sent anywhere, and it will not ask you for a customer document.</p>
+          <div class="reply-grid">
+            <label>What they asked for<input name="item" value="PX-40" maxlength="40" autocomplete="off"></label>
+            <label>How many<input name="wanted" type="number" min="0" step="1" value="12" inputmode="numeric"></label>
+            <label>By when (their words)<input name="byDate" value="Friday" maxlength="30" autocomplete="off"></label>
+            <label>On your stock sheet<input name="listed" type="number" min="0" step="1" value="8" inputmode="numeric" placeholder="leave blank if unknown"></label>
+            <label>Approved price, each<input name="price" type="number" min="0" step="0.01" value="120" inputmode="decimal" placeholder="leave blank if unknown"></label>
+            <label>Lead time for the rest, working days<input name="leadDays" type="number" min="0" step="1" value="10" inputmode="numeric" placeholder="leave blank if unknown"></label>
+            <label>Freight<select name="freight"><option value="not-quoted" selected>Not quoted</option><option value="quoted">Quoted</option><option value="unknown">Not sure</option></select></label>
+            <label>Currency<select name="currency"><option value="EUR" selected>EUR</option><option value="USD">USD</option><option value="GBP">GBP</option></select></label>
+          </div>
+          <p class="small"><button type="button" class="plain-button" id="reply-reset">Clear the numbers and watch what it refuses</button></p>
+        </form>
+                <details open><summary>The customer's request</summary><p>12 PX-40 units needed by Friday. Confirm price, delivery and payment instructions.</p></details>
         <details><summary>The approved facts</summary><ul><li><strong>STOCK-01:</strong> 8 PX-40 units listed. Stock must be reconfirmed before commitment.</li><li><strong>PRICE-01:</strong> €120 per unit, excluding tax. Freight is not quoted.</li><li><strong>SUPPLY-01:</strong> 10 working days indicated for additional units, subject to confirmation.</li><li><strong>RULE-01:</strong> Delivery commitments and payment instructions need the responsible person's approval.</li></ul></details>
         <details><summary>What must not become a promise</summary><p>The customer asking for Friday does not make Friday possible. Missing freight is not free freight. A product total is not a delivered price. An assistant must not invent payment details.</p></details>
       </div>
-      <div class="output-column"><div class="output-heading"><h3>The review handover</h3><span>Example, not a live AI run</span></div>
+      <div class="output-column"><div class="output-heading"><h3>The review handover</h3><span id="reply-static-note">Example, not a live AI run</span><span id="reply-live-note" hidden>Runs in your browser</span></div>
+        <div id="reply-output">
         <h4>Reply draft</h4><p>Thanks for your enquiry. Our latest stock sheet lists 8 PX-40 units at €120 each, excluding tax. We need to reconfirm availability and check whether delivery by Friday is possible.</p><p>The additional 4 units have an indicated lead time of 10 working days, also subject to confirmation. Freight and payment instructions still need to be confirmed before we can send a firm offer.</p>
         <h4>For the person reviewing it</h4><ul><li><strong>Quantity gap:</strong> 12 requested − 8 listed = 4 units.</li><li><strong>Product subtotal:</strong> 8 × €120 = €960, excluding tax and unconfirmed freight. Sources: STOCK-01 and PRICE-01.</li><li><strong>Hold for approval:</strong> availability, delivery, freight and payment instructions. The draft remains unsent and awaits human approval.</li></ul>
+      </div>
       </div>
     </div>
     <div class="sample-download"><div><h3>Try the example in your own AI assistant.</h3><p class="small muted">Get the fictional inputs, task and answer checklist in a free text file, without installing anything or giving an email address. It tests this example, not the security of your setup.</p></div><a class="button button-secondary" href="/downloads/customer-enquiry-example.txt" download>Download the example ↓</a></div>
