@@ -59,3 +59,13 @@
 .receipt-steps li.turn strong{color:var(--red)}
 .receipt-note{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);max-width:68ch}
 @media(max-width:560px){.receipt{padding:20px 18px}.receipt-steps p{font-size:16px}}
+.sales-hero.solo{display:block;max-width:760px}
+.record{list-style:none;margin:0;padding:0;max-width:760px}
+.record li{display:grid;grid-template-columns:132px 1fr;gap:28px;align-items:baseline;padding:22px 0;border-top:1px solid var(--line)}
+.record li:last-child{border-bottom:1px solid var(--line)}
+.record b{font-size:56px;line-height:1;font-weight:700;color:var(--accent);letter-spacing:-.02em}
+.record span{font-size:17px;color:var(--dim)}
+.closing-band{text-align:center}
+.closing-band h2{max-width:20ch;margin-inline:auto}
+.closing-band .lead{max-width:48ch;margin-inline:auto}
+@media(max-width:620px){.record li{grid-template-columns:1fr;gap:6px}.record b{font-size:44px}}
