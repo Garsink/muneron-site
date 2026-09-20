@@ -47,3 +47,15 @@
 .checks .src{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:3px}
 .unsent{margin-top:22px!important;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 @media(max-width:560px){.reply-grid{grid-template-columns:1fr}}
+.receipt{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:26px 28px;max-width:760px}
+.receipt-steps{list-style:none;margin:0;padding:0}
+.receipt-steps li{position:relative;border-left:2px solid var(--line);padding:0 0 22px 22px;margin-left:6px}
+.receipt-steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.receipt-steps li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--line)}
+.receipt-steps li.turn::before{background:var(--red)}
+.receipt-steps .step-label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.receipt-steps p{margin:6px 0 0;font-size:17px;color:var(--dim)}
+.receipt-steps li.turn p{color:var(--ink)}
+.receipt-steps li.turn strong{color:var(--red)}
+.receipt-note{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);max-width:68ch}
+@media(max-width:560px){.receipt{padding:20px 18px}.receipt-steps p{font-size:16px}}
