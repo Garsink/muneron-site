@@ -2,42 +2,40 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tell us about your desk - MUNERON</title>
-  <meta name="description" content="Describe your customer-enquiry workflow, AI application and computer setup. Check the fit for MUNERON's first Desk Pack before any order.">
-  <link rel="canonical" href="https://muneron.com/start/"><link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css">
-  <script src="/assets/theme.js"></script><script src="/assets/site.js" defer></script><script type="module" src="/assets/enquiry.js"></script>
+  <title>Tell me what you run - MUNERON</title>
+  <meta name="description" content="If you run a company on AI you cannot fully account for, write to me. One email, read by me, answered by me. No deck, no proposal, no form.">
+  <meta property="og:title" content="Tell me what you run"><meta property="og:description" content="One email, read by me, answered by me. No deck, no proposal, no form.">
+  <meta property="og:url" content="https://muneron.com/start/"><meta property="og:type" content="website">
+  <meta property="og:image" content="https://muneron.com/assets/card.png"><link rel="canonical" href="https://muneron.com/start/">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css">
+  <script src="/assets/theme.js"></script><script src="/assets/site.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><nav class="shell nav" aria-label="Main navigation"><a class="brand-mark" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a><a class="nav-return" href="/#pack">About the €390 pack</a></nav></header>
-<main class="shell enquiry-layout" id="main">
-  <div class="enquiry-main">
-    <h1>Tell us about the desk you have in mind.</h1>
-    <p class="lead">Three questions help us see whether the first Customer Enquiry Desk could fit. No company files or technical audit needed.</p>
-    <p class="small muted">Your choices stay on this page until you choose to put them in an email. This is an enquiry, not an order or a mailing-list signup.</p>
-    <p id="enquiry-loading" class="status-line">Preparing the questions. You can also <a href="mailto:hello@muneron.com?subject=Customer%20Enquiry%20Desk">email hello@muneron.com directly</a>.</p>
-    <noscript><p class="no-script">The question helper needs JavaScript. Email <a href="mailto:hello@muneron.com?subject=Customer%20Enquiry%20Desk">hello@muneron.com</a> with the task, the AI application and whether the computer is a Mac or Windows. Do not include company documents.</p></noscript>
-    <form class="enquiry-form" id="enquiry-form" hidden>
-      <label for="enquiry-work">What would you like this person to do with AI?</label>
-      <select id="enquiry-work" required><option value="">Choose the closest answer</option><option value="replies">Prepare customer replies from approved product documents</option><option value="connected">Connect live systems or automate actions</option><option value="other">Another task / not sure yet</option></select>
-      <label for="enquiry-app">Which AI application do they use?</label>
-      <select id="enquiry-app" required><option value="">Choose an application</option><option value="claude-code">Claude Code</option><option value="cowork">Claude Cowork</option><option value="chatgpt">ChatGPT</option><option value="copilot">Microsoft Copilot</option><option value="other">Another AI application</option><option value="unsure">Not sure / not using one yet</option></select>
-      <label for="enquiry-computer">What is the computer setup?</label>
-      <select id="enquiry-computer" required><option value="">Choose the closest answer</option><option value="mac">Mac, with permission to install</option><option value="windows">Windows, with permission to install</option><option value="managed">Managed computer / installation needs IT approval</option><option value="unsure">Not sure</option></select>
-      <button class="button" type="submit" id="prepare-enquiry">Prepare my enquiry ↗</button>
-      <p id="enquiry-status" class="status-line" role="status" aria-live="polite"></p>
-    </form>
-    <section class="enquiry-result" id="enquiry-result" aria-labelledby="enquiry-heading" hidden>
-      <h2 id="enquiry-heading" tabindex="-1"></h2><p id="enquiry-guidance"></p>
-      <div class="actions"><a class="button" id="email-enquiry">Open my email with this enquiry ↗</a><button class="plain-button" type="button" id="copy-enquiry">Copy the text instead</button></div>
-      <p class="small">Review and send from your email application. We have not received anything yet.</p>
-      <p id="copy-status" class="status-line" role="status" aria-live="polite"></p>
-      <label for="enquiry-text">Your enquiry text</label><textarea id="enquiry-text" readonly rows="14" spellcheck="false"></textarea>
-      <p class="small">If your email app does not open, copy the text into an email to <a href="mailto:hello@muneron.com">hello@muneron.com</a>. You can add your task description there. Please leave out customer files and sensitive information.</p>
-    </section>
-  </div>
-  <aside class="enquiry-aside"><h2>What happens next</h2><ol><li>We review the work and application you describe.</li><li>If it fits the first release, we confirm the scope and compatibility checks.</li><li>You receive availability, the full price and terms before deciding whether to order.</li></ol><p><strong>Planned price: €390 for one person.</strong> Your AI subscription is separate. The pack is still in development; a form answer is not a compatibility test.</p><p>The first scope is self-service reply preparation. It does not include an ERP integration, automatic sending or a human support service.</p><p><a href="/downloads/customer-enquiry-example.txt" download>Try the free worked example first ↓</a></p></aside>
+<header class="site-header"><nav class="shell nav" aria-label="Main navigation">
+  <a class="brand-mark" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
+  <a class="text-link" href="/aviation/">The long version</a>
+</nav></header>
+<main id="main">
+  <section class="shell section start-page">
+    <p class="audience">Deividas Jurkštas</p>
+    <h1>Tell me what you run.</h1>
+    <p class="lead">Not a form. One email, which I read myself and answer myself. It helps if you tell me three things:</p>
+    <ol class="three">
+      <li><b>What the AI does for you today.</b> Replies, quotes, reports, bookkeeping, the lot. Roughly how many jobs, roughly how often.</li>
+      <li><b>What you cannot account for.</b> The job you are not sure actually ran. The report nobody has checked. The thing that showed green for a month.</li>
+      <li><b>What it would cost you if one of them was quietly wrong.</b> Honest number, or no number.</li>
+    </ol>
+    <p class="lead">Leave out customer files and anything confidential. I do not need them to answer.</p>
+    <div class="actions">
+      <a class="button" href="mailto:hello@muneron.com?subject=What%20I%20run&amp;body=1.%20What%20the%20AI%20does%20for%20us%20today%3A%0A%0A2.%20What%20I%20cannot%20account%20for%3A%0A%0A3.%20What%20it%20would%20cost%20if%20one%20of%20them%20was%20quietly%20wrong%3A%0A">Open an email with those three lines <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="small muted">Or write in your own words to <a href="mailto:hello@muneron.com">hello@muneron.com</a>.</p>
+  </section>
+  <section class="band"><div class="shell">
+    <h2>What happens next</h2>
+    <p class="lead">I write back with what I would look at first, and why. If it is useful, we talk. If it is not, you have lost one email. There is no price on this page because there is nothing on it to buy.</p>
+  </div></section>
 </main>
-<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">MUNERON, S.L. (en formación) · Sotogrande, Spain</p></div><div class="footer-tools"><a href="/test/">Boundary Check</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
+<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">MUNERON, S.L. (en formación) · Sotogrande, Spain</p></div><div class="footer-tools"><a href="/aviation/">The long version</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
 </body></html>
