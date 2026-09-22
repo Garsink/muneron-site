@@ -1,6 +1,6 @@
 # muneron.com
 
-Static site for MUNERON, S.L. (en formacion). Deployed via GitHub Pages.
+Static site for MUNERON. Deployed via GitHub Pages.
 
 ## Current public scope
 

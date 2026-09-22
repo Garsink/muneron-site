@@ -19,9 +19,9 @@
 </nav></header>
 <main id="main" class="long">
   <section class="shell section">
-    <p class="audience">Documentation</p>
+    <p class="audience">The system</p>
     <h1>The operating layer.</h1>
-    <p class="lead">An AI operating layer in use at an aviation parts, MRO and landing gear leasing group. Built over four months: 1,650 commits across 15 repositories. Functions were added as operating requirements were documented.</p>
+    <p class="lead">An AI operating layer built inside an aviation parts, MRO and landing gear leasing group. Four months, 1,650 commits across 15 repositories, added function by function as the business needed them.</p>
   </section>
 
   <section class="shell section" id="timeline" aria-labelledby="tl-h">
@@ -29,9 +29,9 @@
     <ol class="phases">
       <li><span class="when">April</span><div><b>Knowledge base.</b> Company mail, chat and documents made searchable in one place.</div></li>
       <li><span class="when">May</span><div><b>Core functions.</b> Enquiry handling, quote drafting, onboarding paperwork, live reads of the ERP and the accounts, a decision queue for the owner.</div></li>
-      <li><span class="when">31 May</span><div><b>Governance.</b> A registry of every running job, a gate on outbound email, written operating rules. Added three weeks after the first live sends.</div></li>
+      <li><span class="when">31 May</span><div><b>Governance.</b> A registry of every running job, a gate on outbound email, written operating rules.</div></li>
       <li><span class="when">June</span><div><b>Quality gates.</b> A sanity check on every draft, alerts when a data feed stops, a supervisor over the functions.</div></li>
-      <li><span class="when">July</span><div><b>Stop controls and census.</b> One master stop, with a check that reports any acting job not covered by it. A census of all jobs, with stale ones retired. An automatic-send pilot under explicit grants. Regression evaluations.</div></li>
+      <li><span class="when">July</span><div><b>Stop controls and census.</b> One master stop, plus a check that every acting job is registered to it. A census of all jobs, with stale ones retired. An automatic-send pilot under explicit grants. Regression evaluations.</div></li>
       <li><span class="when">August</span><div><b>Hardening.</b> A fail-closed stop rule, a dedicated customer-facing machine, the records function rebuilt, employee starter packages, operating rules reconciled with the running system.</div></li>
       <li><span class="when">2 Sep</span><div><b>Adversarial audit.</b> 311 evaluations across all four machines.</div></li>
       <li><span class="when">20 Sep</span><div><b>Manual re-verification.</b> 20 audit findings re-checked by hand against the original logs.</div></li>
@@ -190,24 +190,20 @@
     <div class="section-heading"><h2 id="audit-h">Audit record.</h2></div>
     <div class="prose">
       <p>On 2 September an adversarial audit completed 311 evaluations covering the scheduled jobs on all four machines. It recorded 102 findings: jobs that finished without error and reported success while the output was wrong or reached nobody. The audit attributed the largest groups of findings to a control verified on the wrong machine, input feeds that stopped while processing continued on schedule, and operating rules that no longer matched the running system. The affected controls were changed during the week of 2 September.</p>
-      <p>On 20 September, 20 of the 102 findings were drawn by seeded random sample and re-checked by hand against the original logs. 19 held. 1 was wrong: the audit had read two lines marked blocked and reported that a daily cash alert never arrived, when the next line in the same file, 308 milliseconds later, recorded it as sent. Across the full log, 108 of 132 alerts were sent; the other 24 were duplicate retry attempts in June and July. The finding was corrected and the checker now reads the final delivery state before reporting on any send.</p>
-      <p>Scope: the current deployment is specific to the group's systems. MUNERON does not offer it as downloadable software.</p>
+      <p>On 20 September, 20 of the 102 findings were chosen at random and re-checked by hand against the original logs. 19 held. 1 was wrong: the audit had read two lines marked blocked and reported that a daily cash alert never arrived, when the next line in the same file, 308 milliseconds later, recorded it as sent. Across the full log, 108 of 132 alerts went out. The finding was corrected and the checker now reads the final delivery state before reporting on any send.</p>
     </div>
   </section>
 
   <section class="shell section" id="founder" aria-labelledby="f-h">
-    <div class="section-heading"><h2 id="f-h">Founder's note.</h2></div>
-    <blockquote class="founder-note">
-      <p>I run the group this layer is used in. I directed the build through written instructions and review; I am not a developer. The registry and audit counts on these pages are the ones used to assess the deployment, published with their dates.</p>
-      <footer>Deividas Jurkštas, founder, MUNERON</footer>
-    </blockquote>
+    <div class="section-heading"><h2 id="f-h">Built inside the business.</h2></div>
+    <p class="lead origin-lead">The layer was built by the group's founder through written instructions and review, over four months, while the business ran on it. The registry and audit counts on these pages are the ones used to run it, published with their dates. MUNERON is the company that documents the layer and the method behind it.</p>
   </section>
 
   <section class="band closing-band"><div class="shell">
     <h2>Contact MUNERON</h2>
-    <p class="lead">For companies with AI jobs already running without independent output checks.</p>
+    <p class="lead">For companies already running AI in the business, with jobs nobody has independently checked.</p>
     <a class="button" href="/start/">Get in touch <span aria-hidden="true">↗</span></a>
   </div></section>
 </main>
-<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">MUNERON, S.L. (en formación) · Sotogrande, Spain</p></div><div class="footer-tools"><a href="/">Overview</a><a href="/start/">Contact</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
+<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">© 2026 MUNERON</p></div><div class="footer-tools"><a href="/">Overview</a><a href="/start/">Contact</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
 </body></html>
