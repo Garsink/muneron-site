@@ -39,13 +39,13 @@
   <text x="332" y="70" class="h">Operating layer: four rules</text>
   <g>
     <rect x="332" y="86" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="103" class="t">1  Connect signals before reporting</text><text x="346" y="118" class="s">related items are reported together</text>
+    <text x="346" y="103" class="t">1  Related signals grouped</text><text x="346" y="118" class="s">one report, relationship stated</text>
     <rect x="332" y="134" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="151" class="t">2  Route to the process owner</text><text x="346" y="166" class="s">only items that need a decision</text>
+    <text x="346" y="151" class="t">2  Routed to the process owner</text><text x="346" y="166" class="s">decision items only</text>
     <rect x="332" y="182" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="199" class="t">3  Verify against the system of record</text><text x="346" y="214" class="s">wrong data is flagged, not used</text>
+    <text x="346" y="199" class="t">3  Figures from the system of record</text><text x="346" y="214" class="s">failed source check: item withheld</text>
     <rect x="332" y="230" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="247" class="t">4  Deliver to a named owner</text><text x="346" y="262" class="s">actions: propose, approve, execute, confirm</text>
+    <text x="346" y="247" class="t">4  Recorded recipient, recorded actions</text><text x="346" y="262" class="s">proposal, approval, execution, confirmation</text>
   </g>
   <text x="332" y="300" class="k">KNOWLEDGE</text>
   <text x="332" y="318" class="s">ingested, deduplicated, dated. Facts with a source outrank text.</text>
@@ -54,8 +54,8 @@
   <text x="332" y="383" class="s">payment-language guard, ERP read-only by default, self-audit.</text>
   <text x="332" y="415" class="k">FIXED RULES</text>
   <text x="332" y="433" class="t">Does not sign documents. Does not move money.</text>
-  <text x="332" y="470" class="s">Reports to the owner are not gated,</text>
-  <text x="332" y="485" class="s">so a stop is always reported.</text>
+  <text x="332" y="470" class="s">Stop events report to the owner</text>
+  <text x="332" y="485" class="s">through a separate, ungated path.</text>
 
   <!-- RIGHT: owners -->
   <text x="740" y="28" class="k">RECIPIENTS</text>

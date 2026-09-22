@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The system - MUNERON</title>
   <meta name="description" content="How the operating layer is wired: inputs, four operating rules, nine functions, four outbound channels under one master stop, controls, measured figures, and the audit record.">
-  <meta property="og:title" content="The system - MUNERON"><meta property="og:description" content="Four months of operating AI inside an aviation group: timeline, operating rules, functions, outbound channels, controls, and the audit record.">
+  <meta property="og:title" content="The system - MUNERON"><meta property="og:description" content="An AI operating layer in use at an aviation group: timeline, operating rules, functions, outbound channels, controls, and the audit record.">
   <meta property="og:url" content="https://muneron.com/aviation/"><meta property="og:type" content="article">
   <meta property="og:image" content="https://muneron.com/assets/card.png"><link rel="canonical" href="https://muneron.com/aviation/">
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css">
@@ -19,9 +19,9 @@
 </nav></header>
 <main id="main" class="long">
   <section class="shell section">
-    <p class="audience">The system</p>
-    <h1>Four months of operating AI.</h1>
-    <p class="lead">The operating layer was built inside an aviation parts, MRO and landing gear leasing group. Over four months it reached 1,650 commits across 15 repositories through written instructions and review, without a developer typing code. It began with one question about the company and expanded function by function as operating requirements emerged.</p>
+    <p class="audience">Documentation</p>
+    <h1>The operating layer.</h1>
+    <p class="lead">An AI operating layer in use at an aviation parts, MRO and landing gear leasing group. Built over four months: 1,650 commits across 15 repositories. Functions were added as operating requirements were documented.</p>
   </section>
 
   <section class="shell section" id="timeline" aria-labelledby="tl-h">
@@ -31,7 +31,7 @@
       <li><span class="when">May</span><div><b>Core functions.</b> Enquiry handling, quote drafting, onboarding paperwork, live reads of the ERP and the accounts, a decision queue for the owner.</div></li>
       <li><span class="when">31 May</span><div><b>Governance.</b> A registry of every running job, a gate on outbound email, written operating rules. Added three weeks after the first live sends.</div></li>
       <li><span class="when">June</span><div><b>Quality gates.</b> A sanity check on every draft, alerts when a data feed stops, a supervisor over the functions.</div></li>
-      <li><span class="when">July</span><div><b>Stop controls and census.</b> One master stop over every job that can act. A census of all jobs, with stale ones retired. An automatic-send pilot under explicit grants. Regression evaluations.</div></li>
+      <li><span class="when">July</span><div><b>Stop controls and census.</b> One master stop, with a check that reports any acting job not covered by it. A census of all jobs, with stale ones retired. An automatic-send pilot under explicit grants. Regression evaluations.</div></li>
       <li><span class="when">August</span><div><b>Hardening.</b> A fail-closed stop rule, a dedicated customer-facing machine, the records function rebuilt, employee starter packages, operating rules reconciled with the running system.</div></li>
       <li><span class="when">2 Sep</span><div><b>Adversarial audit.</b> 311 evaluations across all four machines.</div></li>
       <li><span class="when">20 Sep</span><div><b>Manual re-verification.</b> 20 audit findings re-checked by hand against the original logs.</div></li>
@@ -81,13 +81,13 @@
   <text x="332" y="70" class="h">Operating layer: four rules</text>
   <g>
     <rect x="332" y="86" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="103" class="t">1  Connect signals before reporting</text><text x="346" y="118" class="s">related items are reported together</text>
+    <text x="346" y="103" class="t">1  Related signals grouped</text><text x="346" y="118" class="s">one report, relationship stated</text>
     <rect x="332" y="134" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="151" class="t">2  Route to the process owner</text><text x="346" y="166" class="s">only items that need a decision</text>
+    <text x="346" y="151" class="t">2  Routed to the process owner</text><text x="346" y="166" class="s">decision items only</text>
     <rect x="332" y="182" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="199" class="t">3  Verify against the system of record</text><text x="346" y="214" class="s">wrong data is flagged, not used</text>
+    <text x="346" y="199" class="t">3  Figures from the system of record</text><text x="346" y="214" class="s">failed source check: item withheld</text>
     <rect x="332" y="230" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="247" class="t">4  Deliver to a named owner</text><text x="346" y="262" class="s">actions: propose, approve, execute, confirm</text>
+    <text x="346" y="247" class="t">4  Recorded recipient, recorded actions</text><text x="346" y="262" class="s">proposal, approval, execution, confirmation</text>
   </g>
   <text x="332" y="300" class="k">KNOWLEDGE</text>
   <text x="332" y="318" class="s">ingested, deduplicated, dated. Facts with a source outrank text.</text>
@@ -96,8 +96,8 @@
   <text x="332" y="383" class="s">payment-language guard, ERP read-only by default, self-audit.</text>
   <text x="332" y="415" class="k">FIXED RULES</text>
   <text x="332" y="433" class="t">Does not sign documents. Does not move money.</text>
-  <text x="332" y="470" class="s">Reports to the owner are not gated,</text>
-  <text x="332" y="485" class="s">so a stop is always reported.</text>
+  <text x="332" y="470" class="s">Stop events report to the owner</text>
+  <text x="332" y="485" class="s">through a separate, ungated path.</text>
 
   <!-- RIGHT: owners -->
   <text x="740" y="28" class="k">RECIPIENTS</text>
@@ -126,30 +126,30 @@
   <text x="850" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
 </svg></div>
     <ol class="laws">
-      <li><b>Connect signals before reporting them.</b> Related items are reported together, with their relationship stated.</li>
-      <li><b>Route to the process owner.</b> Only items that need a decision are sent, and only to the person who owns that process.</li>
-      <li><b>Verify against the system of record.</b> No figure is shown unless it was pulled from the source at the time of writing. Wrong data is flagged and routed for correction, not used.</li>
-      <li><b>Deliver to a named owner.</b> Every recommendation has a recipient. Actions follow propose, approve, execute, confirm.</li>
+      <li><b>Related signals are grouped.</b> Items that belong together are reported in one place, with the relationship stated.</li>
+      <li><b>Decision items go to the recorded process owner.</b> Items that need no decision are not sent.</li>
+      <li><b>Figures come from the named system of record.</b> They are pulled when the report is created. When a source check fails, the item is withheld and marked for correction.</li>
+      <li><b>Each recommendation has a recorded recipient.</b> Actions are recorded as proposal, approval, execution and confirmation.</li>
     </ol>
   </section>
 
   <section class="shell section" id="functions" aria-labelledby="fn-h">
-    <div class="section-heading"><h2 id="fn-h">Functions.</h2><p class="lead">The person owning each process decides. The layer reads, drafts, checks and chases.</p></div>
+    <div class="section-heading"><h2 id="fn-h">Functions.</h2><p class="lead">Process owners keep approval. The layer reads source systems, prepares drafts, runs checks and sends follow-ups.</p></div>
     <div class="fn-grid">
       <article><h3>Enquiries and quotes</h3><p>Read incoming requests, price them against stock and history, and draft quotes. Approved offers can send automatically under set rules, with manual-only control for any customer.</p></article>
-      <article><h3>Purchasing</h3><p>Track what needs buying, request supplier offers, and write the offers back into the system so nothing is asked twice.</p></article>
-      <article><h3>Finance</h3><p>Maintain a live view of cash, receivables and payables. Every figure is pulled fresh from its source, with bank data taking precedence over book records.</p></article>
+      <article><h3>Purchasing</h3><p>Track purchase requirements, request supplier offers, and record each offer in the system.</p></article>
+      <article><h3>Finance</h3><p>Read cash, receivable and payable balances from their source systems, with bank data taking precedence over book records.</p></article>
       <article><h3>People</h3><p>Handle staff questions and paperwork. Health and personal data are never routed by job title.</p></article>
       <article><h3>Market</h3><p>Read market and regional sources each morning and report only the items that changed, with the source next to each.</p></article>
       <article><h3>Meetings</h3><p>Convert recordings into minutes and track the follow-ups. Attendance is taken from the recording, not the invitation.</p></article>
       <article><h3>Marketing</h3><p>Extract publishable signals from internal meetings, with figures and names removed and a verification note on each item.</p></article>
-      <article><h3>Knowledge</h3><p>Keep an append-only log of mail, chat, meetings and deals, separated into lanes so restricted material never reaches a shared summary.</p></article>
+      <article><h3>Knowledge</h3><p>Store mail, chat, meeting and deal records in separate access-controlled logs, so restricted material is excluded from shared summaries.</p></article>
       <article><h3>Controls</h3><p>Verify recipients, apply the lowest permission in any group, screen payment language, keep the ERP read-only by default, and audit the layer's own output.</p></article>
     </div>
   </section>
 
   <section class="shell section" id="outbound" aria-labelledby="ob-h">
-    <div class="section-heading"><h2 id="ob-h">Outbound channels.</h2><p class="lead">The layer reads widely and acts outward through four channels. Each is authorised by the owner, gated, logged and revocable.</p></div>
+    <div class="section-heading"><h2 id="ob-h">Outbound channels.</h2><p class="lead">The layer sends through four outbound channels. Each is authorised by the owner, gated, logged and revocable.</p></div>
     <ol class="lanes-list">
       <li><b>Internal email.</b> Capped per recipient per day and in total, screened for confidential content, listed in a daily digest.</li>
       <li><b>Customer quotes.</b> Enabled only while an explicit arming file is present. A price floor applies to every quote. Any account can be set to manual only.</li>
@@ -157,18 +157,18 @@
       <li><b>Public stock listings.</b> Explicit arming, daily cap, separate pause.</li>
     </ol>
     <div class="brake-line"><span>One master stop covers all four channels.</span></div>
-    <p class="lead">Two fixed rules: the layer does not sign documents and does not move money. Reports to the owner are never gated, so a stop is always reported.</p>
+    <p class="lead">Two fixed rules: the layer does not sign documents and does not move money. Stop events report to the owner through a separate, ungated path.</p>
   </section>
 
   <section class="band" id="controls-b"><div class="shell">
-    <div class="section-heading"><h2>Controls, built in.</h2></div>
+    <div class="section-heading"><h2>Controls.</h2></div>
     <div class="tiles">
       <div><h3>Recipient verification</h3><p>A message must name its recipient in two independent places, and both must match, or it is not sent.</p></div>
       <div><h3>Scope gate</h3><p>Outbound drafts are classified, every recipient including copies is checked, and the lowest permission in the group applies.</p></div>
       <div><h3>Payment language</h3><p>Messages containing payment or bank instructions are held unless explicitly released, and every decision is logged.</p></div>
-      <div><h3>Figure freshness</h3><p>A financial figure is re-pulled from its source when the draft is written. A stale source is a refusal.</p></div>
+      <div><h3>Figure freshness</h3><p>A financial figure is re-pulled from its source when the draft is written. If the source is stale, the figure is withheld.</p></div>
       <div><h3>ERP access</h3><p>Read-only by default. Only approved quoting functions write, to their own records, through one audited path.</p></div>
-      <div><h3>Self-audit</h3><p>Monitoring over the monitors, an adversarial audit of every job, and manual re-verification of a sample of findings.</p></div>
+      <div><h3>Self-audit</h3><p>Job monitoring, the 2 September audit of the scheduled jobs, and manual review of 20 findings on 20 September.</p></div>
     </div>
   </div></section>
 
@@ -189,23 +189,23 @@
   <section class="shell section" id="audit" aria-labelledby="audit-h">
     <div class="section-heading"><h2 id="audit-h">Audit record.</h2></div>
     <div class="prose">
-      <p>On 2 September an adversarial audit evaluated 311 jobs across all four machines. It found 102 cases where a job finished without error and reported success while its output was wrong or reached nobody. The largest sources were not model errors: a control verified on the wrong machine, a processing chain that continued on schedule after its input feed stopped, and operating rules that no longer matched the running system. A first repair wave was applied the same week.</p>
-      <p>On 20 September, 20 of the 102 findings were selected at random and re-verified by hand against the original logs. 19 held. 1 was wrong: the audit had read two lines marked blocked and reported that a daily cash alert never arrived, when the next line in the same file, 308 milliseconds later, recorded it as sent. Across the full log, 108 of 132 alerts were sent. The finding was corrected and the checker now reads the final delivery state before reporting on any send.</p>
-      <p>Scope: the layer was built for one company, against that company's systems. It is not offered as a downloadable product.</p>
+      <p>On 2 September an adversarial audit completed 311 evaluations covering the scheduled jobs on all four machines. It recorded 102 findings: jobs that finished without error and reported success while the output was wrong or reached nobody. The audit attributed the largest groups of findings to a control verified on the wrong machine, input feeds that stopped while processing continued on schedule, and operating rules that no longer matched the running system. The affected controls were changed during the week of 2 September.</p>
+      <p>On 20 September, 20 of the 102 findings were drawn by seeded random sample and re-checked by hand against the original logs. 19 held. 1 was wrong: the audit had read two lines marked blocked and reported that a daily cash alert never arrived, when the next line in the same file, 308 milliseconds later, recorded it as sent. Across the full log, 108 of 132 alerts were sent; the other 24 were duplicate retry attempts in June and July. The finding was corrected and the checker now reads the final delivery state before reporting on any send.</p>
+      <p>Scope: the current deployment is specific to the group's systems. MUNERON does not offer it as downloadable software.</p>
     </div>
   </section>
 
   <section class="shell section" id="founder" aria-labelledby="f-h">
     <div class="section-heading"><h2 id="f-h">Founder's note.</h2></div>
     <blockquote class="founder-note">
-      <p>I run the group this was built in. I am not a developer; the layer was built through written instructions and review, over four months, while the business kept running on it. What is published here is what it does and where it failed, with the dates and the counts, because that is the record I would ask any supplier for.</p>
+      <p>I run the group this layer is used in. I directed the build through written instructions and review; I am not a developer. The registry and audit counts on these pages are the ones used to assess the deployment, published with their dates.</p>
       <footer>Deividas Jurkštas, founder, MUNERON</footer>
     </blockquote>
   </section>
 
   <section class="band closing-band"><div class="shell">
     <h2>Contact MUNERON</h2>
-    <p class="lead">For companies operating AI in day-to-day business, with jobs they cannot yet verify.</p>
+    <p class="lead">For companies with AI jobs already running without independent output checks.</p>
     <a class="button" href="/start/">Get in touch <span aria-hidden="true">↗</span></a>
   </div></section>
 </main>
