@@ -2,9 +2,9 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The long version - what I built and how it is wired</title>
-  <meta name="description" content="What I built inside my own aviation group, in the order I built it: the four laws, the functions it covers, what it reads, the four gated lanes out, one master brake, and where it failed.">
-  <meta property="og:title" content="The long version - what I built and how it is wired"><meta property="og:description" content="Four months, 1,650 commits, not one line typed by a developer. The four laws, the functions, the lanes out, the brake, and where it failed.">
+  <title>The system - MUNERON</title>
+  <meta name="description" content="How the operating layer is wired: inputs, four operating rules, nine functions, four outbound channels under one master stop, controls, measured figures, and the audit record.">
+  <meta property="og:title" content="The system - MUNERON"><meta property="og:description" content="Four months of operating AI inside an aviation group: timeline, operating rules, functions, outbound channels, controls, and the audit record.">
   <meta property="og:url" content="https://muneron.com/aviation/"><meta property="og:type" content="article">
   <meta property="og:image" content="https://muneron.com/assets/card.png"><link rel="canonical" href="https://muneron.com/aviation/">
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css">
@@ -14,34 +14,35 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><nav class="shell nav" aria-label="Main navigation">
   <a class="brand-mark" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
-  <a class="button button-small" href="/start/">Tell me what you run</a>
+  <div class="nav-links"><a href="#functions">Functions</a><a href="#outbound">Outbound</a><a href="#audit">Audit</a></div>
+  <a class="button button-small" href="/start/">Contact</a>
 </nav></header>
 <main id="main" class="long">
   <section class="shell section">
-    <p class="audience">Deividas Jurkštas · the long version</p>
-    <h1>What I built, in the order I built it, and where it failed.</h1>
-    <p class="lead">I run an aviation parts, MRO and landing gear leasing group. I am not a developer. Everything below was built by describing what I wanted, checking what came back, and describing again. Four months of building, 1,650 commits across 15 repositories, and not one line typed by a developer.</p>
-    <p class="lead">It started as one question typed into a tool late one night about my own company. I never closed the window. Nothing was designed up front. It was added to, one sentence at a time, which is the only way someone who cannot code could have built it.</p>
+    <p class="audience">The system</p>
+    <h1>Four months of operating AI.</h1>
+    <p class="lead">The operating layer was built inside an aviation parts, MRO and landing gear leasing group. Over four months it reached 1,650 commits across 15 repositories through written instructions and review, without a developer typing code. It began with one question about the company and expanded function by function as operating requirements emerged.</p>
   </section>
 
-  <section class="shell section" id="order" aria-labelledby="order-h">
-    <div class="section-heading"><h2 id="order-h">The order tells the story.</h2><p class="lead">Sales throughput first. Governance second, retrofitted. Verification third, after silent failures piled up. The audit last.</p></div>
+  <section class="shell section" id="timeline" aria-labelledby="tl-h">
+    <div class="section-heading"><h2 id="tl-h">Timeline.</h2></div>
     <ol class="phases">
-      <li><span class="when">April</span><div><b>The knowledge vault first.</b> Every email, chat and document the company produces, made readable in one place. Context before anything else.</div></li>
-      <li><span class="when">May</span><div><b>The revenue engines.</b> Reading incoming enquiries, drafting priced quotes, onboarding paperwork, live reads of the ERP and the books, and a decision queue for me.</div></li>
-      <li><span class="when">31 May</span><div><b>The entire governance layer, in one day.</b> A registry of everything that runs, a gate on every outbound email, a written charter. Retrofitted three weeks after the first live sends, because uncontrolled outbound was the first real fear.</div></li>
-      <li><span class="when">June</span><div><b>Quality gates and self-healing.</b> A sanity gate on every draft, alerts when a feed dies quietly, a supervisor over the engines. Silent failure had become the enemy.</div></li>
-      <li><span class="when">July</span><div><b>Brakes and audits.</b> One master brake over everything that can act. A census of every agent, with the stale ones retired the same day. An auto-send pilot under explicit grants only. Regression evals.</div></li>
-      <li><span class="when">August</span><div><b>Hardening.</b> A fail-closed brake rule. A dedicated customer-facing machine. The records engine frozen and rebuilt. Starter packages so colleagues could install their own desk. The rulebook rewritten to match what was actually running.</div></li>
-      <li><span class="when">September</span><div><b>The audit of the whole fleet.</b> Then the audit of the audit. Both are on the <a href="/#record">front page</a>.</div></li>
+      <li><span class="when">April</span><div><b>Knowledge base.</b> Company mail, chat and documents made searchable in one place.</div></li>
+      <li><span class="when">May</span><div><b>Core functions.</b> Enquiry handling, quote drafting, onboarding paperwork, live reads of the ERP and the accounts, a decision queue for the owner.</div></li>
+      <li><span class="when">31 May</span><div><b>Governance.</b> A registry of every running job, a gate on outbound email, written operating rules. Added three weeks after the first live sends.</div></li>
+      <li><span class="when">June</span><div><b>Quality gates.</b> A sanity check on every draft, alerts when a data feed stops, a supervisor over the functions.</div></li>
+      <li><span class="when">July</span><div><b>Stop controls and census.</b> One master stop over every job that can act. A census of all jobs, with stale ones retired. An automatic-send pilot under explicit grants. Regression evaluations.</div></li>
+      <li><span class="when">August</span><div><b>Hardening.</b> A fail-closed stop rule, a dedicated customer-facing machine, the records function rebuilt, employee starter packages, operating rules reconciled with the running system.</div></li>
+      <li><span class="when">2 Sep</span><div><b>Adversarial audit.</b> 311 evaluations across all four machines.</div></li>
+      <li><span class="when">20 Sep</span><div><b>Manual re-verification.</b> 20 audit findings re-checked by hand against the original logs.</div></li>
     </ol>
   </section>
 
-  <section class="shell section" id="laws" aria-labelledby="laws-h">
-    <div class="section-heading"><h2 id="laws-h">One layer, four laws.</h2><p class="lead">It is one layer that reads across everything the company does and routes the few things that matter to whoever owns them. It is not a dashboard. Every part of it obeys four laws I wrote down before it obeyed them.</p></div>
+  <section class="shell section" id="wiring" aria-labelledby="w-h">
+    <div class="section-heading"><h2 id="w-h">How it is wired.</h2><p class="lead">Nine inputs, one operating layer, six recipient groups, four outbound channels.</p></div>
     <div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" class="diagram" viewBox="0 0 980 560" role="img" aria-labelledby="t d" font-family="Poppins, system-ui, sans-serif">
-  <title id="t">How the layer is wired</title>
-  <desc id="d">Nine sources on the left feed one layer in the middle that understands, chooses, verifies and closes the loop. On the right, six owners receive what matters. Four gated outward lanes leave the building, all under one master brake. Nothing signs and nothing moves money.</desc>
+  <title id="t">How the operating layer is wired</title>
+  <desc id="d">Nine inputs on the left feed one operating layer governed by four rules. On the right, six recipients. Four outbound channels, each gated, all covered by one master stop. The layer does not sign documents and does not move money.</desc>
   <style>
     .box{fill:var(--surface,#fff);stroke:var(--line,#b6c7d6);stroke-width:1.2}
     .core{fill:var(--tint,#e2f3ef);stroke:var(--accent,#076e67);stroke-width:1.6}
@@ -61,7 +62,7 @@
   </defs>
 
   <!-- LEFT: sources -->
-  <text x="20" y="28" class="k">WHAT IT READS</text>
+  <text x="20" y="28" class="k">INPUTS</text>
   <g>
     <rect x="20" y="42" width="200" height="34" rx="8" class="box"/><text x="34" y="64" class="t">Email, every mailbox</text>
     <rect x="20" y="84" width="200" height="34" rx="8" class="box"/><text x="34" y="106" class="t">WhatsApp working groups</text>
@@ -71,133 +72,142 @@
     <rect x="20" y="252" width="200" height="34" rx="8" class="box"/><text x="34" y="274" class="t">Calendars and meetings</text>
     <rect x="20" y="294" width="200" height="34" rx="8" class="box"/><text x="34" y="316" class="t">Shared documents</text>
     <rect x="20" y="336" width="200" height="34" rx="8" class="box"/><text x="34" y="358" class="t">Fleet and market data</text>
-    <rect x="20" y="378" width="200" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own past decisions</text>
+    <rect x="20" y="378" width="200" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own decision log</text>
   </g>
   <path d="M232 227 H300" class="a" marker-end="url(#m)"/>
 
   <!-- CENTER: the layer -->
   <rect x="312" y="42" width="356" height="470" rx="16" class="core"/>
-  <text x="332" y="70" class="h">One layer, four laws</text>
+  <text x="332" y="70" class="h">Operating layer: four rules</text>
   <g>
     <rect x="332" y="86" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="103" class="t">1  Understand and connect</text><text x="346" y="118" class="s">meaning, not detections</text>
+    <text x="346" y="103" class="t">1  Connect signals before reporting</text><text x="346" y="118" class="s">related items are reported together</text>
     <rect x="332" y="134" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="151" class="t">2  Choose and route</text><text x="346" y="166" class="s">the few things that matter, to their owner</text>
+    <text x="346" y="151" class="t">2  Route to the process owner</text><text x="346" y="166" class="s">only items that need a decision</text>
     <rect x="332" y="182" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="199" class="t">3  Verify against the live source</text><text x="346" y="214" class="s">wrong data is flagged, never acted on</text>
+    <text x="346" y="199" class="t">3  Verify against the system of record</text><text x="346" y="214" class="s">wrong data is flagged, not used</text>
     <rect x="332" y="230" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="247" class="t">4  Close the loop to a real person</text><text x="346" y="262" class="s">propose, approve, execute, confirm</text>
+    <text x="346" y="247" class="t">4  Deliver to a named owner</text><text x="346" y="262" class="s">actions: propose, approve, execute, confirm</text>
   </g>
-  <text x="332" y="300" class="k">THE BRAIN</text>
-  <text x="332" y="318" class="s">ingest, canonicalise, brief, retrieve. Dated facts outrank prose.</text>
-  <text x="332" y="350" class="k">THE IMMUNE SYSTEM</text>
-  <text x="332" y="368" class="s">watchdogs, recipient guard, scope gate, money guard,</text>
-  <text x="332" y="383" class="s">ERP read-only by default, a graded audit of itself.</text>
-  <text x="332" y="415" class="k">TWO RULES, NO EXCEPTIONS</text>
-  <text x="332" y="433" class="t">It does not sign. It does not move money.</text>
-  <text x="332" y="470" class="s">Reports to the owner alone are deliberately not gated:</text>
-  <text x="332" y="485" class="s">he must still get the alert that everything else stopped.</text>
+  <text x="332" y="300" class="k">KNOWLEDGE</text>
+  <text x="332" y="318" class="s">ingested, deduplicated, dated. Facts with a source outrank text.</text>
+  <text x="332" y="350" class="k">CONTROLS</text>
+  <text x="332" y="368" class="s">monitoring, recipient verification, scope gate,</text>
+  <text x="332" y="383" class="s">payment-language guard, ERP read-only by default, self-audit.</text>
+  <text x="332" y="415" class="k">FIXED RULES</text>
+  <text x="332" y="433" class="t">Does not sign documents. Does not move money.</text>
+  <text x="332" y="470" class="s">Reports to the owner are not gated,</text>
+  <text x="332" y="485" class="s">so a stop is always reported.</text>
 
   <!-- RIGHT: owners -->
-  <text x="740" y="28" class="k">WHO RECEIVES</text>
+  <text x="740" y="28" class="k">RECIPIENTS</text>
   <g>
-    <rect x="740" y="42" width="220" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: one morning picture</text>
+    <rect x="740" y="42" width="220" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: daily summary</text>
     <rect x="740" y="80" width="220" height="30" rx="8" class="box"/><text x="754" y="100" class="t">Sales: priced, checked quotes</text>
-    <rect x="740" y="118" width="220" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: what to chase</text>
-    <rect x="740" y="156" width="220" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: fresh numbers only</text>
-    <rect x="740" y="194" width="220" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: signals, not deals</text>
-    <rect x="740" y="232" width="220" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: hard privacy stops</text>
+    <rect x="740" y="118" width="220" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: items to chase</text>
+    <rect x="740" y="156" width="220" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: source-fresh figures</text>
+    <rect x="740" y="194" width="220" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: publishable signals</text>
+    <rect x="740" y="232" width="220" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: privacy-restricted</text>
   </g>
   <path d="M680 152 H728" class="a" marker-end="url(#m)"/>
 
   <!-- RIGHT: outward lanes -->
-  <text x="740" y="300" class="k">FOUR LANES OUT OF THE BUILDING</text>
-  <text x="740" y="316" class="s">authorised, gated, logged, revocable</text>
+  <text x="740" y="300" class="k">OUTBOUND CHANNELS</text>
+  <text x="740" y="316" class="s">each authorised, gated, logged, revocable</text>
   <g>
-    <rect x="740" y="328" width="220" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Email to colleagues, capped</text>
-    <rect x="740" y="366" width="220" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Priced quotes to customers</text>
+    <rect x="740" y="328" width="220" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Internal email, capped</text>
+    <rect x="740" y="366" width="220" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Customer quotes</text>
     <rect x="740" y="404" width="220" height="30" rx="8" class="lane"/><text x="754" y="424" class="t">Marketplace submissions</text>
     <rect x="740" y="442" width="220" height="30" rx="8" class="lane"/><text x="754" y="462" class="t">Public stock listings</text>
   </g>
   <path d="M680 400 H728" class="ag" marker-end="url(#mg)"/>
   <!-- master brake bar -->
   <rect x="740" y="488" width="220" height="24" rx="6" class="brake"/>
-  <text x="850" y="504" class="w" text-anchor="middle">ONE MASTER BRAKE STOPS ALL FOUR</text>
-</svg>
-</div>
+  <text x="850" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
+</svg></div>
     <ol class="laws">
-      <li><b>Understand and connect.</b> Not just detect. The output is meaning, signals tied into a picture, never a loose line on a pile.</li>
-      <li><b>Choose and route.</b> Decide the few things that matter and send each to the person who owns that process. Volume is the failure, not the goal.</li>
-      <li><b>Verify against the live source.</b> Nothing surfaces unless it was checked against the system of record that minute and shows where it came from. When the data is wrong, it says so and routes the fix. It does not act on it.</li>
-      <li><b>Close the loop to a real person.</b> Every recommendation reaches its owner. For actions: propose, approve, execute, confirm. Nothing dies silently.</li>
+      <li><b>Connect signals before reporting them.</b> Related items are reported together, with their relationship stated.</li>
+      <li><b>Route to the process owner.</b> Only items that need a decision are sent, and only to the person who owns that process.</li>
+      <li><b>Verify against the system of record.</b> No figure is shown unless it was pulled from the source at the time of writing. Wrong data is flagged and routed for correction, not used.</li>
+      <li><b>Deliver to a named owner.</b> Every recommendation has a recipient. Actions follow propose, approve, execute, confirm.</li>
     </ol>
   </section>
 
   <section class="shell section" id="functions" aria-labelledby="fn-h">
-    <div class="section-heading"><h2 id="fn-h">What it does, by function.</h2><p class="lead">The human decides. The layer reads, drafts, checks and chases. Where a line crosses out of the building, it does so through a named lane, below.</p></div>
+    <div class="section-heading"><h2 id="fn-h">Functions.</h2><p class="lead">The person owning each process decides. The layer reads, drafts, checks and chases.</p></div>
     <div class="fn-grid">
-      <article><h3>Customer enquiries and quotes</h3><p>Reads every incoming request, prices it against stock and history, drafts the quote. Some offers leave automatically under rules we set, and any customer can be flagged manual-only.</p></article>
-      <article><h3>Purchasing and suppliers</h3><p>Watches what needs buying, chases suppliers for offers, and writes the offers back into the system so nothing is asked twice.</p></article>
-      <article><h3>Finance</h3><p>Keeps a live picture of cash, receivables and payables, and refuses to put a money figure in front of anyone unless it was pulled fresh from the source that minute. Bank before books, always.</p></article>
-      <article><h3>People</h3><p>Handles staff questions and paperwork, with one hard stop: health and personal data never route by job title, to anyone.</p></article>
-      <article><h3>Market and early warning</h3><p>Reads the market and the region every morning and reports the few things that actually changed, with the source next to each.</p></article>
-      <article><h3>Meetings</h3><p>Turns recordings into minutes and chases the follow-ups afterwards. Names who attended from the evidence, not from the invitation.</p></article>
-      <article><h3>Marketing</h3><p>Feeds marketing the real signals from inside the company, stripped of numbers and names, each one marked with what a person must verify before anything is published.</p></article>
-      <article><h3>Knowledge</h3><p>An append-only ledger of what happened across mail, chat, meetings and deals, kept in lanes, so that private things can never reach a shared briefing.</p></article>
-      <article><h3>The immune system</h3><p>Watchdogs over the watchers. A recipient guard. A scope gate that applies the lowest permission in any group. A guard on payment language. The ERP read-only by default. And a graded audit of itself.</p></article>
+      <article><h3>Enquiries and quotes</h3><p>Read incoming requests, price them against stock and history, and draft quotes. Approved offers can send automatically under set rules, with manual-only control for any customer.</p></article>
+      <article><h3>Purchasing</h3><p>Track what needs buying, request supplier offers, and write the offers back into the system so nothing is asked twice.</p></article>
+      <article><h3>Finance</h3><p>Maintain a live view of cash, receivables and payables. Every figure is pulled fresh from its source, with bank data taking precedence over book records.</p></article>
+      <article><h3>People</h3><p>Handle staff questions and paperwork. Health and personal data are never routed by job title.</p></article>
+      <article><h3>Market</h3><p>Read market and regional sources each morning and report only the items that changed, with the source next to each.</p></article>
+      <article><h3>Meetings</h3><p>Convert recordings into minutes and track the follow-ups. Attendance is taken from the recording, not the invitation.</p></article>
+      <article><h3>Marketing</h3><p>Extract publishable signals from internal meetings, with figures and names removed and a verification note on each item.</p></article>
+      <article><h3>Knowledge</h3><p>Keep an append-only log of mail, chat, meetings and deals, separated into lanes so restricted material never reaches a shared summary.</p></article>
+      <article><h3>Controls</h3><p>Verify recipients, apply the lowest permission in any group, screen payment language, keep the ERP read-only by default, and audit the layer's own output.</p></article>
     </div>
   </section>
 
-  <section class="shell section" id="lanes" aria-labelledby="lanes-h">
-    <div class="section-heading"><h2 id="lanes-h">What leaves the building.</h2><p class="lead">It reads almost everything. It acts outward through exactly four lanes. Each exists because I authorised it, each has a gate, each has its own off switch, and every send is logged.</p></div>
+  <section class="shell section" id="outbound" aria-labelledby="ob-h">
+    <div class="section-heading"><h2 id="ob-h">Outbound channels.</h2><p class="lead">The layer reads widely and acts outward through four channels. Each is authorised by the owner, gated, logged and revocable.</p></div>
     <ol class="lanes-list">
-      <li><b>Email to colleagues.</b> Capped per person per day and in total, scrubbed for confidentiality, every send in the daily digest.</li>
-      <li><b>Priced quotes to customers.</b> Armed only while a specific file is present, disarmed the moment it is not. A floor under every quote. Any account can opt out to manual.</li>
-      <li><b>Quote submissions to the parts marketplace.</b> Its own off switch.</li>
-      <li><b>Public stock listings.</b> Must be explicitly armed, daily cap, its own pause.</li>
+      <li><b>Internal email.</b> Capped per recipient per day and in total, screened for confidential content, listed in a daily digest.</li>
+      <li><b>Customer quotes.</b> Enabled only while an explicit arming file is present. A price floor applies to every quote. Any account can be set to manual only.</li>
+      <li><b>Marketplace submissions.</b> Separate stop control.</li>
+      <li><b>Public stock listings.</b> Explicit arming, daily cap, separate pause.</li>
     </ol>
-    <div class="brake-line"><span>One master brake stops all four at once.</span></div>
-    <p class="lead">Two rules I typed that have no exceptions: it does not sign, and it does not move money. And reports to me alone are deliberately not gated, because I must keep receiving the alert that everything else has stopped.</p>
+    <div class="brake-line"><span>One master stop covers all four channels.</span></div>
+    <p class="lead">Two fixed rules: the layer does not sign documents and does not move money. Reports to the owner are never gated, so a stop is always reported.</p>
   </section>
 
+  <section class="band" id="controls-b"><div class="shell">
+    <div class="section-heading"><h2>Controls, built in.</h2></div>
+    <div class="tiles">
+      <div><h3>Recipient verification</h3><p>A message must name its recipient in two independent places, and both must match, or it is not sent.</p></div>
+      <div><h3>Scope gate</h3><p>Outbound drafts are classified, every recipient including copies is checked, and the lowest permission in the group applies.</p></div>
+      <div><h3>Payment language</h3><p>Messages containing payment or bank instructions are held unless explicitly released, and every decision is logged.</p></div>
+      <div><h3>Figure freshness</h3><p>A financial figure is re-pulled from its source when the draft is written. A stale source is a refusal.</p></div>
+      <div><h3>ERP access</h3><p>Read-only by default. Only approved quoting functions write, to their own records, through one audited path.</p></div>
+      <div><h3>Self-audit</h3><p>Monitoring over the monitors, an adversarial audit of every job, and manual re-verification of a sample of findings.</p></div>
+    </div>
+  </div></section>
+
   <section class="shell section" id="numbers" aria-labelledby="num-h">
-    <div class="section-heading"><h2 id="num-h">Counted, not remembered.</h2><p class="lead">From the registry and the live self-check, as of 20 September 2026.</p></div>
+    <div class="section-heading"><h2 id="num-h">Registry figures.</h2><p class="lead">As of 20 September 2026.</p></div>
     <dl class="numbers">
-      <div><dt>219</dt><dd>scheduled jobs running on four machines. Many exist only to watch the others.</dd></div>
-      <div><dt>313</dt><dd>registered over the project's life, 33 of them retired on purpose.</dd></div>
+      <div><dt>219</dt><dd>scheduled jobs running on four machines, including jobs that monitor other jobs.</dd></div>
+      <div><dt>313</dt><dd>jobs registered over the project's life, 33 retired.</dd></div>
       <div><dt>40</dt><dd>capabilities, each tied to a credential and a policy.</dd></div>
-      <div><dt>38</dt><dd>written policies, some of them written the day after an incident.</dd></div>
+      <div><dt>38</dt><dd>written policies.</dd></div>
       <div><dt>202</dt><dd>schedules.</dd></div>
-      <div><dt>16</dt><dd>registered delivery channels inside the company.</dd></div>
-      <div><dt>4</dt><dd>lanes that leave the building.</dd></div>
-      <div><dt>1</dt><dd>master brake.</dd></div>
+      <div><dt>16</dt><dd>internal delivery channels.</dd></div>
+      <div><dt>4</dt><dd>outbound channels.</dd></div>
+      <div><dt>1</dt><dd>master stop.</dd></div>
     </dl>
   </section>
 
-  <section class="shell section" id="failed" aria-labelledby="failed-h">
-    <div class="section-heading"><h2 id="failed-h">Where it failed.</h2><p class="lead">The costliest mistakes were not the AI making things up. They were plain code, silent defaults and drift between machines.</p></div>
+  <section class="shell section" id="audit" aria-labelledby="audit-h">
+    <div class="section-heading"><h2 id="audit-h">Audit record.</h2></div>
     <div class="prose">
-      <p>A guard was verified live on the wrong machine, so the machine that actually talked to customers ran without it. A processing chain kept running on schedule after its raw feed died, stamping today's date on months-old input, and nothing errored. The rulebook fell behind the system it was meant to govern: several things the company had approved were not yet written in it.</p>
-      <p>So in August I rewrote the rules to match what was running, and made every engine that can act announce itself to the brake on every run, with a separate check that reports any that do not.</p>
-      <p>On 2 September I put the whole fleet through an adversarial audit: 311 evaluations, 102 places where the job finished clean, showed green, and was wrong or reached nobody. The first repair wave went in the same week. On 20 September I took twenty of those 102 at random and re-verified them by hand against the original logs. Nineteen held. One did not, and it is on the <a href="/#wrong">front page</a>.</p>
-      <p>Since this week, every prediction the layer or I make gets written down with a date and the artefact that will settle it. Nothing is graded yet. A ledger is worth nothing until it is.</p>
+      <p>On 2 September an adversarial audit evaluated 311 jobs across all four machines. It found 102 cases where a job finished without error and reported success while its output was wrong or reached nobody. The largest sources were not model errors: a control verified on the wrong machine, a processing chain that continued on schedule after its input feed stopped, and operating rules that no longer matched the running system. A first repair wave was applied the same week.</p>
+      <p>On 20 September, 20 of the 102 findings were selected at random and re-verified by hand against the original logs. 19 held. 1 was wrong: the audit had read two lines marked blocked and reported that a daily cash alert never arrived, when the next line in the same file, 308 milliseconds later, recorded it as sent. Across the full log, 108 of 132 alerts were sent. The finding was corrected and the checker now reads the final delivery state before reporting on any send.</p>
+      <p>Scope: the layer was built for one company, against that company's systems. It is not offered as a downloadable product.</p>
     </div>
   </section>
 
-  <section class="shell section" id="not" aria-labelledby="not-h">
-    <div class="section-heading"><h2 id="not-h">What it is not.</h2></div>
-    <ul class="nots">
-      <li>Not a product you can download. It was built for one company, by its owner, against that company's systems.</li>
-      <li>Not a platform, and not one ecosystem. Four machines, several code states, and an honest gap between them that the audit named.</li>
-      <li>Not self-learning. It remembers and it obeys. It does not yet learn from its own outcomes, and I will not say it does until the ledger shows it.</li>
-    </ul>
+  <section class="shell section" id="founder" aria-labelledby="f-h">
+    <div class="section-heading"><h2 id="f-h">Founder's note.</h2></div>
+    <blockquote class="founder-note">
+      <p>I run the group this was built in. I am not a developer; the layer was built through written instructions and review, over four months, while the business kept running on it. What is published here is what it does and where it failed, with the dates and the counts, because that is the record I would ask any supplier for.</p>
+      <footer>Deividas Jurkštas, founder, MUNERON</footer>
+    </blockquote>
   </section>
 
   <section class="band closing-band"><div class="shell">
-    <h2>If you are running this too, I would like to hear what broke.</h2>
-    <p class="lead">No deck, no proposal. Tell me what you run and what you cannot account for.</p>
-    <a class="button" href="/start/">Tell me what you run <span aria-hidden="true">↗</span></a>
+    <h2>Contact MUNERON</h2>
+    <p class="lead">For companies operating AI in day-to-day business, with jobs they cannot yet verify.</p>
+    <a class="button" href="/start/">Get in touch <span aria-hidden="true">↗</span></a>
   </div></section>
 </main>
-<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">MUNERON, S.L. (en formación) · Sotogrande, Spain</p></div><div class="footer-tools"><a href="/">Front page</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
+<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">MUNERON, S.L. (en formación) · Sotogrande, Spain</p></div><div class="footer-tools"><a href="/">Overview</a><a href="/start/">Contact</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
 </body></html>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" role="img" aria-labelledby="t d" font-family="Poppins, system-ui, sans-serif">
-  <title id="t">How the layer is wired</title>
-  <desc id="d">Nine sources on the left feed one layer in the middle that understands, chooses, verifies and closes the loop. On the right, six owners receive what matters. Four gated outward lanes leave the building, all under one master brake. Nothing signs and nothing moves money.</desc>
+  <title id="t">How the operating layer is wired</title>
+  <desc id="d">Nine inputs on the left feed one operating layer governed by four rules. On the right, six recipients. Four outbound channels, each gated, all covered by one master stop. The layer does not sign documents and does not move money.</desc>
   <style>
     .box{fill:var(--surface,#fff);stroke:var(--line,#b6c7d6);stroke-width:1.2}
     .core{fill:var(--tint,#e2f3ef);stroke:var(--accent,#076e67);stroke-width:1.6}
@@ -20,7 +20,7 @@
   </defs>
 
   <!-- LEFT: sources -->
-  <text x="20" y="28" class="k">WHAT IT READS</text>
+  <text x="20" y="28" class="k">INPUTS</text>
   <g>
     <rect x="20" y="42" width="200" height="34" rx="8" class="box"/><text x="34" y="64" class="t">Email, every mailbox</text>
     <rect x="20" y="84" width="200" height="34" rx="8" class="box"/><text x="34" y="106" class="t">WhatsApp working groups</text>
@@ -30,56 +30,56 @@
     <rect x="20" y="252" width="200" height="34" rx="8" class="box"/><text x="34" y="274" class="t">Calendars and meetings</text>
     <rect x="20" y="294" width="200" height="34" rx="8" class="box"/><text x="34" y="316" class="t">Shared documents</text>
     <rect x="20" y="336" width="200" height="34" rx="8" class="box"/><text x="34" y="358" class="t">Fleet and market data</text>
-    <rect x="20" y="378" width="200" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own past decisions</text>
+    <rect x="20" y="378" width="200" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own decision log</text>
   </g>
   <path d="M232 227 H300" class="a" marker-end="url(#m)"/>
 
   <!-- CENTER: the layer -->
   <rect x="312" y="42" width="356" height="470" rx="16" class="core"/>
-  <text x="332" y="70" class="h">One layer, four laws</text>
+  <text x="332" y="70" class="h">Operating layer: four rules</text>
   <g>
     <rect x="332" y="86" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="103" class="t">1  Understand and connect</text><text x="346" y="118" class="s">meaning, not detections</text>
+    <text x="346" y="103" class="t">1  Connect signals before reporting</text><text x="346" y="118" class="s">related items are reported together</text>
     <rect x="332" y="134" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="151" class="t">2  Choose and route</text><text x="346" y="166" class="s">the few things that matter, to their owner</text>
+    <text x="346" y="151" class="t">2  Route to the process owner</text><text x="346" y="166" class="s">only items that need a decision</text>
     <rect x="332" y="182" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="199" class="t">3  Verify against the live source</text><text x="346" y="214" class="s">wrong data is flagged, never acted on</text>
+    <text x="346" y="199" class="t">3  Verify against the system of record</text><text x="346" y="214" class="s">wrong data is flagged, not used</text>
     <rect x="332" y="230" width="316" height="40" rx="8" class="box"/>
-    <text x="346" y="247" class="t">4  Close the loop to a real person</text><text x="346" y="262" class="s">propose, approve, execute, confirm</text>
+    <text x="346" y="247" class="t">4  Deliver to a named owner</text><text x="346" y="262" class="s">actions: propose, approve, execute, confirm</text>
   </g>
-  <text x="332" y="300" class="k">THE BRAIN</text>
-  <text x="332" y="318" class="s">ingest, canonicalise, brief, retrieve. Dated facts outrank prose.</text>
-  <text x="332" y="350" class="k">THE IMMUNE SYSTEM</text>
-  <text x="332" y="368" class="s">watchdogs, recipient guard, scope gate, money guard,</text>
-  <text x="332" y="383" class="s">ERP read-only by default, a graded audit of itself.</text>
-  <text x="332" y="415" class="k">TWO RULES, NO EXCEPTIONS</text>
-  <text x="332" y="433" class="t">It does not sign. It does not move money.</text>
-  <text x="332" y="470" class="s">Reports to the owner alone are deliberately not gated:</text>
-  <text x="332" y="485" class="s">he must still get the alert that everything else stopped.</text>
+  <text x="332" y="300" class="k">KNOWLEDGE</text>
+  <text x="332" y="318" class="s">ingested, deduplicated, dated. Facts with a source outrank text.</text>
+  <text x="332" y="350" class="k">CONTROLS</text>
+  <text x="332" y="368" class="s">monitoring, recipient verification, scope gate,</text>
+  <text x="332" y="383" class="s">payment-language guard, ERP read-only by default, self-audit.</text>
+  <text x="332" y="415" class="k">FIXED RULES</text>
+  <text x="332" y="433" class="t">Does not sign documents. Does not move money.</text>
+  <text x="332" y="470" class="s">Reports to the owner are not gated,</text>
+  <text x="332" y="485" class="s">so a stop is always reported.</text>
 
   <!-- RIGHT: owners -->
-  <text x="740" y="28" class="k">WHO RECEIVES</text>
+  <text x="740" y="28" class="k">RECIPIENTS</text>
   <g>
-    <rect x="740" y="42" width="220" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: one morning picture</text>
+    <rect x="740" y="42" width="220" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: daily summary</text>
     <rect x="740" y="80" width="220" height="30" rx="8" class="box"/><text x="754" y="100" class="t">Sales: priced, checked quotes</text>
-    <rect x="740" y="118" width="220" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: what to chase</text>
-    <rect x="740" y="156" width="220" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: fresh numbers only</text>
-    <rect x="740" y="194" width="220" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: signals, not deals</text>
-    <rect x="740" y="232" width="220" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: hard privacy stops</text>
+    <rect x="740" y="118" width="220" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: items to chase</text>
+    <rect x="740" y="156" width="220" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: source-fresh figures</text>
+    <rect x="740" y="194" width="220" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: publishable signals</text>
+    <rect x="740" y="232" width="220" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: privacy-restricted</text>
   </g>
   <path d="M680 152 H728" class="a" marker-end="url(#m)"/>
 
   <!-- RIGHT: outward lanes -->
-  <text x="740" y="300" class="k">FOUR LANES OUT OF THE BUILDING</text>
-  <text x="740" y="316" class="s">authorised, gated, logged, revocable</text>
+  <text x="740" y="300" class="k">OUTBOUND CHANNELS</text>
+  <text x="740" y="316" class="s">each authorised, gated, logged, revocable</text>
   <g>
-    <rect x="740" y="328" width="220" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Email to colleagues, capped</text>
-    <rect x="740" y="366" width="220" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Priced quotes to customers</text>
+    <rect x="740" y="328" width="220" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Internal email, capped</text>
+    <rect x="740" y="366" width="220" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Customer quotes</text>
     <rect x="740" y="404" width="220" height="30" rx="8" class="lane"/><text x="754" y="424" class="t">Marketplace submissions</text>
     <rect x="740" y="442" width="220" height="30" rx="8" class="lane"/><text x="754" y="462" class="t">Public stock listings</text>
   </g>
   <path d="M680 400 H728" class="ag" marker-end="url(#mg)"/>
   <!-- master brake bar -->
   <rect x="740" y="488" width="220" height="24" rx="6" class="brake"/>
-  <text x="850" y="504" class="w" text-anchor="middle">ONE MASTER BRAKE STOPS ALL FOUR</text>
+  <text x="850" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
 </svg>

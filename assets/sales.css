@@ -108,3 +108,16 @@
 .bridge-list li{padding:16px 0;border-top:1px solid var(--line);font-size:16px;color:var(--dim)}
 .bridge-list li:last-child{border-bottom:1px solid var(--line)}
 .bridge-list b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+/* product register 2026-09-22 */
+.numbers.proof{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.numbers.proof dd b{display:block;color:var(--ink);font-weight:600;margin-bottom:3px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.tiles>div{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:20px 22px}
+.tiles h3{margin:0 0 8px;font-size:16px;color:var(--ink)}
+.tiles p{margin:0;font-size:15px;color:var(--dim)}
+.receipt-p{margin:0 0 14px;font-size:17px;color:var(--dim);max-width:68ch}
+.receipt-p:last-child{margin-bottom:0}
+.origin-lead{max-width:72ch}
+.founder-note{margin:0;padding:24px 28px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 14px 14px 0;max-width:760px}
+.founder-note p{margin:0 0 12px;font-size:17px;color:var(--dim)}
+.founder-note footer{font-size:14px;color:var(--muted)}
