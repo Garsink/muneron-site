@@ -13,7 +13,7 @@
   <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css">
   <script src="/assets/theme.js"></script><script src="/assets/hero-field.js" defer></script>
-  <script src="/assets/site.js" defer></script><script type="module" src="/assets/reply.js"></script>
+  <script src="/assets/site.js" defer></script><script src="/assets/verify-demo.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -49,34 +49,11 @@
     </dl>
   </section>
 
-  <section class="shell section" id="demo" aria-labelledby="demo-h">
-    <div class="section-heading"><p class="audience">Live demo</p><h2 id="demo-h">See the rule in action.</h2><p class="lead">The core rule of the layer, running in this browser: a draft may only use what it was given, and it states what it was not given. Change a number, or remove one, and watch the draft withhold it. Nothing is sent anywhere.</p></div>
-    <div class="worked-enquiry">
-      <div class="source-column"><h3>Inputs</h3>
-        <form id="reply-form" hidden>
-          <div class="reply-grid">
-            <label>Item requested<input name="item" value="PX-40" maxlength="40" autocomplete="off"></label>
-            <label>Quantity requested<input name="wanted" type="number" min="0" step="1" value="12" inputmode="numeric"></label>
-            <label>Requested by (their words)<input name="byDate" value="Friday" maxlength="30" autocomplete="off"></label>
-            <label>On the stock sheet<input name="listed" type="number" min="0" step="1" value="8" inputmode="numeric" placeholder="blank if unknown"></label>
-            <label>Approved unit price<input name="price" type="number" min="0" step="0.01" value="120" inputmode="decimal" placeholder="blank if unknown"></label>
-            <label>Lead time for the rest, working days<input name="leadDays" type="number" min="0" step="1" value="10" inputmode="numeric" placeholder="blank if unknown"></label>
-            <label>Freight<select name="freight"><option value="not-quoted" selected>Not quoted</option><option value="quoted">Quoted</option><option value="unknown">Not sure</option></select></label>
-            <label>Currency<select name="currency"><option value="EUR" selected>EUR</option><option value="USD">USD</option><option value="GBP">GBP</option></select></label>
-          </div>
-          <p class="small"><button type="button" class="plain-button" id="reply-reset">Clear the numbers</button></p>
-        </form>
-        <details open><summary>The request</summary><p>12 PX-40 units needed by Friday. Confirm price, delivery and payment instructions.</p></details>
-        <details><summary>Approved facts</summary><ul><li><strong>STOCK-01:</strong> 8 PX-40 units listed. Stock is reconfirmed before commitment.</li><li><strong>PRICE-01:</strong> 120 per unit, excluding tax. Freight not quoted.</li><li><strong>SUPPLY-01:</strong> 10 working days indicated for additional units, subject to confirmation.</li><li><strong>RULE-01:</strong> Delivery commitments and payment instructions require the responsible person's approval.</li></ul></details>
-        <details><summary>What does not become a promise</summary><p>A requested date is not a confirmed date. Missing freight is not free freight. A product subtotal is not a delivered price. Payment details are never invented.</p></details>
-      </div>
-      <div class="output-column"><div class="output-heading"><h3>Handover for review</h3><span id="reply-static-note">Example</span><span id="reply-live-note" hidden>Running in your browser</span></div>
-        <div id="reply-output">
-        <h4>Reply draft</h4><p>Thank you for your enquiry. The latest stock sheet lists 8 PX-40 units at 120 each, excluding tax. Availability is being reconfirmed, and delivery by Friday is not yet confirmed.</p><p>The additional 4 units have an indicated lead time of 10 working days, subject to confirmation. Freight and payment instructions will follow once confirmed.</p>
-        <h4>For the reviewer</h4><ul><li><strong>Quantity gap:</strong> 12 requested, 8 listed, 4 to source.</li><li><strong>Product subtotal:</strong> 8 × 120 = 960, excluding tax and unquoted freight. Sources: STOCK-01, PRICE-01.</li><li><strong>Held for approval:</strong> availability, delivery date, freight, payment instructions. The draft is not sent.</li></ul>
-      </div>
-      </div>
-    </div>
+  <section class="shell section" id="verify" aria-labelledby="verify-h">
+    <div class="section-heading"><p class="audience">Live demo</p><h2 id="verify-h">Green is not the same as right.</h2><p class="lead">Eight jobs, all finished without error. A status page stops there. The layer does not: it opens the artefact each job produced and checks it against the source. Press the button.</p></div>
+    <div class="jobs" aria-live="polite"></div>
+    <div class="verify-actions"><button type="button" class="button" id="verify-run">Verify against the source</button><p id="verify-summary" class="verify-summary" role="status"></p></div>
+    <p class="small muted">Illustrative jobs. The three failures are real findings from the 2 September audit, with names removed. Runs in your browser; nothing is sent.</p>
   </section>
 
   <section class="shell section" id="functions" aria-labelledby="fn-h">
