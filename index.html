@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HAI by MUNERON - Your company. Now you can talk to it.</title>
@@ -7,48 +7,50 @@
   <meta property="og:title" content="HAI by MUNERON - Your company. Now you can talk to it.">
   <meta property="og:description" content="A digital company you can work with: ask what needs your attention, understand why, keep decisions moving into action. It remembers decisions, sets up agents for the work, and tracks what happens next.">
   <meta property="og:url" content="https://muneron.com/"><meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0c1626" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#eef3f9" media="(prefers-color-scheme: light)">
-  <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-  <meta property="og:image" content="https://muneron.com/assets/card.png?v=20261014b"><link rel="canonical" href="https://muneron.com/">
-  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css?v=20261014g">
-  <script src="/assets/theme.js"></script><script src="/assets/hero-field.js" defer></script>
-  <script src="/assets/site.js" defer></script><script src="/assets/ask-panel.js?v=20261014b" defer></script>
+  <meta property="og:image" content="https://muneron.com/assets/card.png?v=20261014r1"><meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f8f8"><link rel="canonical" href="https://muneron.com/">
+  <link rel="preload" href="/assets/fonts/hanken-grotesk-wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/muneron.css?v=20261014r1">
+  <script src="/assets/ui.js?v=20261014r1" defer></script><script src="/assets/ask-panel.js?v=20261014r1" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><nav class="shell nav" aria-label="Main navigation">
-  <a class="brand-mark" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
-  <div class="nav-links"><a href="#agents">Agents</a><a href="#email">Email HAI</a><a href="#structure">Structure</a><a href="/start-here/">Start here</a><a href="/aviation/">The system</a></div>
-  <a class="button button-small" href="/start/">Find your first use case</a>
+<header class="site-header"><nav class="wrap nav" aria-label="Main navigation">
+  <a class="brand" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+  <div class="nav-menu" id="nav-menu">
+    <a href="#agents">Agents</a><a href="#email">Email</a><a href="#structure">Structure</a><a href="/start-here/">Start here</a><a href="/aviation/">The system</a>
+    <a class="button small" href="/start/">Find your first use case</a>
+  </div>
 </nav></header>
 <main id="main">
-  <div class="hero-field hero-quiet">
-    <canvas id="gl" aria-hidden="true"></canvas>
-    <div id="glfall" aria-hidden="true"></div>
-    <canvas id="scene" aria-hidden="true"></canvas>
-    <div class="hero-veil" aria-hidden="true"></div>
-  <section class="shell sales-hero solo">
-    <div class="sales-intro">
-      <p class="audience">HAI by MUNERON · The next step in business AI</p>
-      <h1>Your company. Now you can talk to it.</h1>
-      <p class="lead">HAI connects your company's information, people and decisions into a digital company you can work with. Ask what needs your attention, understand why, and keep decisions moving into action.</p>
-      <p class="lead">It remembers decisions, sets up agents for the work, and keeps track of what happens next.</p>
-      <div class="actions"><a class="button" href="/start/">Find your first use case <span aria-hidden="true">↗</span></a><a class="text-link" href="#ask">Ask it something ↓</a></div>
-      <p class="small muted">Built inside a working aviation parts, MRO and leasing business, by its owner, while the business ran on it. Made for any owner-led company.</p>
-    </div>
-  </section>
-  </div>
 
-  <section class="shell section ask-section" id="ask" aria-labelledby="ask-h">
-    <div class="section-heading"><h2 id="ask-h">Ask your company.</h2><p class="lead">Three questions an owner asks every week, answered the way a digital company answers: with the source, the decision behind it, the owner and the next step.</p></div>
-    <div class="ask-panel">
-      <div class="ask-chips" role="group" aria-label="Example questions">
-        <button type="button" class="ask-chip" aria-pressed="true">What needs my attention today?</button>
-        <button type="button" class="ask-chip" aria-pressed="false">Why is this order blocked?</button>
-        <button type="button" class="ask-chip" aria-pressed="false">What did we decide about the late supplier?</button>
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <h1 id="hero-h">Your company. Now you can talk to it.</h1>
+      <div class="hero-aside">
+        <span class="kicker">HAI by MUNERON</span>
+        <p class="lead">HAI is your company's AI. It connects your company's information, people and decisions into a digital company you can work with: ask what needs your attention, understand why, and keep decisions moving into action.</p>
+        <div class="actions"><a class="button" href="/start/">Find your first use case</a><a class="button ghost" href="#ask">See it answer</a></div>
       </div>
-      <div class="ask-card">
-        <span class="ask-badge">Illustrative example</span>
+    </div>
+    <figure class="hero-photo">
+      <img src="/assets/photos/mro-detail-1800.webp" srcset="/assets/photos/mro-detail-800.webp 800w, /assets/photos/mro-detail-1800.webp 1800w" sizes="100vw" width="1800" height="1201" fetchpriority="high" decoding="async" alt="Close view of a precision component held in a machine, hoses running into its bore, the workshop blurred behind it.">
+    </figure>
+  </section>
+
+  <section class="wrap demo" id="ask" aria-labelledby="ask-h">
+    <div class="demo-panel">
+      <div class="demo-rail">
+        <h2 id="ask-h">Ask your company.</h2>
+        <p class="demo-sub">Three questions an owner asks every week, answered with the source, the decision behind it, the owner and the next step.</p>
+        <div class="ask-chips" role="group" aria-label="Example questions">
+          <button type="button" class="ask-chip" aria-pressed="true">What needs my attention today?</button>
+          <button type="button" class="ask-chip" aria-pressed="false">Why is this order blocked?</button>
+          <button type="button" class="ask-chip" aria-pressed="false">What did we decide about the late supplier?</button>
+        </div>
+      </div>
+      <div class="demo-main">
         <div class="ask-answer">
           <p class="ask-text">One customer order is waiting for your approval. Purchasing has confirmed availability. Finance approved the terms yesterday. The sales owner is ready to send the proposal once you approve.</p>
           <dl class="ask-meta">
@@ -77,133 +79,126 @@
           </dl>
         </div>
       </div>
+      <p class="demo-foot">Illustrative workflow. No real company, customer or figures. Answers come from the sources you connect, and only from those.</p>
     </div>
-    <p class="small muted">Illustrative scenario. No real company, customer or figures. Answers come from the sources you connect, and only from those.</p>
   </section>
 
-  <section class="band" id="scopes"><div class="shell">
-    <div class="section-heading"><h2>Three ways to use AI. They work together.</h2></div>
-    <div class="tiles cols3">
-      <div><h3>Chat</h3><p>Ask questions. Think, write and explore.</p></div>
-      <div><h3>Agents</h3><p>Delegate tasks. Prepare, check and execute.</p></div>
-      <div class="tile-accent"><h3>HAI</h3><p>Connect the company. Company context, tailored agents, remembered decisions and coordinated follow-up.</p></div>
-    </div>
-    <p class="small muted band-note">HAI uses agents, and it works alongside the chat tools your team already has.</p>
-  </div></section>
-
-  <section class="shell section" id="agents" aria-labelledby="agents-h">
-    <div class="section-heading"><h2 id="agents-h">AI agents, built around your company.</h2><p class="lead">Tell HAI what needs to get done. Working with you, it sets up a routine or an agent for the job: the company context it needs, the sources it may read, the rules it works under and when it runs. You define access and approvals. HAI supervises the work: what ran, what did not, and what needs a person.</p></div>
-    <ol class="walk four">
-      <li><span class="step">1</span><h3>Define the job</h3><p>In plain words, from you or proposed by HAI from what it sees in the company.</p></li>
-      <li><span class="step">2</span><h3>Configure around your company</h3><p>In a working session with you: company context, the sources it may read, the rules it follows, the tools it may use, the schedule.</p></li>
-      <li><span class="step">3</span><h3>Run within approved access</h3><p>Only the sources and actions you granted, each with a stop switch.</p></li>
-      <li><span class="step">4</span><h3>Supervise and surface</h3><p>What ran, what did not, what went quiet, and what needs a person, reported to the owner.</p></li>
-    </ol>
-    <div class="tiles cols3 agent-examples">
-      <div><h3>Weekly management brief</h3><p>Reads the week's numbers and open items, writes the brief, flags what changed.</p></div>
-      <div><h3>Supplier updates</h3><p>Checks confirmations and delivery dates against open orders, raises the late ones.</p></div>
-      <div><h3>Follow-up on open work</h3><p>Chases what was promised, records what came back, escalates what did not.</p></div>
-    </div>
-    <p class="small muted">Illustrative examples. You do not design and manage each agent in isolation: HAI gives them shared company context, coordination and oversight. Agents are configured with you in a working session and supervised continuously as part of a connected deployment, within the access you approve.</p>
-  </section>
-
-  <section class="shell section" id="email" aria-labelledby="email-h">
-    <div class="section-heading"><p class="audience">A familiar door</p><h2 id="email-h">Your company has an email address.</h2><p class="lead">Staff write to HAI the way they write to a colleague. The answer comes from the company's connected knowledge, decisions and current work, with sources and next steps, within the rules set for their role. Nothing new to learn, no new tool to open.</p></div>
-    <div class="mail-thread" aria-label="Illustrative email exchange">
-      <span class="ask-badge">Illustrative example</span>
-      <article class="mail mail-in">
-        <header><span class="mail-from">From: a sales colleague</span><span class="mail-to">To: HAI</span></header>
-        <p class="mail-subject">Subject: Order 4471, where does it stand?</p>
-        <p>The customer is asking for an update on 4471. Where is it, and when can I tell them it ships?</p>
-      </article>
-      <article class="mail mail-out">
-        <header><span class="mail-from">From: HAI</span><span class="mail-to">To: the sales colleague</span></header>
-        <p class="mail-subject">Subject: Re: Order 4471, where does it stand?</p>
-        <p>Order 4471 is picked and packed. Collection is booked for Thursday morning. Tracking appears once the carrier scans the parcel; HAI checks for the confirmation and shares the update when it is available.</p>
-        <dl class="ask-meta">
-          <div><dt>Source</dt><dd>ERP order record, updated 09:40 today · carrier booking confirmation</dd></div>
-          <div><dt>Owner</dt><dd>Logistics owns the collection. You own the customer update.</dd></div>
-          <div><dt>Next step</dt><dd>Tell the customer Thursday. HAI checks for the carrier confirmation and shares the available update.</dd></div>
+  <section class="wrap chapter" id="agents" aria-labelledby="agents-h">
+    <div class="agents-grid">
+      <div class="agents-intro">
+        <h2 id="agents-h">Then it does the work.</h2>
+        <p class="lead">Tell HAI what needs to get done. Working with you, it sets up a routine or an agent for the job, with the context, sources, rules and schedule it needs. You define access and approvals. HAI supervises the work.</p>
+        <dl class="outcomes">
+          <div><dt>Less chasing for information</dt><dd>Where you stand with a customer comes back with the sources attached.</dd></div>
+          <div><dt>Decisions that carry forward</dt><dd>What you decided on Monday is still known on Thursday: who owns it, what was agreed, what happened since.</dd></div>
+          <div><dt>More handled by the same team</dt><dd>Routine preparation, checking and follow-up run as routines. People keep the judgment and the relationships.</dd></div>
         </dl>
-      </article>
-    </div>
-    <p class="small muted">Illustrative exchange. No real company, colleague, customer or order. In this illustrative company's configured view, supplier cost and internal margin are restricted for the sales role, so they do not appear in the reply. Who may ask, what each role may receive, and what never leaves the company are configured rules; every reply is logged. In the founding group, colleagues write to HAI by email and get answers from the company's context within their role. Part of a connected deployment.</p>
-  </section>
-
-  <section class="shell section" id="outcomes" aria-labelledby="outcomes-h">
-    <div class="section-heading"><h2 id="outcomes-h">What changes for an owner.</h2></div>
-    <div class="tiles cols3">
-      <div><h3>Less chasing for information</h3><p>"Where do we stand with this customer" comes back with the sources attached, instead of a search through five inboxes and two spreadsheets.</p></div>
-      <div><h3>Decisions that carry forward</h3><p>What you decided on Monday is still known on Thursday: who owns it, what was agreed, and what has happened since.</p></div>
-      <div><h3>More handled by the same team</h3><p>Routine preparation, checking and follow-up run as routines. People keep the judgment and the relationships.</p></div>
-    </div>
-  </section>
-
-  <section class="shell section" id="walkthrough" aria-labelledby="walk-h">
-    <div class="section-heading"><p class="audience">Illustrative scenario</p><h2 id="walk-h">Then it carries the work forward.</h2><p class="lead">A customer asks for a quote on a part your purchasing team last bought eight months ago. Here is what happens between the request and the result.</p></div>
-    <ol class="walk">
-      <li><span class="step">1</span><h3>Source information</h3><p>The request, the ERP record, last year's supplier offer and the customer's open invoice are read together.</p></li>
-      <li><span class="step">2</span><h3>The issue that matters</h3><p>The last supplier price is stale, and the customer has an overdue invoice. Both are surfaced, with the source next to each.</p></li>
-      <li><span class="step">3</span><h3>Proposal with an owner</h3><p>A draft quote with a refreshed price check goes to the sales owner. The credit question is routed to finance.</p></li>
-      <li><span class="step">4</span><h3>Decision remembered</h3><p>Finance approves on terms. The decision is recorded against the customer, with who decided and when.</p></li>
-      <li><span class="step">5</span><h3>Follow-up with evidence</h3><p>Three days later: quote sent, acknowledged, order received. Or not, and the owner is told why, with the trail.</p></li>
-    </ol>
-    <p class="small muted">Illustrative scenario. The company, figures and names are not from a real customer. Which actions HAI may take itself, and which wait for a person, is set per company.</p>
-  </section>
-
-  <section class="shell section" id="structure" aria-labelledby="structure-h">
-    <div class="section-heading"><h2 id="structure-h">How the pieces work together.</h2><p class="lead">People and company systems feed HAI; clear answers and coordinated work come out, within the rules set for each role.</p></div>
-    <figure class="arch" aria-labelledby="arch-cap">
-      <div class="arch-row arch-top">
-        <div class="arch-cap arch-l"><b>Your people</b><span>Email · Chat · Working sessions</span></div>
-        <div class="arch-cap arch-r"><b>Clear answers</b><span>Sources · Owner · Next step</span></div>
       </div>
-      <img class="arch-img" src="/assets/hai-architecture-20261014.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Architectural illustration of HAI as three stacked intelligence planes at the centre of a navy field. Fine lines connect people and mail at the upper left and company systems at the lower left into HAI, and lead out to a checked document at the upper right and three supervised task modules at the lower right.">
-      <div class="arch-row arch-bottom">
-        <div class="arch-cap arch-l"><b>Your systems</b><span>Mail · Documents · ERP · Accounting</span></div>
-        <div class="arch-cap arch-r"><b>Coordinated work</b><span>Tailored agents · Supervised follow-up</span></div>
+      <div>
+        <ol class="sequence" aria-label="How an agent is set up">
+          <li><span class="n">1</span><div><h3>Define the job</h3><p>In plain words, from you or proposed by HAI from what it sees in the company.</p></div></li>
+          <li><span class="n">2</span><div><h3>Configure around your company</h3><p>In a working session with you: company context, the sources it may read, the rules it follows, the tools it may use, the schedule.</p></div></li>
+          <li><span class="n">3</span><div><h3>Run within approved access</h3><p>Only the sources and actions you granted, each with a stop switch.</p></div></li>
+          <li><span class="n">4</span><div><h3>Supervise and surface</h3><p>What ran, what did not, what went quiet, and what needs a person, reported to the owner.</p></div></li>
+        </ol>
+        <p class="note">Illustrative agents: a weekly management brief, supplier confirmations checked against open orders, follow-up on promised work. Configured with you in a working session and supervised as part of a connected deployment, within the access you approve.</p>
       </div>
-      <figcaption id="arch-cap" class="vh">Your people and your systems feed HAI, the company context and decision memory. Clear answers and coordinated work come out. Sources and actions are configured per role.</figcaption>
-    </figure>
+    </div>
+  </section>
+
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="email" aria-labelledby="email-h">
+    <div class="email-grid">
+      <div class="email-intro">
+        <h2 id="email-h">Your company has an email address.</h2>
+        <p class="lead">Staff write to HAI the way they write to a colleague. The answer comes from the company's connected knowledge, decisions and current work, with sources and next steps, within the rules set for their role. Nothing new to learn.</p>
+      </div>
+      <div class="thread" aria-label="Illustrative email exchange">
+        <article class="mail mail-in">
+          <header><span class="mail-from">From: a sales colleague</span><span class="mail-to">To: HAI</span></header>
+          <p class="mail-subject">Order 4471, where does it stand?</p>
+          <p>The customer is asking for an update on 4471. Where is it, and when can I tell them it ships?</p>
+        </article>
+        <article class="mail mail-out">
+          <header><span class="mail-from">From: HAI</span><span class="mail-to">To: the sales colleague</span></header>
+          <p class="mail-subject">Re: Order 4471, where does it stand?</p>
+          <p>Order 4471 is picked and packed. Collection is booked for Thursday morning. Tracking appears once the carrier scans the parcel; HAI checks for the confirmation and shares the update when it is available.</p>
+          <dl class="ask-meta">
+            <div><dt>Source</dt><dd>ERP order record, updated 09:40 today · carrier booking confirmation</dd></div>
+            <div><dt>Owner</dt><dd>Logistics owns the collection. You own the customer update.</dd></div>
+            <div><dt>Next step</dt><dd>Tell the customer Thursday. HAI checks for the carrier confirmation and shares the available update.</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="note email-note">Illustrative exchange, no real company or order. In this company's configured view, supplier cost and margin are restricted for the sales role, so they do not appear. Who may ask, what each role receives and what never leaves the company are configured rules; every reply is logged. In the founding group, colleagues already write to HAI by email within their role. Part of a connected deployment.</p>
+    </div>
+  </section>
+
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="structure" aria-labelledby="structure-h">
+    <div class="arch">
+      <div class="arch-copy">
+        <h2 id="structure-h">How the pieces work together.</h2>
+        <p class="lead">People and company systems feed HAI; clear answers and coordinated work come out, within the rules set for each role. Which sources, roles and actions exist is set per company.</p>
+      </div>
+      <figure>
+        <img class="arch-img" src="/assets/hai-architecture-20261014.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Architectural illustration of HAI as three stacked intelligence planes at the centre of a navy field. Fine lines connect people and mail at the upper left and company systems at the lower left into HAI, and lead out to a checked document at the upper right and three supervised task modules at the lower right.">
+        <figcaption class="vh">Your people and your systems feed HAI, the company context and decision memory. Clear answers and coordinated work come out. Sources and actions are configured per role.</figcaption>
+      </figure>
+    </div>
     <dl class="legend">
       <div><dt>Enterprise Context Layer</dt><dd>Customers, orders, people, documents and decisions, connected, with their sources and dates.</dd></div>
       <div><dt>Decision Memory</dt><dd>What was decided, by whom, when, and what happened next.</dd></div>
       <div><dt>Agent Orchestration</dt><dd>Agents and routines configured around your workflows, run within approved access, supervised.</dd></div>
       <div><dt>Permission-Aware Intelligence</dt><dd>Configured role and access rules shape which sources are used and what each reply contains.</dd></div>
     </dl>
-    <p class="small muted">Which sources are connected, which roles exist and which actions are approved is set per company.</p>
   </section>
 
-  <section class="band" id="origin"><div class="shell">
-    <div class="section-heading"><h2>Built where the stakes were real.</h2></div>
-    <p class="lead band-lead">HAI was built inside an aviation parts, MRO and landing gear leasing group, by its owner, while the business ran on it. That internal deployment is the reference implementation, and it is held to account: 219 scheduled jobs on four machines as of 20 September 2026, audited adversarially and re-checked by hand.</p>
-    <p class="lead"><a class="text-link" href="/aviation/">The system and the audit record ↗</a></p>
-  </div></section>
+  <hr class="rule wrap">
 
-  <section class="shell section" id="offer" aria-labelledby="offer-h">
-    <div class="section-heading"><h2 id="offer-h">Start with one workflow.</h2><p class="lead">Pick one recurring, valuable workflow: customer enquiries, purchasing exceptions, the weekly management picture. Define its sources, its owner and the output you expect. HAI runs it. You expand when it proves useful.</p></div>
-    <div class="tiles cols2">
-      <div><h3>Starter</h3><p>A portable HAI that runs on a computer in your company, with your own Claude account. It reads what you grant, builds the company context, briefs the owner and proposes where to go next. It does not send, write to your systems or move money.</p></div>
-      <div class="tile-accent"><h3>Connected deployment</h3><p>Your systems connected, agents and routines configured around your workflows and supervised, roles and permissions set for your team, and the actions you approve put behind rules and a stop switch. Scoped and agreed per company.</p></div>
+  <section class="wrap chapter" id="origin" aria-labelledby="origin-h">
+    <div class="origin">
+      <figure class="origin-photo">
+        <img src="/assets/photos/mro-technician-1800.webp" srcset="/assets/photos/mro-technician-800.webp 800w, /assets/photos/mro-technician-1800.webp 1800w" sizes="(max-width: 900px) 100vw, 60vw" width="1800" height="1201" loading="lazy" decoding="async" alt="A technician working on a landing gear assembly at a workbench in an aircraft maintenance facility.">
+        <figcaption>On the bench in the group's maintenance facility. HAI was built here, while the business ran on it.</figcaption>
+      </figure>
+      <div class="origin-copy">
+        <h2 id="origin-h">Built where the stakes were real.</h2>
+        <p>HAI was built inside an aviation parts, MRO and landing gear leasing group, by its owner, while the business ran on it. That internal deployment is the reference implementation: 219 scheduled jobs on four machines as of 20 September 2026, held to account and re-checked by hand.</p>
+        <p>Made for any owner-led company, whatever it makes, moves or sells.</p>
+        <div class="actions"><a class="text-link" href="/aviation/">The system and the audit record</a></div>
+      </div>
     </div>
-    <div class="actions"><a class="button" href="/start/">Find your first use case <span aria-hidden="true">↗</span></a><a class="text-link" href="/start-here/">Not sure where you stand? Start here ↗</a></div>
   </section>
 
-  <section class="shell section" id="faq" aria-labelledby="faq-h">
-    <div class="section-heading"><h2 id="faq-h">Questions owners ask.</h2></div>
-    <dl class="myths">
-      <div><dt>Is this another chatbot?</dt><dd>No. A chat answers the question in front of it. HAI is a digital company: it holds the company context, connects approved sources, keeps decisions, runs agents and routines, and follows up. Talking to it is one of its doors.</dd></div>
-      <div><dt>Do we replace our systems?</dt><dd>No. Your ERP, accounting and mail stay the systems of record. HAI reads them and works alongside them.</dd></div>
-      <div><dt>Who controls access and actions?</dt><dd>You do. Access is granted per source and per role. Outbound actions exist only where you approve them, each with its own stop switch. HAI does not sign documents or move money.</dd></div>
-      <div><dt>How do we start?</dt><dd>With one workflow, its sources and its owner. Tell us about it, and we reply with what we would set up first and what we would need from you.</dd></div>
-    </dl>
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="offer" aria-labelledby="offer-h">
+    <div class="chapter-head">
+      <h2 id="offer-h">Start with one workflow.</h2>
+      <p class="lead">One recurring, valuable workflow: customer enquiries, purchasing exceptions, the weekly management picture. Define its sources, its owner and the output you expect. HAI runs it; you expand when it proves useful.</p>
+    </div>
+    <div class="plans">
+      <div><span class="tag">Starter</span><h3>A portable HAI on a computer in your company</h3><p>Runs with your own Claude account. It reads what you grant, builds the company context, briefs the owner and proposes where to go next. It does not send, write to your systems or move money.</p></div>
+      <div><span class="tag">Connected deployment</span><h3>Your systems connected, your workflows configured</h3><p>Agents and routines set up around your workflows and supervised, roles and permissions set for your team, and the actions you approve put behind rules and a stop switch. Scoped and agreed per company.</p></div>
+    </div>
+    <div class="actions"><a class="button" href="/start/">Find your first use case</a><a class="text-link" href="/start-here/">Not sure where you stand? Start here</a></div>
   </section>
 
-  <section class="band closing-band"><div class="shell">
-    <h2>Find your first use case</h2>
-    <p class="lead">One recurring workflow, its sources, its owner. That is enough for a first conversation.</p>
-    <a class="button" href="/start/">Get in touch <span aria-hidden="true">↗</span></a>
+  <section class="wrap chapter tight" id="faq" aria-labelledby="faq-h">
+    <div class="chapter-head"><h2 id="faq-h">Questions owners ask.</h2></div>
+    <details class="faq" name="faq"><summary>Is this another chatbot?</summary><p class="answer">No. A chat answers the question in front of it. HAI is a digital company: it holds the company context, connects approved sources, keeps decisions, runs agents and routines, and follows up. Talking to it is one of its doors.</p></details>
+    <details class="faq" name="faq"><summary>Do we replace our systems?</summary><p class="answer">No. Your ERP, accounting and mail stay the systems of record. HAI reads them and works alongside them.</p></details>
+    <details class="faq" name="faq"><summary>Who controls access and actions?</summary><p class="answer">You do. Access is granted per source and per role. Outbound actions exist only where you approve them, each with its own stop switch. HAI does not sign documents or move money.</p></details>
+    <details class="faq" name="faq"><summary>How do we start?</summary><p class="answer">With one workflow, its sources and its owner. Tell us about it, and we reply with what we would set up first and what we would need from you.</p></details>
+  </section>
+
+  <section class="closing"><div class="wrap inner">
+    <div><h2>Find your first use case.</h2><p class="lead">One recurring workflow, its sources, its owner. That is enough for a first conversation.</p></div>
+    <div class="actions"><a class="button" href="/start/">Get in touch</a></div>
   </div></section>
 </main>
-<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">© 2026 MUNERON</p></div><div class="footer-tools"><a href="/start-here/">Start here</a><a href="/aviation/">The system</a><a href="/start/">Contact</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
+<footer class="wrap site-footer"><div><a class="brand" href="/">MUNER<b>ON</b></a><p class="small muted">© 2026 MUNERON</p></div><div class="links"><a href="/start-here/">Start here</a><a href="/aviation/">The system</a><a href="/start/">Contact</a></div></footer>
 </body></html>

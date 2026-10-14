@@ -1,66 +1,71 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The system behind HAI - built inside a working business - MUNERON</title>
   <meta name="description" content="The reference implementation of HAI, the digital company, inside an aviation parts, MRO and leasing group: how it is wired, what it covers, what leaves the building and what stops it, registry figures, and the audit record.">
   <meta property="og:title" content="The system behind HAI - MUNERON"><meta property="og:description" content="The reference implementation inside an aviation group: wiring, functions, outbound channels, controls, registry figures and the audit record.">
   <meta property="og:url" content="https://muneron.com/aviation/"><meta property="og:type" content="article">
-  <meta property="og:image" content="https://muneron.com/assets/card.png?v=20261014b"><link rel="canonical" href="https://muneron.com/aviation/">
-  <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0c1626" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#eef3f9" media="(prefers-color-scheme: light)">
-  <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css?v=20261014g">
-  <script src="/assets/theme.js"></script><script src="/assets/site.js" defer></script><script src="/assets/verify-demo.js" defer></script>
+  <meta property="og:image" content="https://muneron.com/assets/card.png?v=20261014r1"><meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f8f8"><link rel="canonical" href="https://muneron.com/aviation/">
+  <link rel="preload" href="/assets/fonts/hanken-grotesk-wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/muneron.css?v=20261014r1">
+  <script src="/assets/ui.js?v=20261014r1" defer></script><script src="/assets/verify-demo.js?v=20261014r1" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><nav class="shell nav" aria-label="Main navigation">
-  <a class="brand-mark" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
-  <div class="nav-links"><a href="/">HAI</a><a href="#functions">Functions</a><a href="#demo">Demo</a><a href="#audit">Audit</a></div>
-  <a class="button button-small" href="/start/">Find your first use case</a>
+<header class="site-header"><nav class="wrap nav" aria-label="Main navigation">
+  <a class="brand" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+  <div class="nav-menu" id="nav-menu">
+    <a href="/">HAI</a><a href="#functions">Functions</a><a href="#demo">Demo</a><a href="#audit">Audit</a>
+    <a class="button small" href="/start/">Find your first use case</a>
+  </div>
 </nav></header>
-<main id="main" class="long">
-  <section class="shell section">
-    <p class="audience">The system behind HAI</p>
+<main id="main">
+  <section class="wrap page-head">
     <h1>Built inside a working business.</h1>
     <p class="lead">HAI was first built inside an aviation parts, MRO and landing gear leasing group, by its owner, while the business ran on it. Four months, 1,650 commits across 15 repositories, added function by function as the business needed them. This page documents that internal reference implementation.</p>
     <p class="lead">What a new company gets is scoped to it: the starter reads what you grant and does not act; a connected deployment connects your systems and configures and supervises agents and routines workflow by workflow. The functions, channels and controls below show what the same parts look like at full depth.</p>
   </section>
 
-  <section class="shell section" id="timeline" aria-labelledby="tl-h">
-    <div class="section-heading"><h2 id="tl-h">Timeline.</h2></div>
-    <ol class="phases">
-      <li><span class="when">April</span><div><b>Knowledge base.</b> Company mail, chat and documents made searchable in one place.</div></li>
-      <li><span class="when">May</span><div><b>Core functions.</b> Enquiry handling, quote drafting, onboarding paperwork, live reads of the ERP and the accounts, a decision queue for the owner.</div></li>
-      <li><span class="when">31 May</span><div><b>Governance.</b> A registry of every running job, a gate on outbound email, written operating rules.</div></li>
-      <li><span class="when">June</span><div><b>Quality gates.</b> A sanity check on every draft, alerts when a data feed stops, a supervisor over the functions.</div></li>
-      <li><span class="when">July</span><div><b>Stop controls and census.</b> One master stop, plus a check that every acting job is registered to it. A census of all jobs, with stale ones retired. An automatic-send pilot under explicit grants. Regression evaluations.</div></li>
-      <li><span class="when">August</span><div><b>Hardening.</b> A fail-closed stop rule, a dedicated customer-facing machine, the records function rebuilt, employee starter packages, operating rules reconciled with the running system.</div></li>
-      <li><span class="when">2 Sep</span><div><b>Adversarial audit.</b> 311 evaluations across all four machines.</div></li>
-      <li><span class="when">20 Sep</span><div><b>Manual re-verification.</b> 20 audit findings re-checked by hand against the original logs.</div></li>
+  <section class="wrap chapter tight" id="timeline" aria-labelledby="tl-h">
+    <div class="chapter-head"><h2 id="tl-h">Timeline.</h2></div>
+    <ol class="sequence wide">
+      <li><span class="n">April</span><p><b>Knowledge base.</b> Company mail, chat and documents made searchable in one place.</p></li>
+      <li><span class="n">May</span><p><b>Core functions.</b> Enquiry handling, quote drafting, onboarding paperwork, live reads of the ERP and the accounts, a decision queue for the owner.</p></li>
+      <li><span class="n">31 May</span><p><b>Governance.</b> A registry of every running job, a gate on outbound email, written operating rules.</p></li>
+      <li><span class="n">June</span><p><b>Quality gates.</b> A sanity check on every draft, alerts when a data feed stops, a supervisor over the functions.</p></li>
+      <li><span class="n">July</span><p><b>Stop controls and census.</b> One master stop, plus a check that every acting job is registered to it. A census of all jobs, with stale ones retired. An automatic-send pilot under explicit grants. Regression evaluations.</p></li>
+      <li><span class="n">August</span><p><b>Hardening.</b> A fail-closed stop rule, a dedicated customer-facing machine, the records function rebuilt, employee starter packages, operating rules reconciled with the running system.</p></li>
+      <li><span class="n">2 Sep</span><p><b>Adversarial audit.</b> 311 evaluations across all four machines.</p></li>
+      <li><span class="n">20 Sep</span><p><b>Manual re-verification.</b> 20 audit findings re-checked by hand against the original logs.</p></li>
     </ol>
   </section>
 
-  <section class="shell section" id="wiring" aria-labelledby="w-h">
-    <div class="section-heading"><h2 id="w-h">How it is wired.</h2><p class="lead">Nine inputs, one operating layer, six recipient groups, four outbound channels.</p></div>
-    <div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" class="diagram" viewBox="0 0 980 560" role="img" aria-labelledby="t d" font-family="Poppins, system-ui, sans-serif">
+  <section class="wrap chapter" id="wiring" aria-labelledby="w-h">
+    <div class="chapter-head">
+      <h2 id="w-h">How it is wired.</h2>
+      <p class="lead">Nine inputs, one operating layer, six recipient groups, four outbound channels.</p>
+    </div>
+    <div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" class="diagram" viewBox="0 0 980 560" role="img" aria-labelledby="t d" font-family="Hanken Grotesk, system-ui, sans-serif">
   <title id="t">How the operating layer is wired</title>
   <desc id="d">Nine inputs on the left feed one operating layer governed by four rules. On the right, six recipients. Four outbound channels, each gated, all covered by one master stop. The layer does not sign documents and does not move money.</desc>
   <style>
-    .box{fill:var(--surface,#fff);stroke:var(--line,#b6c7d6);stroke-width:1.2}
-    .core{fill:var(--tint,#e2f3ef);stroke:var(--accent,#076e67);stroke-width:1.6}
+    .box{fill:var(--surface,#fff);stroke:var(--line,#e2e5e8);stroke-width:1.2}
+    .core{fill:var(--tint,#e6f2f0);stroke:var(--accent,#076e67);stroke-width:1.6}
     .lane{fill:var(--surface,#fff);stroke:var(--accent,#076e67);stroke-width:1.2;stroke-dasharray:4 3}
     .brake{fill:var(--red,#ae322b)}
-    .t{fill:var(--ink,#10253d);font-size:14px}
-    .s{fill:var(--muted,#536a82);font-size:11px}
-    .h{fill:var(--ink,#10253d);font-size:18px;font-weight:600}
-    .k{fill:var(--accent,#076e67);font-size:11px;font-weight:600;letter-spacing:.08em}
-    .w{fill:#fff;font-size:11px;font-weight:600;letter-spacing:.06em}
-    .a{stroke:var(--muted,#536a82);stroke-width:1.4;fill:none}
+    .t{fill:var(--ink,#15191e);font-size:14px}
+    .s{fill:var(--muted,#5d6670);font-size:11px}
+    .h{fill:var(--ink,#15191e);font-size:22px;font-weight:500;letter-spacing:-.01em}
+    .k{fill:var(--accent,#076e67);font-size:11px;font-weight:500;letter-spacing:.08em}
+    .w{fill:#fff;font-size:11px;font-weight:500;letter-spacing:.06em}
+    .a{stroke:var(--muted,#5d6670);stroke-width:1.4;fill:none}
     .ag{stroke:var(--accent,#076e67);stroke-width:1.6;fill:none}
   </style>
   <defs>
-    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--muted,#536a82)"/></marker>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--muted,#5d6670)"/></marker>
     <marker id="mg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--accent,#076e67)"/></marker>
   </defs>
 
@@ -81,7 +86,7 @@
 
   <!-- CENTER: the layer -->
   <rect x="312" y="42" width="356" height="470" rx="16" class="core"/>
-  <text x="332" y="70" class="h">Operating layer: four rules</text>
+  <text x="332" y="72" class="h">Operating layer: four rules</text>
   <g>
     <rect x="332" y="86" width="316" height="40" rx="8" class="box"/>
     <text x="346" y="103" class="t">1  Related signals grouped</text><text x="346" y="118" class="s">one report, relationship stated</text>
@@ -128,17 +133,22 @@
   <rect x="740" y="488" width="232" height="24" rx="6" class="brake"/>
   <text x="856" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
 </svg></div>
-    <ol class="laws">
-      <li><b>Related signals are grouped.</b> Items that belong together are reported in one place, with the relationship stated.</li>
-      <li><b>Decision items go to the recorded process owner.</b> Items that need no decision are not sent.</li>
-      <li><b>Figures come from the named system of record.</b> They are pulled when the report is created. When a source check fails, the item is withheld and marked for correction.</li>
-      <li><b>Each recommendation has a recorded recipient.</b> Actions are recorded as proposal, approval, execution and confirmation.</li>
+    <ol class="sequence" aria-label="The four rules">
+      <li><span class="n">1</span><p><b>Related signals are grouped.</b> Items that belong together are reported in one place, with the relationship stated.</p></li>
+      <li><span class="n">2</span><p><b>Decision items go to the recorded process owner.</b> Items that need no decision are not sent.</p></li>
+      <li><span class="n">3</span><p><b>Figures come from the named system of record.</b> They are pulled when the report is created. When a source check fails, the item is withheld and marked for correction.</p></li>
+      <li><span class="n">4</span><p><b>Each recommendation has a recorded recipient.</b> Actions are recorded as proposal, approval, execution and confirmation.</p></li>
     </ol>
   </section>
 
-  <section class="shell section" id="functions" aria-labelledby="fn-h">
-    <div class="section-heading"><h2 id="fn-h">Functions in the reference implementation.</h2><p class="lead">Process owners keep approval. HAI reads source systems, prepares drafts, runs checks and sends follow-ups. A new deployment starts with one of these and adds the next when it proves useful.</p></div>
-    <div class="fn-grid">
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="functions" aria-labelledby="fn-h">
+    <div class="chapter-head">
+      <h2 id="fn-h">Functions in the reference implementation.</h2>
+      <p class="lead">Process owners keep approval. HAI reads source systems, prepares drafts, runs checks and sends follow-ups. A new deployment starts with one of these and adds the next when it proves useful.</p>
+    </div>
+    <div class="parts">
       <article><h3>Enquiries and quotes</h3><p>Read incoming requests, price them against stock and history, and draft quotes. Approved offers can send automatically under set rules, with manual-only control for any customer.</p></article>
       <article><h3>Purchasing</h3><p>Track purchase requirements, request supplier offers, and record each offer in the system.</p></article>
       <article><h3>Finance</h3><p>Read cash, receivable and payable balances from their source systems, with bank data taking precedence over book records.</p></article>
@@ -151,33 +161,45 @@
     </div>
   </section>
 
-  <section class="shell section" id="outbound" aria-labelledby="ob-h">
-    <div class="section-heading"><h2 id="ob-h">Outbound channels.</h2><p class="lead">In the reference implementation HAI sends through four outbound channels. Each is authorised by the owner, gated, logged and revocable. A new company starts with none, and adds a channel only when it approves it.</p></div>
-    <ol class="lanes-list">
-      <li><b>Internal email.</b> Capped per recipient per day and in total, screened for confidential content, listed in a daily digest.</li>
-      <li><b>Customer quotes.</b> Enabled only while an explicit arming file is present. A price floor applies to every quote. Any account can be set to manual only.</li>
-      <li><b>Marketplace submissions.</b> Separate stop control.</li>
-      <li><b>Public stock listings.</b> Explicit arming, daily cap, separate pause.</li>
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="outbound" aria-labelledby="ob-h">
+    <div class="chapter-head">
+      <h2 id="ob-h">Outbound channels.</h2>
+      <p class="lead">In the reference implementation HAI sends through four outbound channels. Each is authorised by the owner, gated, logged and revocable. A new company starts with none, and adds a channel only when it approves it.</p>
+    </div>
+    <ol class="sequence" aria-label="Outbound channels">
+      <li><span class="n">1</span><p><b>Internal email.</b> Capped per recipient per day and in total, screened for confidential content, listed in a daily digest.</p></li>
+      <li><span class="n">2</span><p><b>Customer quotes.</b> Enabled only while an explicit arming file is present. A price floor applies to every quote. Any account can be set to manual only.</p></li>
+      <li><span class="n">3</span><p><b>Marketplace submissions.</b> Separate stop control.</p></li>
+      <li><span class="n">4</span><p><b>Public stock listings.</b> Explicit arming, daily cap, separate pause.</p></li>
     </ol>
-    <div class="brake-line"><span>One master stop covers all four channels.</span></div>
+    <p class="stop-line">One master stop covers all four channels.</p>
     <p class="lead">Two fixed rules: HAI does not sign documents and does not move money. Stop events report to the owner through a separate, ungated path.</p>
   </section>
 
-  <section class="band" id="controls-b"><div class="shell">
-    <div class="section-heading"><h2>Controls.</h2></div>
-    <div class="tiles">
-      <div><h3>Recipient verification</h3><p>A message must name its recipient in two independent places, and both must match, or it is not sent.</p></div>
-      <div><h3>Scope gate</h3><p>Outbound drafts are classified, every recipient including copies is checked, and the lowest permission in the group applies.</p></div>
-      <div><h3>Payment language</h3><p>Messages containing payment or bank instructions are held unless explicitly released, and every decision is logged.</p></div>
-      <div><h3>Figure freshness</h3><p>A financial figure is re-pulled from its source when the draft is written. If the source is stale, the figure is withheld.</p></div>
-      <div><h3>ERP access</h3><p>Read-only by default. Only approved quoting functions write, to their own records, through one audited path.</p></div>
-      <div><h3>Self-audit</h3><p>Job monitoring, the 2 September audit of the scheduled jobs, and manual review of 20 findings on 20 September.</p></div>
-    </div>
-  </div></section>
+  <hr class="rule wrap">
 
-  <section class="shell section" id="numbers" aria-labelledby="num-h">
-    <div class="section-heading"><h2 id="num-h">Registry figures of the reference implementation.</h2><p class="lead">As of 20 September 2026. These describe the internal deployment, not what every new customer gets.</p></div>
-    <dl class="numbers">
+  <section class="wrap chapter" id="controls" aria-labelledby="controls-h">
+    <div class="chapter-head"><h2 id="controls-h">Controls.</h2></div>
+    <div class="parts">
+      <article><h3>Recipient verification</h3><p>A message must name its recipient in two independent places, and both must match, or it is not sent.</p></article>
+      <article><h3>Scope gate</h3><p>Outbound drafts are classified, every recipient including copies is checked, and the lowest permission in the group applies.</p></article>
+      <article><h3>Payment language</h3><p>Messages containing payment or bank instructions are held unless explicitly released, and every decision is logged.</p></article>
+      <article><h3>Figure freshness</h3><p>A financial figure is re-pulled from its source when the draft is written. If the source is stale, the figure is withheld.</p></article>
+      <article><h3>ERP access</h3><p>Read-only by default. Only approved quoting functions write, to their own records, through one audited path.</p></article>
+      <article><h3>Self-audit</h3><p>Job monitoring, the 2 September audit of the scheduled jobs, and manual review of 20 findings on 20 September.</p></article>
+    </div>
+  </section>
+
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="numbers" aria-labelledby="num-h">
+    <div class="chapter-head">
+      <h2 id="num-h">Registry figures of the reference implementation.</h2>
+      <p class="lead">As of 20 September 2026. These describe the internal deployment, not what every new customer gets.</p>
+    </div>
+    <dl class="figures">
       <div><dt>219</dt><dd>scheduled jobs running on four machines, including jobs that monitor other jobs.</dd></div>
       <div><dt>313</dt><dd>jobs registered over the project's life, 33 retired.</dd></div>
       <div><dt>40</dt><dd>capabilities, each tied to a credential and a policy.</dd></div>
@@ -189,33 +211,41 @@
     </dl>
   </section>
 
-  <section class="shell section" id="demo" aria-labelledby="verify-h">
-    <div class="section-heading"><p class="audience">Live demo</p><h2 id="verify-h">Green is not the same as right.</h2><p class="lead">Eight jobs, all finished without error. A status page stops there. HAI does not: it opens the artefact each job produced and checks it against the source. Press the button.</p></div>
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="demo" aria-labelledby="verify-h">
+    <div class="chapter-head">
+      <h2 id="verify-h">Green is not the same as right.</h2>
+      <p class="lead">Eight jobs, all finished without error. A status page stops there. HAI does not: it opens the artefact each job produced and checks it against the source. Press the button.</p>
+    </div>
     <div id="verify">
       <div class="jobs" aria-live="polite"></div>
       <div class="verify-actions"><button type="button" class="button" id="verify-run">Verify against the source</button><p id="verify-summary" class="verify-summary" role="status"></p></div>
     </div>
-    <p class="small muted">Illustrative jobs. The three failures are real findings from the 2 September audit, with names removed. Runs in your browser; nothing is sent.</p>
+    <p class="note">Illustrative jobs. The three failures are real findings from the 2 September audit, with names removed. Runs in your browser; nothing is sent.</p>
   </section>
 
-  <section class="shell section" id="audit" aria-labelledby="audit-h">
-    <div class="section-heading"><h2 id="audit-h">Audit record.</h2></div>
+  <hr class="rule wrap">
+
+  <section class="wrap chapter" id="audit" aria-labelledby="audit-h">
+    <div class="chapter-head"><h2 id="audit-h">Audit record.</h2></div>
     <div class="prose">
       <p>On 2 September an adversarial audit completed 311 evaluations covering the scheduled jobs on all four machines. It recorded 102 findings: jobs that finished without error and reported success while the output was wrong or reached nobody. The audit attributed the largest groups of findings to a control verified on the wrong machine, input feeds that stopped while processing continued on schedule, and operating rules that no longer matched the running system. The affected controls were changed during the week of 2 September.</p>
       <p>On 20 September, 20 of the 102 findings were chosen at random and re-checked by hand against the original logs. 19 held. 1 was wrong: the audit had read two lines marked blocked and reported that a daily cash alert never arrived, when the next line in the same file, 308 milliseconds later, recorded it as sent. Across the full log, 108 of 132 alerts went out. The finding was corrected and the checker now reads the final delivery state before reporting on any send.</p>
     </div>
   </section>
 
-  <section class="shell section" id="founder" aria-labelledby="f-h">
-    <div class="section-heading"><h2 id="f-h">From one company to any company.</h2></div>
-    <p class="lead origin-lead">The layer was built by the founder of a group operating across the US and Europe, through written instructions and review, over four months, while the business ran on it. The registry and audit counts on this page are the ones used to run it, published with their dates. MUNERON is the company behind HAI, the portable version of that layer for other owner-led companies.</p>
+  <section class="wrap chapter tight" id="founder" aria-labelledby="f-h">
+    <div class="chapter-head"><h2 id="f-h">From one company to any company.</h2></div>
+    <div class="prose">
+      <p>The layer was built by the founder of a group operating across the US and Europe, through written instructions and review, over four months, while the business ran on it. The registry and audit counts on this page are the ones used to run it, published with their dates. MUNERON is the company behind HAI, the portable version of that layer for other owner-led companies.</p>
+    </div>
   </section>
 
-  <section class="band closing-band"><div class="shell">
-    <h2>Find your first use case</h2>
-    <p class="lead">One recurring workflow, its sources, its owner. That is enough for a first conversation.</p>
-    <a class="button" href="/start/">Get in touch <span aria-hidden="true">↗</span></a>
+  <section class="closing"><div class="wrap inner">
+    <div><h2>Find your first use case.</h2><p class="lead">One recurring workflow, its sources, its owner. That is enough for a first conversation.</p></div>
+    <div class="actions"><a class="button" href="/start/">Get in touch</a></div>
   </div></section>
 </main>
-<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">© 2026 MUNERON</p></div><div class="footer-tools"><a href="/">HAI</a><a href="/start-here/">Start here</a><a href="/start/">Contact</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
+<footer class="wrap site-footer"><div><a class="brand" href="/">MUNER<b>ON</b></a><p class="small muted">© 2026 MUNERON</p></div><div class="links"><a href="/">HAI</a><a href="/start-here/">Start here</a><a href="/start/">Contact</a></div></footer>
 </body></html>
