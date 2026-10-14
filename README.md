@@ -1,23 +1,22 @@
 # muneron.com
 
-Static site for MUNERON. Deployed via GitHub Pages.
+Static site for MUNERON, the company behind HAI. Deployed via GitHub Pages from `main` (CNAME `muneron.com`).
 
-## Current public scope
+## Pages
 
-- `/`: Customer Enquiry Desk, the planned EUR 390 first single-seat Desk Pack. Concrete fictional example, source notes, no checkout.
-- `/start/`: three-question enquiry preparation. Opens the visitor's email app only when requested; explicit manual-send and copy fallback. No enquiry backend, analytics or mailing-list signup.
-- `/downloads/customer-enquiry-example.txt`: free fictional exercise and human answer checklist, not an installer or a security test.
-- `/test/`: version 2 of the free, self-reported Boundary Check.
-- `/aviation/`: the internal connected-workflow example and the limits of its evidence.
+- `/` - HAI by MUNERON: the product, owner outcomes, a comparison with using AI for a task, an illustrative walkthrough, the six parts, origin, the offer (starter vs connected deployment), FAQ.
+- `/start-here/` - for companies at the chat stage: what HAI offers today, the six parts, what to have in place before day one, the order to build in.
+- `/aviation/` - the reference implementation inside the founding group: wiring, functions, outbound channels, controls, dated registry figures, the live demo and the audit record.
+- `/start/` - contact. Opens the visitor's own email application with three prompts. No form backend, no analytics, nothing is sent from the page.
 
-The routes share `assets/site.css`, fonts, the default light theme and the saved theme preference. Home and enquiry also use `assets/sales.css`. The questionnaire renders from `assets/check-model.mjs`; its scoring and text export are pure functions. `assets/check.js` handles accessible controls and session-only answer storage. No questionnaire answers are transmitted to a server. `assets/enquiry-model.mjs` validates allowed selections and composes bounded email text; `assets/enquiry.js` presents it without claiming receipt or compatibility.
+## Claim boundaries
 
-Early-access links open the visitor's own email application. They do not send automatically or subscribe anyone. The stop-control example affects its illustration only, not real systems.
+No customers, ROI figures, adoption counts, certifications or turnkey integrations are claimed. Scale numbers are dated and describe the internal reference implementation, not what every new customer gets. The starter is described as read-only (it does not send, write to company systems or move money); a connected deployment is scoped per company. No prices.
 
-Before publishing changes, check JavaScript syntax, local links, both themes, 320px and 390px layouts, partial and complete answers, unknown/not-applicable states, reload/navigation recovery, clearing and the plain-text export fallback. Do not execute the suggested questions on real confidential data as part of website QA.
+## Assets
 
-Public release claims must remain bounded to verified compatibility and actual acceptance checks. The internal aviation integration is not the single-seat pack specification.
+`assets/site.css` (tokens, light and dark themes), `assets/sales.css` (page components), `assets/fonts.css` + `assets/fonts/` (Poppins woff2, swap), `assets/hero-field.js` (home hero renderer, respects reduced motion), `assets/verify-demo.js` (the demo on `/aviation/`), `assets/hai-map.svg` (wiring diagram, also inlined on `/aviation/`), `assets/card.png` (OpenGraph card).
 
-The first commercial focus is owner-led distribution and equipment supply, with approved-file customer reply preparation. This is a research-informed validation hypothesis, not demonstrated market demand. Claude Code is the first validation target, not a claim that a public installation has passed on any platform. The free sample is written to be tried in an organisation-approved assistant and includes no real company data.
+## Before publishing
 
-Keep private research, lead records, acceptance results and commercial launch notes outside this public repository. Do not enable payments until seller details, taxes/terms, fulfilment, compatibility and refund handling have been verified.
+Check JavaScript syntax (`node --check`), internal links and anchors, both themes, 320 / 390 / 1440 layouts, reduced motion, and the impeccable detector. Rollback: `git tag -l 'live-baseline-*'`; the exact live baseline is also zipped under `outputs/muneron/refresh-<date>/` outside this repository.

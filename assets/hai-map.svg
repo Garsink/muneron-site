@@ -6,9 +6,9 @@
     .core{fill:var(--tint,#e2f3ef);stroke:var(--accent,#076e67);stroke-width:1.6}
     .lane{fill:var(--surface,#fff);stroke:var(--accent,#076e67);stroke-width:1.2;stroke-dasharray:4 3}
     .brake{fill:var(--red,#ae322b)}
-    .t{fill:var(--ink,#10253d);font-size:13px}
+    .t{fill:var(--ink,#10253d);font-size:14px}
     .s{fill:var(--muted,#536a82);font-size:11px}
-    .h{fill:var(--ink,#10253d);font-size:14px;font-weight:600}
+    .h{fill:var(--ink,#10253d);font-size:18px;font-weight:600}
     .k{fill:var(--accent,#076e67);font-size:11px;font-weight:600;letter-spacing:.08em}
     .w{fill:#fff;font-size:11px;font-weight:600;letter-spacing:.06em}
     .a{stroke:var(--muted,#536a82);stroke-width:1.4;fill:none}
@@ -22,15 +22,15 @@
   <!-- LEFT: sources -->
   <text x="20" y="28" class="k">INPUTS</text>
   <g>
-    <rect x="20" y="42" width="200" height="34" rx="8" class="box"/><text x="34" y="64" class="t">Email, every mailbox</text>
-    <rect x="20" y="84" width="200" height="34" rx="8" class="box"/><text x="34" y="106" class="t">WhatsApp working groups</text>
-    <rect x="20" y="126" width="200" height="34" rx="8" class="box"/><text x="34" y="148" class="t">ERP: stock, quotes, orders</text>
-    <rect x="20" y="168" width="200" height="34" rx="8" class="box"/><text x="34" y="190" class="t">Accounting and bank feeds</text>
-    <rect x="20" y="210" width="200" height="34" rx="8" class="box"/><text x="34" y="232" class="t">Parts marketplaces</text>
-    <rect x="20" y="252" width="200" height="34" rx="8" class="box"/><text x="34" y="274" class="t">Calendars and meetings</text>
-    <rect x="20" y="294" width="200" height="34" rx="8" class="box"/><text x="34" y="316" class="t">Shared documents</text>
-    <rect x="20" y="336" width="200" height="34" rx="8" class="box"/><text x="34" y="358" class="t">Fleet and market data</text>
-    <rect x="20" y="378" width="200" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own decision log</text>
+    <rect x="20" y="42" width="212" height="34" rx="8" class="box"/><text x="34" y="64" class="t">Email, every mailbox</text>
+    <rect x="20" y="84" width="212" height="34" rx="8" class="box"/><text x="34" y="106" class="t">WhatsApp working groups</text>
+    <rect x="20" y="126" width="212" height="34" rx="8" class="box"/><text x="34" y="148" class="t">ERP: stock, quotes, orders</text>
+    <rect x="20" y="168" width="212" height="34" rx="8" class="box"/><text x="34" y="190" class="t">Accounting and bank feeds</text>
+    <rect x="20" y="210" width="212" height="34" rx="8" class="box"/><text x="34" y="232" class="t">Parts marketplaces</text>
+    <rect x="20" y="252" width="212" height="34" rx="8" class="box"/><text x="34" y="274" class="t">Calendars and meetings</text>
+    <rect x="20" y="294" width="212" height="34" rx="8" class="box"/><text x="34" y="316" class="t">Shared documents</text>
+    <rect x="20" y="336" width="212" height="34" rx="8" class="box"/><text x="34" y="358" class="t">Fleet and market data</text>
+    <rect x="20" y="378" width="212" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own decision log</text>
   </g>
   <path d="M232 227 H300" class="a" marker-end="url(#m)"/>
 
@@ -60,12 +60,12 @@
   <!-- RIGHT: owners -->
   <text x="740" y="28" class="k">RECIPIENTS</text>
   <g>
-    <rect x="740" y="42" width="220" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: daily summary</text>
-    <rect x="740" y="80" width="220" height="30" rx="8" class="box"/><text x="754" y="100" class="t">Sales: priced, checked quotes</text>
-    <rect x="740" y="118" width="220" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: items to chase</text>
-    <rect x="740" y="156" width="220" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: source-fresh figures</text>
-    <rect x="740" y="194" width="220" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: publishable signals</text>
-    <rect x="740" y="232" width="220" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: privacy-restricted</text>
+    <rect x="740" y="42" width="232" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: daily summary</text>
+    <rect x="740" y="80" width="232" height="30" rx="8" class="box"/><text x="754" y="100" class="t">Sales: priced, checked quotes</text>
+    <rect x="740" y="118" width="232" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: items to chase</text>
+    <rect x="740" y="156" width="232" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: source-fresh figures</text>
+    <rect x="740" y="194" width="232" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: publishable signals</text>
+    <rect x="740" y="232" width="232" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: privacy-restricted</text>
   </g>
   <path d="M680 152 H728" class="a" marker-end="url(#m)"/>
 
@@ -73,13 +73,13 @@
   <text x="740" y="300" class="k">OUTBOUND CHANNELS</text>
   <text x="740" y="316" class="s">each authorised, gated, logged, revocable</text>
   <g>
-    <rect x="740" y="328" width="220" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Internal email, capped</text>
-    <rect x="740" y="366" width="220" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Customer quotes</text>
-    <rect x="740" y="404" width="220" height="30" rx="8" class="lane"/><text x="754" y="424" class="t">Marketplace submissions</text>
-    <rect x="740" y="442" width="220" height="30" rx="8" class="lane"/><text x="754" y="462" class="t">Public stock listings</text>
+    <rect x="740" y="328" width="232" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Internal email, capped</text>
+    <rect x="740" y="366" width="232" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Customer quotes</text>
+    <rect x="740" y="404" width="232" height="30" rx="8" class="lane"/><text x="754" y="424" class="t">Marketplace submissions</text>
+    <rect x="740" y="442" width="232" height="30" rx="8" class="lane"/><text x="754" y="462" class="t">Public stock listings</text>
   </g>
   <path d="M680 400 H728" class="ag" marker-end="url(#mg)"/>
   <!-- master brake bar -->
-  <rect x="740" y="488" width="220" height="24" rx="6" class="brake"/>
-  <text x="850" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
+  <rect x="740" y="488" width="232" height="24" rx="6" class="brake"/>
+  <text x="856" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
 </svg>

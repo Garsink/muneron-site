@@ -2,28 +2,29 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The system - MUNERON</title>
-  <meta name="description" content="How the operating layer is wired: inputs, four operating rules, nine functions, four outbound channels under one master stop, controls, measured figures, and the audit record.">
-  <meta property="og:title" content="The system - MUNERON"><meta property="og:description" content="An AI operating layer in use at an aviation group: timeline, operating rules, functions, outbound channels, controls, and the audit record.">
+  <title>The system behind HAI - built inside a working business - MUNERON</title>
+  <meta name="description" content="The reference implementation of HAI inside an aviation parts, MRO and leasing group: how it is wired, what it covers, what leaves the building and what stops it, registry figures, and the audit record.">
+  <meta property="og:title" content="The system behind HAI - MUNERON"><meta property="og:description" content="The reference implementation inside an aviation group: wiring, functions, outbound channels, controls, registry figures and the audit record.">
   <meta property="og:url" content="https://muneron.com/aviation/"><meta property="og:type" content="article">
   <meta property="og:image" content="https://muneron.com/assets/card.png"><link rel="canonical" href="https://muneron.com/aviation/">
   <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0c1626" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#eef3f9" media="(prefers-color-scheme: light)">
   <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css">
-  <script src="/assets/theme.js"></script><script src="/assets/site.js" defer></script>
+  <script src="/assets/theme.js"></script><script src="/assets/site.js" defer></script><script src="/assets/verify-demo.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><nav class="shell nav" aria-label="Main navigation">
   <a class="brand-mark" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
-  <div class="nav-links"><a href="#functions">Functions</a><a href="#outbound">Outbound</a><a href="#audit">Audit</a></div>
-  <a class="button button-small" href="/start/">Contact</a>
+  <div class="nav-links"><a href="/">HAI</a><a href="#functions">Functions</a><a href="#demo">Demo</a><a href="#audit">Audit</a></div>
+  <a class="button button-small" href="/start/">Find your first use case</a>
 </nav></header>
 <main id="main" class="long">
   <section class="shell section">
-    <p class="audience">The system</p>
-    <h1>The operating layer.</h1>
-    <p class="lead">An AI operating layer built inside an aviation parts, MRO and landing gear leasing group. Four months, 1,650 commits across 15 repositories, added function by function as the business needed them.</p>
+    <p class="audience">The system behind HAI</p>
+    <h1>Built inside a working business.</h1>
+    <p class="lead">HAI was first built inside an aviation parts, MRO and landing gear leasing group, by its owner, while the business ran on it. Four months, 1,650 commits across 15 repositories, added function by function as the business needed them. This page documents that internal reference implementation.</p>
+    <p class="lead">What a new company gets is scoped to it: the starter reads what you grant and does not act; a connected deployment connects your systems and schedules routines workflow by workflow. The functions, channels and controls below show what the same parts look like at full depth.</p>
   </section>
 
   <section class="shell section" id="timeline" aria-labelledby="tl-h">
@@ -50,9 +51,9 @@
     .core{fill:var(--tint,#e2f3ef);stroke:var(--accent,#076e67);stroke-width:1.6}
     .lane{fill:var(--surface,#fff);stroke:var(--accent,#076e67);stroke-width:1.2;stroke-dasharray:4 3}
     .brake{fill:var(--red,#ae322b)}
-    .t{fill:var(--ink,#10253d);font-size:13px}
+    .t{fill:var(--ink,#10253d);font-size:14px}
     .s{fill:var(--muted,#536a82);font-size:11px}
-    .h{fill:var(--ink,#10253d);font-size:14px;font-weight:600}
+    .h{fill:var(--ink,#10253d);font-size:18px;font-weight:600}
     .k{fill:var(--accent,#076e67);font-size:11px;font-weight:600;letter-spacing:.08em}
     .w{fill:#fff;font-size:11px;font-weight:600;letter-spacing:.06em}
     .a{stroke:var(--muted,#536a82);stroke-width:1.4;fill:none}
@@ -66,15 +67,15 @@
   <!-- LEFT: sources -->
   <text x="20" y="28" class="k">INPUTS</text>
   <g>
-    <rect x="20" y="42" width="200" height="34" rx="8" class="box"/><text x="34" y="64" class="t">Email, every mailbox</text>
-    <rect x="20" y="84" width="200" height="34" rx="8" class="box"/><text x="34" y="106" class="t">WhatsApp working groups</text>
-    <rect x="20" y="126" width="200" height="34" rx="8" class="box"/><text x="34" y="148" class="t">ERP: stock, quotes, orders</text>
-    <rect x="20" y="168" width="200" height="34" rx="8" class="box"/><text x="34" y="190" class="t">Accounting and bank feeds</text>
-    <rect x="20" y="210" width="200" height="34" rx="8" class="box"/><text x="34" y="232" class="t">Parts marketplaces</text>
-    <rect x="20" y="252" width="200" height="34" rx="8" class="box"/><text x="34" y="274" class="t">Calendars and meetings</text>
-    <rect x="20" y="294" width="200" height="34" rx="8" class="box"/><text x="34" y="316" class="t">Shared documents</text>
-    <rect x="20" y="336" width="200" height="34" rx="8" class="box"/><text x="34" y="358" class="t">Fleet and market data</text>
-    <rect x="20" y="378" width="200" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own decision log</text>
+    <rect x="20" y="42" width="212" height="34" rx="8" class="box"/><text x="34" y="64" class="t">Email, every mailbox</text>
+    <rect x="20" y="84" width="212" height="34" rx="8" class="box"/><text x="34" y="106" class="t">WhatsApp working groups</text>
+    <rect x="20" y="126" width="212" height="34" rx="8" class="box"/><text x="34" y="148" class="t">ERP: stock, quotes, orders</text>
+    <rect x="20" y="168" width="212" height="34" rx="8" class="box"/><text x="34" y="190" class="t">Accounting and bank feeds</text>
+    <rect x="20" y="210" width="212" height="34" rx="8" class="box"/><text x="34" y="232" class="t">Parts marketplaces</text>
+    <rect x="20" y="252" width="212" height="34" rx="8" class="box"/><text x="34" y="274" class="t">Calendars and meetings</text>
+    <rect x="20" y="294" width="212" height="34" rx="8" class="box"/><text x="34" y="316" class="t">Shared documents</text>
+    <rect x="20" y="336" width="212" height="34" rx="8" class="box"/><text x="34" y="358" class="t">Fleet and market data</text>
+    <rect x="20" y="378" width="212" height="34" rx="8" class="box"/><text x="34" y="400" class="t">Its own decision log</text>
   </g>
   <path d="M232 227 H300" class="a" marker-end="url(#m)"/>
 
@@ -104,12 +105,12 @@
   <!-- RIGHT: owners -->
   <text x="740" y="28" class="k">RECIPIENTS</text>
   <g>
-    <rect x="740" y="42" width="220" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: daily summary</text>
-    <rect x="740" y="80" width="220" height="30" rx="8" class="box"/><text x="754" y="100" class="t">Sales: priced, checked quotes</text>
-    <rect x="740" y="118" width="220" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: items to chase</text>
-    <rect x="740" y="156" width="220" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: source-fresh figures</text>
-    <rect x="740" y="194" width="220" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: publishable signals</text>
-    <rect x="740" y="232" width="220" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: privacy-restricted</text>
+    <rect x="740" y="42" width="232" height="30" rx="8" class="box"/><text x="754" y="62" class="t">Owner: daily summary</text>
+    <rect x="740" y="80" width="232" height="30" rx="8" class="box"/><text x="754" y="100" class="t">Sales: priced, checked quotes</text>
+    <rect x="740" y="118" width="232" height="30" rx="8" class="box"/><text x="754" y="138" class="t">Purchasing: items to chase</text>
+    <rect x="740" y="156" width="232" height="30" rx="8" class="box"/><text x="754" y="176" class="t">Finance: source-fresh figures</text>
+    <rect x="740" y="194" width="232" height="30" rx="8" class="box"/><text x="754" y="214" class="t">Marketing: publishable signals</text>
+    <rect x="740" y="232" width="232" height="30" rx="8" class="box"/><text x="754" y="252" class="t">People: privacy-restricted</text>
   </g>
   <path d="M680 152 H728" class="a" marker-end="url(#m)"/>
 
@@ -117,15 +118,15 @@
   <text x="740" y="300" class="k">OUTBOUND CHANNELS</text>
   <text x="740" y="316" class="s">each authorised, gated, logged, revocable</text>
   <g>
-    <rect x="740" y="328" width="220" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Internal email, capped</text>
-    <rect x="740" y="366" width="220" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Customer quotes</text>
-    <rect x="740" y="404" width="220" height="30" rx="8" class="lane"/><text x="754" y="424" class="t">Marketplace submissions</text>
-    <rect x="740" y="442" width="220" height="30" rx="8" class="lane"/><text x="754" y="462" class="t">Public stock listings</text>
+    <rect x="740" y="328" width="232" height="30" rx="8" class="lane"/><text x="754" y="348" class="t">Internal email, capped</text>
+    <rect x="740" y="366" width="232" height="30" rx="8" class="lane"/><text x="754" y="386" class="t">Customer quotes</text>
+    <rect x="740" y="404" width="232" height="30" rx="8" class="lane"/><text x="754" y="424" class="t">Marketplace submissions</text>
+    <rect x="740" y="442" width="232" height="30" rx="8" class="lane"/><text x="754" y="462" class="t">Public stock listings</text>
   </g>
   <path d="M680 400 H728" class="ag" marker-end="url(#mg)"/>
   <!-- master brake bar -->
-  <rect x="740" y="488" width="220" height="24" rx="6" class="brake"/>
-  <text x="850" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
+  <rect x="740" y="488" width="232" height="24" rx="6" class="brake"/>
+  <text x="856" y="504" class="w" text-anchor="middle">ONE MASTER STOP COVERS ALL FOUR</text>
 </svg></div>
     <ol class="laws">
       <li><b>Related signals are grouped.</b> Items that belong together are reported in one place, with the relationship stated.</li>
@@ -136,7 +137,7 @@
   </section>
 
   <section class="shell section" id="functions" aria-labelledby="fn-h">
-    <div class="section-heading"><h2 id="fn-h">Functions.</h2><p class="lead">Process owners keep approval. The layer reads source systems, prepares drafts, runs checks and sends follow-ups.</p></div>
+    <div class="section-heading"><h2 id="fn-h">Functions in the reference implementation.</h2><p class="lead">Process owners keep approval. HAI reads source systems, prepares drafts, runs checks and sends follow-ups. A new deployment starts with one of these and adds the next when it proves useful.</p></div>
     <div class="fn-grid">
       <article><h3>Enquiries and quotes</h3><p>Read incoming requests, price them against stock and history, and draft quotes. Approved offers can send automatically under set rules, with manual-only control for any customer.</p></article>
       <article><h3>Purchasing</h3><p>Track purchase requirements, request supplier offers, and record each offer in the system.</p></article>
@@ -151,7 +152,7 @@
   </section>
 
   <section class="shell section" id="outbound" aria-labelledby="ob-h">
-    <div class="section-heading"><h2 id="ob-h">Outbound channels.</h2><p class="lead">The layer sends through four outbound channels. Each is authorised by the owner, gated, logged and revocable.</p></div>
+    <div class="section-heading"><h2 id="ob-h">Outbound channels.</h2><p class="lead">In the reference implementation HAI sends through four outbound channels. Each is authorised by the owner, gated, logged and revocable. A new company starts with none, and adds a channel only when it approves it.</p></div>
     <ol class="lanes-list">
       <li><b>Internal email.</b> Capped per recipient per day and in total, screened for confidential content, listed in a daily digest.</li>
       <li><b>Customer quotes.</b> Enabled only while an explicit arming file is present. A price floor applies to every quote. Any account can be set to manual only.</li>
@@ -159,7 +160,7 @@
       <li><b>Public stock listings.</b> Explicit arming, daily cap, separate pause.</li>
     </ol>
     <div class="brake-line"><span>One master stop covers all four channels.</span></div>
-    <p class="lead">Two fixed rules: the layer does not sign documents and does not move money. Stop events report to the owner through a separate, ungated path.</p>
+    <p class="lead">Two fixed rules: HAI does not sign documents and does not move money. Stop events report to the owner through a separate, ungated path.</p>
   </section>
 
   <section class="band" id="controls-b"><div class="shell">
@@ -175,7 +176,7 @@
   </div></section>
 
   <section class="shell section" id="numbers" aria-labelledby="num-h">
-    <div class="section-heading"><h2 id="num-h">Registry figures.</h2><p class="lead">As of 20 September 2026.</p></div>
+    <div class="section-heading"><h2 id="num-h">Registry figures of the reference implementation.</h2><p class="lead">As of 20 September 2026. These describe the internal deployment, not what every new customer gets.</p></div>
     <dl class="numbers">
       <div><dt>219</dt><dd>scheduled jobs running on four machines, including jobs that monitor other jobs.</dd></div>
       <div><dt>313</dt><dd>jobs registered over the project's life, 33 retired.</dd></div>
@@ -188,6 +189,15 @@
     </dl>
   </section>
 
+  <section class="shell section" id="demo" aria-labelledby="verify-h">
+    <div class="section-heading"><p class="audience">Live demo</p><h2 id="verify-h">Green is not the same as right.</h2><p class="lead">Eight jobs, all finished without error. A status page stops there. HAI does not: it opens the artefact each job produced and checks it against the source. Press the button.</p></div>
+    <div id="verify">
+      <div class="jobs" aria-live="polite"></div>
+      <div class="verify-actions"><button type="button" class="button" id="verify-run">Verify against the source</button><p id="verify-summary" class="verify-summary" role="status"></p></div>
+    </div>
+    <p class="small muted">Illustrative jobs. The three failures are real findings from the 2 September audit, with names removed. Runs in your browser; nothing is sent.</p>
+  </section>
+
   <section class="shell section" id="audit" aria-labelledby="audit-h">
     <div class="section-heading"><h2 id="audit-h">Audit record.</h2></div>
     <div class="prose">
@@ -197,15 +207,15 @@
   </section>
 
   <section class="shell section" id="founder" aria-labelledby="f-h">
-    <div class="section-heading"><h2 id="f-h">Built inside the business.</h2></div>
-    <p class="lead origin-lead">The layer was built by the founder of a group operating across the US and Europe, through written instructions and review, over four months, while the business ran on it. The registry and audit counts on these pages are the ones used to run it, published with their dates. MUNERON is the company that documents the layer and the method behind it.</p>
+    <div class="section-heading"><h2 id="f-h">From one company to any company.</h2></div>
+    <p class="lead origin-lead">The layer was built by the founder of a group operating across the US and Europe, through written instructions and review, over four months, while the business ran on it. The registry and audit counts on this page are the ones used to run it, published with their dates. MUNERON is the company behind HAI, the portable version of that layer for other owner-led companies.</p>
   </section>
 
   <section class="band closing-band"><div class="shell">
-    <h2>Contact MUNERON</h2>
-    <p class="lead">For companies already running AI in the business, with jobs nobody has independently checked.</p>
+    <h2>Find your first use case</h2>
+    <p class="lead">One recurring workflow, its sources, its owner. That is enough for a first conversation.</p>
     <a class="button" href="/start/">Get in touch <span aria-hidden="true">↗</span></a>
   </div></section>
 </main>
-<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">© 2026 MUNERON</p></div><div class="footer-tools"><a href="/">Overview</a><a href="/start-here/">Start here</a><a href="/start/">Contact</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
+<footer class="shell site-footer"><div><a class="brand-mark" href="/">MUNER<b>ON</b></a><p class="small muted">© 2026 MUNERON</p></div><div class="footer-tools"><a href="/">HAI</a><a href="/start-here/">Start here</a><a href="/start/">Contact</a><button class="theme-button" data-theme-toggle type="button" aria-label="Switch to dark theme">Dark theme</button></div></footer>
 </body></html>
