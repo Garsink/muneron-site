@@ -10,7 +10,7 @@
   <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0c1626" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#eef3f9" media="(prefers-color-scheme: light)">
   <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:image" content="https://muneron.com/assets/card.png?v=20261014b"><link rel="canonical" href="https://muneron.com/">
-  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css?v=20261014d">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css?v=20261014e">
   <script src="/assets/theme.js"></script><script src="/assets/hero-field.js" defer></script>
   <script src="/assets/site.js" defer></script><script src="/assets/ask-panel.js?v=20261014b" defer></script>
 </head>
@@ -153,33 +153,37 @@
 
   <section class="shell section" id="structure" aria-labelledby="structure-h">
     <div class="section-heading"><h2 id="structure-h">How the pieces work together.</h2><p class="lead">People ask. A shared company context and decision memory, with tailored agents, support the work. Configured role and access rules shape which sources are used and what each reply contains.</p></div>
-    <div class="map" role="list" aria-label="How HAI is built">
-      <div class="map-node map-people" role="listitem">
-        <h3>People</h3>
-        <p>Staff and owners ask by email, chat or in a working session.</p>
-      </div>
-      <div class="map-boundary" role="listitem" aria-label="Configured role and access rules">
-        <div class="map-rules"><span class="tech">Permission-Aware Intelligence</span><span class="map-rules-t">Configured role and access rules shape incoming questions and outgoing replies.</span></div>
-        <div class="map-node map-core">
-          <h3>HAI</h3>
-          <p>Connected company information with its sources and dates, and the decisions behind it: what was decided, by whom, when, and what happened next.</p>
-          <div class="map-labels"><span class="tech">Enterprise Context Layer</span><span class="tech">Decision Memory</span></div>
-        </div>
-        <div class="map-node map-agents">
-          <h3>Tailored agents and routines</h3>
-          <p>Configured around your workflows, running within approved access, supervised.</p>
-          <div class="map-labels"><span class="tech">Agent Orchestration</span></div>
-        </div>
-        <div class="map-node map-sources">
-          <h3>Approved sources</h3>
-          <p>Mail, documents, ERP, accounting. Read-only, scoped to what you connect.</p>
-        </div>
-      </div>
-      <div class="map-node map-answers" role="listitem">
-        <h3>Answers and follow-up</h3>
-        <p>Role-appropriate replies with the source and the next step; follow-ups chased, exceptions surfaced.</p>
-      </div>
-    </div>
+    <figure class="plate" aria-labelledby="plate-cap">
+      <span class="plate-tag">Illustrative</span>
+      <div class="plate-node n-people"><h3>People</h3><p>Staff and owners ask by email, chat or in a working session.</p></div>
+      <div class="plate-node n-sources"><h3>Approved sources</h3><p>Mail, documents, ERP, accounting. Read-only, scoped to what you connect.</p></div>
+      <div class="plate-core" aria-label="HAI: company context and decision memory"><span class="core-word">HAI</span><span class="core-sub">Company context · Decision memory</span></div>
+      <p class="plate-rail">Configured role and access rules apply where the lines cross the rail.</p>
+      <div class="plate-node n-agents"><h3>Tailored agents</h3><p>Configured around your workflows, running within approved access, supervised.</p></div>
+      <div class="plate-node n-answers"><h3>Answers and follow-up</h3><p>Role-appropriate replies with the source and the next step.</p></div>
+      <svg class="plate-lines" viewBox="0 0 1200 600" aria-hidden="true" focusable="false">
+        <defs>
+          <marker id="pl-in" orient="auto" markerWidth="9" markerHeight="9" refX="8" refY="4.5"><path d="M1.5 1.5 L7.5 4.5 L1.5 7.5" fill="none" stroke="#66d7cb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="pl-out" orient="auto" markerWidth="9" markerHeight="9" refX="8" refY="4.5"><path d="M1.5 1.5 L7.5 4.5 L1.5 7.5" fill="none" stroke="#66d7cb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="pl-back" orient="auto" markerWidth="9" markerHeight="9" refX="1" refY="4.5"><path d="M7.5 1.5 L1.5 4.5 L7.5 7.5" fill="none" stroke="#66d7cb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        </defs>
+        <circle cx="600" cy="300" r="150" fill="none" stroke="#66d7cb" stroke-opacity=".5" stroke-width="1.25"/>
+        <g stroke="#66d7cb" stroke-width="1.6" stroke-linecap="round"><line x1="466.6" y1="251.4" x2="449.6" y2="245.3"/><line x1="466.6" y1="348.6" x2="449.6" y2="354.7"/><line x1="733.4" y1="251.4" x2="750.4" y2="245.3"/><line x1="733.4" y1="348.6" x2="750.4" y2="354.7"/></g>
+        <g fill="none" stroke="#66d7cb" stroke-opacity=".85" stroke-width="1.25">
+          <path d="M372 172 C 424 172, 440 226, 459.0 248.7" marker-end="url(#pl-in)"/>
+          <path d="M372 428 C 424 428, 440 374, 459.0 351.3" marker-end="url(#pl-in)"/>
+          <path d="M741.0 248.7 C 760 226, 776 172, 828 172" marker-end="url(#pl-out)"/>
+          <path d="M741.0 351.3 C 760 374, 776 428, 828 428" marker-start="url(#pl-back)" marker-end="url(#pl-out)"/>
+        </g>
+      </svg>
+      <figcaption id="plate-cap" class="vh">People and approved sources feed HAI, the company context and decision memory. Tailored agents are connected to HAI. Role-appropriate answers and follow-up come out. Configured role and access rules apply on the rail around HAI.</figcaption>
+    </figure>
+    <dl class="legend">
+      <div><dt>Enterprise Context Layer</dt><dd>Customers, orders, people, documents and decisions, connected, with their sources and dates.</dd></div>
+      <div><dt>Decision Memory</dt><dd>What was decided, by whom, when, and what happened next.</dd></div>
+      <div><dt>Agent Orchestration</dt><dd>Agents and routines configured around your workflows, run within approved access, supervised.</dd></div>
+      <div><dt>Permission-Aware Intelligence</dt><dd>Configured role and access rules shape which sources are used and what each reply contains.</dd></div>
+    </dl>
     <p class="small muted">Which sources are connected, which roles exist and which actions are approved is set per company.</p>
   </section>
 
