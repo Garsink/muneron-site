@@ -193,20 +193,34 @@
 .mail-out{margin-left:min(72px,10%);border-color:var(--accent);background:var(--tint)}
 .mail-out .ask-meta{margin-top:12px}
 .mail-out .ask-meta div{border-top-color:var(--line)}
-.stack{display:grid;gap:0;max-width:860px}
-.layer{position:relative;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:18px 20px 16px;margin-bottom:26px}
-.layer::after{content:"";position:absolute;left:50%;bottom:-26px;width:2px;height:26px;background:var(--line)}
-.layer:last-child::after{display:none}
-.layer-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:6px}
-.layer-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--band);color:var(--ink);font-weight:700;font-size:14px}
-.layer h3{margin:0;font-size:17px;color:var(--ink)}
-.layer p{margin:0;font-size:15px;color:var(--dim);line-height:1.5;max-width:66ch}
 .tech{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:3px 9px;white-space:nowrap}
-.layer-gate{border-style:dashed;border-color:var(--accent)}
-.layer-gate .layer-n{background:var(--tint);color:var(--accent)}
-.layer-core{border-color:var(--accent);background:var(--tint)}
-.layer-core p{max-width:none}
-.feeds{display:grid;gap:2px;margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--dim)}
-.feeds-k{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-@media(min-width:900px){.layer-core{display:grid;grid-template-columns:1fr 250px;gap:12px 20px}.layer-core .layer-head{grid-column:1/-1}.layer-core .feeds{margin-top:0;align-self:start}}
+@media(min-width:900px){}
 @media(max-width:560px){.mail-in,.mail-out{margin-left:0;margin-right:0}.mail-thread{padding-top:34px}.tech{white-space:normal}}
+/* structure map (pass 3b): compact at desktop, ordered stack on narrow screens */
+.map{display:grid;gap:16px;max-width:1000px}
+.map-node{position:relative;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:16px 18px 14px}
+.map-node h3{margin:0 0 6px;font-size:16px;color:var(--ink)}
+.map-node p{margin:0;font-size:14px;color:var(--dim);line-height:1.45}
+.map-labels{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.map-boundary{position:relative;display:grid;gap:14px;border:1.5px dashed var(--accent);border-radius:18px;padding:14px;background:color-mix(in srgb,var(--tint) 45%,transparent)}
+.map-rules{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:2px 4px 6px}
+.map-rules-t{font-size:13px;color:var(--dim)}
+.map-core{border-color:var(--accent);background:var(--tint)}
+.map-core h3{font-size:18px}
+.map-core p{color:var(--ink)}
+.map-sources{background:var(--band)}
+@media(min-width:900px){
+  .map{grid-template-columns:200px 1fr 220px;align-items:center;column-gap:34px}
+  .map-boundary{grid-template-columns:1fr 1fr;grid-template-areas:"rules rules" "core core" "agents sources"}
+  .map-rules{grid-area:rules;justify-content:center;text-align:center}
+  .map-core{grid-area:core}
+  .map-agents{grid-area:agents}
+  .map-sources{grid-area:sources}
+  .map-people::after,.map-boundary::after{content:"";position:absolute;top:50%;right:-34px;width:34px;height:2px;background:var(--accent);transform:translateY(-50%)}
+  .map-people::before,.map-boundary::before{content:"";position:absolute;top:50%;right:-37px;width:9px;height:12px;background:var(--accent);clip-path:polygon(0 0,100% 50%,0 100%);transform:translateY(-50%)}
+  .map-agents::before,.map-sources::before{content:"";position:absolute;top:-15px;left:50%;width:2px;height:15px;background:var(--accent)}
+}
+@media(max-width:899px){
+  .map-people::after,.map-boundary::after{content:"";display:block;width:2px;height:14px;background:var(--accent);margin:12px auto -2px}
+  .map-boundary .map-node+.map-node::before{content:"";display:block;width:2px;height:12px;background:var(--accent);margin:-14px auto 10px}
+}
