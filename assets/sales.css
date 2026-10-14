@@ -199,49 +199,33 @@
 @media(max-width:899px){
     }
 
-/* system plate (pass 4b): connected company map around the HAI wordmark; one dark figure in both themes */
+/* architecture illustration (pass 4 final): one navy plate, the image, four HTML captions in two rows */
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.plate{--p-ground:#0c1626;--p-ink:#eef4fb;--p-dim:#bdcee1;--p-muted:#a1b5cf;--p-accent:#66d7cb;--p-line:#405773;position:relative;margin:0;background:var(--p-ground);color:var(--p-ink);border-radius:16px;overflow:hidden}
-.plate-node h3{margin:0 0 3px;font-size:17px;font-weight:600;color:var(--p-ink);line-height:1.25}
-.plate-node p{margin:0;font-size:14px;line-height:1.5;color:var(--p-dim)}
-.plate-core{display:grid;place-items:center;text-align:center}
-.core-cap{font-size:13px;color:var(--p-muted);margin-bottom:6px}
-.core-word{font-weight:800;font-size:clamp(60px,7.4vw,96px);line-height:.92;letter-spacing:-.02em;color:var(--p-ink)}
-.core-sub{margin-top:8px;font-size:14px;color:var(--p-dim)}
-.plate-net{list-style:none;margin:0;padding:0}
-.ent{font-size:14px;font-weight:600;color:var(--p-ink);white-space:nowrap}
-.plate-foot{margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;align-items:baseline}
-.plate-foot b{font-size:15px;font-weight:600;color:var(--p-ink)}
-.plate-foot span{font-size:13px;color:var(--p-muted)}
-.plate-lines{display:none}
+.arch{--p-ground:#0c1626;--p-ink:#eef4fb;--p-dim:#bdcee1;--p-accent:#66d7cb;margin:0;background:var(--p-ground);color:var(--p-ink);border-radius:16px;overflow:hidden;padding:26px 28px 22px}
+.arch-img{display:block;width:100%;height:auto;margin:0 auto}
+.arch-row{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.arch-cap{display:grid;gap:2px}
+.arch-cap b{font-size:16px;font-weight:600;color:var(--p-ink);line-height:1.3}
+.arch-cap span{font-size:14px;color:var(--p-dim);line-height:1.45}
+.arch-r{text-align:right}
+.arch-top{margin-bottom:6px}
+.arch-bottom{margin-top:6px}
 @media(min-width:900px){
-  .plate{aspect-ratio:1200/600;min-height:450px}
-  .plate-lines{display:block;position:absolute;inset:0;width:100%;height:100%}
-  .plate-node,.plate-core,.plate-foot,.ent{position:absolute;z-index:2}
-  .plate-node{width:22%;max-width:270px}
-  .n-people{left:8.5%;top:22%;text-align:right}
-  .n-sources{left:8.5%;top:65%;text-align:right}
-  .n-answers{left:69.5%;top:22%}
-  .n-agents{left:69.5%;top:65%}
-  .plate-core{left:50%;top:50%;transform:translate(-50%,-50%);width:26%}
-  .ent{transform:translate(-50%,-50%)}
-  .e-people{left:50%;top:21.5%}
-  .e-customers{left:35.6%;top:34.2%}
-  .e-orders{left:64.5%;top:34.2%}
-  .e-suppliers{left:36.4%;top:70.2%}
-  .e-decisions{left:64.2%;top:70.2%}
-  .plate-foot{left:8%;right:8%;top:88%;transform:none}
+  .arch{padding:28px 36px 24px}
+  .arch-img{height:clamp(550px,54vw,640px);object-fit:cover;object-position:50% 55%}
+  .arch-row{padding:0 2%}
 }
 @media(max-width:899px){
-  .plate{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 20px 28px;gap:18px}
-  .plate-node{max-width:34ch}
-  .plate-core{margin:6px 0 2px}
-  .plate-net{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 0;margin:2px 0 6px;max-width:34ch}
-  .ent{position:relative;padding:0 12px}
-  .ent+.ent::before{content:"";position:absolute;left:-3px;top:50%;width:6px;height:6px;border-radius:50%;background:var(--p-accent);transform:translate(-50%,-50%)}
-  .plate-foot{margin-top:10px;padding-top:16px;border-top:1px solid var(--p-line);width:100%;max-width:34ch}
-  .plate-lines{display:none}
+  .arch{padding:20px 18px 18px}
+  .arch-img{height:auto}
+  .arch-top{order:2;margin:16px 0 0}
+  .arch-bottom{order:3;margin-top:12px}
+  .arch{display:flex;flex-direction:column}
+  .arch-img{order:1}
+  .arch-row{grid-template-columns:1fr 1fr}
+  .arch-r{text-align:left}
 }
+@media(max-width:380px){.arch-row{grid-template-columns:1fr}}
 .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px 28px;margin:26px 0 18px}
 .legend div{border-top:1px solid var(--line);padding-top:12px}
 .legend dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:6px}
