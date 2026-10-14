@@ -166,3 +166,11 @@
 .walk li+li::before{content:"";position:absolute;left:-14px;top:50%;width:14px;height:2px;background:var(--line)}
 #offer .actions{margin-top:22px}
 @media(max-width:720px){.compare-head,.compare-row{grid-template-columns:1fr}.compare-head span:first-child{display:none}.compare-row span[role="rowheader"]{padding-bottom:4px;border-bottom:0}.compare-row span:not([role="rowheader"]){padding-top:6px}.walk li+li::before{display:none}}
+/* mobile labels for the comparison cells (Codex review 1) */
+.compare .cell-label{display:none}
+@media(max-width:720px){
+  .compare .cell-label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;font-weight:600}
+  .compare span.hai .cell-label{color:var(--accent)}
+  .compare-head{display:none}
+  .compare-row span:not([role="rowheader"]){padding-top:12px}
+}
