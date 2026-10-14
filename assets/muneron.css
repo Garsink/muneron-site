@@ -82,8 +82,9 @@ button{font:inherit}
 .hero h1{max-width:12ch}
 .hero-aside .kicker{display:block;font-size:.9375rem;font-weight:500;color:var(--accent);margin-bottom:14px}
 .hero-aside .lead{max-width:44ch}
-.hero-photo{margin-top:clamp(32px,5vw,64px)}
-.hero-photo img{display:block;width:100%;height:clamp(280px,40vw,560px);object-fit:cover;object-position:50% 50%}
+.hero-photo{position:relative;margin-top:clamp(32px,5vw,64px)}
+.hero-photo img{display:block;width:100%;height:clamp(280px,44.45vw,640px);object-fit:cover;object-position:50% 50%}
+.hero-photo figcaption{position:absolute;top:16px;right:24px;padding:6px 10px;background:var(--ground);color:var(--ink);font-size:.75rem;line-height:1.5}
 
 /* ---------- product demonstration (dark work surface) ---------- */
 .demo{position:relative;z-index:2;margin-top:clamp(-120px,-8vw,-56px)}
