@@ -10,7 +10,7 @@
   <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0c1626" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#eef3f9" media="(prefers-color-scheme: light)">
   <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:image" content="https://muneron.com/assets/card.png?v=20261014b"><link rel="canonical" href="https://muneron.com/">
-  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css?v=20261014b">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/sales.css?v=20261014c">
   <script src="/assets/theme.js"></script><script src="/assets/hero-field.js" defer></script>
   <script src="/assets/site.js" defer></script><script src="/assets/ask-panel.js?v=20261014b" defer></script>
 </head>
@@ -18,7 +18,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><nav class="shell nav" aria-label="Main navigation">
   <a class="brand-mark" href="/" aria-label="MUNERON home">MUNER<b>ON</b></a>
-  <div class="nav-links"><a href="#agents">Agents</a><a href="#walkthrough">How it works</a><a href="/start-here/">Start here</a><a href="/aviation/">The system</a></div>
+  <div class="nav-links"><a href="#agents">Agents</a><a href="#email">Email HAI</a><a href="#structure">Structure</a><a href="/start-here/">Start here</a><a href="/aviation/">The system</a></div>
   <a class="button button-small" href="/start/">Find your first use case</a>
 </nav></header>
 <main id="main">
@@ -107,6 +107,30 @@
     <p class="small muted">Illustrative examples. You do not design and manage each agent in isolation: HAI gives them shared company context, coordination and oversight. Agents are configured with you in a working session and supervised continuously as part of a connected deployment, within the access you approve.</p>
   </section>
 
+  <section class="shell section" id="email" aria-labelledby="email-h">
+    <div class="section-heading"><p class="audience">A familiar door</p><h2 id="email-h">Your company has an email address.</h2><p class="lead">Staff write to HAI the way they write to a colleague. The answer comes from the company's connected knowledge, decisions and current work, with sources and next steps, within the rules set for their role. Nothing new to learn, no new tool to open.</p></div>
+    <div class="mail-thread" aria-label="Illustrative email exchange">
+      <span class="ask-badge">Illustrative example</span>
+      <article class="mail mail-in">
+        <header><span class="mail-from">From: a sales colleague</span><span class="mail-to">To: HAI</span></header>
+        <p class="mail-subject">Subject: Order 4471, where does it stand?</p>
+        <p>The customer is asking for an update on 4471. Where is it, and when can I tell them it ships?</p>
+      </article>
+      <article class="mail mail-out">
+        <header><span class="mail-from">From: HAI</span><span class="mail-to">To: the sales colleague</span></header>
+        <p class="mail-subject">Subject: Re: Order 4471, where does it stand?</p>
+        <p>Order 4471 is picked and packed. Collection is booked for Thursday morning; the tracking number will be issued when the carrier scans it, and you will get it the same hour.</p>
+        <dl class="ask-meta">
+          <div><dt>Source</dt><dd>ERP order record, updated 09:40 today · carrier booking confirmation</dd></div>
+          <div><dt>Owner</dt><dd>Logistics owns the collection. You own the customer update.</dd></div>
+          <div><dt>Next step</dt><dd>Tell the customer Thursday. HAI confirms the pickup and forwards the tracking number.</dd></div>
+          <div><dt>Scope</dt><dd>Pricing and margin are outside the sales role's view, so they are not in this reply. Finance has the open question on this account.</dd></div>
+        </dl>
+      </article>
+    </div>
+    <p class="small muted">Illustrative exchange. No real company, colleague, customer or order. Who may ask, what each role may receive, and what never leaves the company are configured rules; every reply is logged. In the founding group, colleagues write to HAI by email and get answers from the company's context within their role. Part of a connected deployment.</p>
+  </section>
+
   <section class="shell section" id="outcomes" aria-labelledby="outcomes-h">
     <div class="section-heading"><h2 id="outcomes-h">What changes for an owner.</h2></div>
     <div class="tiles cols3">
@@ -128,16 +152,32 @@
     <p class="small muted">Illustrative scenario. The company, figures and names are not from a real customer. Which actions HAI may take itself, and which wait for a person, is set per company.</p>
   </section>
 
-  <section class="shell section" id="parts" aria-labelledby="parts-h">
-    <div class="section-heading"><h2 id="parts-h">What HAI is made of.</h2><p class="lead">Six parts, each one a benefit you can point to.</p></div>
-    <div class="fn-grid">
-      <article><h3>Company context</h3><p>Your products, customers, suppliers, people and terms, held in one place that HAI reads first. Nobody re-explains the business every morning.</p></article>
-      <article><h3>Connections to approved sources</h3><p>Mail, documents, accounting and the ERP, connected read-only and scoped to what you grant. Your systems stay the systems of record.</p></article>
-      <article><h3>Decisions and corrections that persist</h3><p>What you decide and what you correct is written down and used next time. The company gets more useful the longer it runs.</p></article>
-      <article><h3>Tailored agents and routines</h3><p>Each job gets an agent or a routine configured around your sources, rules and schedule, with shared context and oversight.</p></article>
-      <article><h3>Roles and follow-up</h3><p>Sales, purchasing, finance and management each get their own view, with that role's permissions. Follow-ups are chased, and what could not be done is reported.</p></article>
-      <article><h3>Permissions and verification</h3><p>Every figure shows its source. Outbound actions exist only where you approve them, each behind rules you set and a stop switch.</p></article>
+  <section class="shell section" id="structure" aria-labelledby="structure-h">
+    <div class="section-heading"><h2 id="structure-h">How HAI is built.</h2><p class="lead">Five layers, one direction. People ask; rules decide what they may ask and receive; a shared company context and decision memory answer; tailored agents do the work; answers and follow-up come back through the same rules.</p></div>
+    <div class="stack" role="list">
+      <div class="layer" role="listitem">
+        <div class="layer-head"><span class="layer-n">1</span><h3>People</h3></div>
+        <p>Staff and owners ask by email, chat, or in a working session. The question they already know how to ask.</p>
+      </div>
+      <div class="layer layer-gate" role="listitem">
+        <div class="layer-head"><span class="layer-n">2</span><h3>Role and access rules</h3><span class="tech">Permission-Aware Intelligence</span></div>
+        <p>Who may ask, and what each role may receive. The rules sit on the question, on the sources and on the answer: a sales question gets a sales-level answer, however much the company knows.</p>
+      </div>
+      <div class="layer layer-core" role="listitem">
+        <div class="layer-head"><span class="layer-n">3</span><h3>Company context and decision memory</h3><span class="tech">Enterprise Context Layer</span><span class="tech">Decision Memory</span></div>
+        <p>Customers, orders, people, documents and decisions, linked and kept current. What was decided, by whom, when, and what happened next. Nobody re-explains the business every morning.</p>
+        <aside class="feeds" aria-label="Approved sources"><span class="feeds-k">Approved sources</span><span>Mail · documents · ERP · accounting</span><span class="small">Read-only, scoped to what you connect</span></aside>
+      </div>
+      <div class="layer" role="listitem">
+        <div class="layer-head"><span class="layer-n">4</span><h3>Tailored agents and routines</h3><span class="tech">Agent Orchestration</span></div>
+        <p>Each job gets an agent or a routine configured around your workflows, running within approved access, supervised: what ran, what did not, what needs a person.</p>
+      </div>
+      <div class="layer layer-gate" role="listitem">
+        <div class="layer-head"><span class="layer-n">5</span><h3>Answers, follow-up and supervised work</h3></div>
+        <p>Replies with the source and the next step. Follow-ups chased, exceptions surfaced, decisions kept. The same role and access rules apply to every answer.</p>
+      </div>
     </div>
+    <p class="small muted">Which sources are connected, which roles exist and which actions are approved is set per company. No installation connects every system out of the box.</p>
   </section>
 
   <section class="band" id="origin"><div class="shell">
