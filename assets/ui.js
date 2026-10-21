@@ -1,19 +1,31 @@
-/* Mobile navigation. No other UI behaviour lives here. */
 (() => {
   const header = document.querySelector('.site-header');
-  const btn = document.querySelector('.nav-toggle');
+  const button = document.querySelector('.nav-toggle');
   const menu = document.getElementById('nav-menu');
-  if (!header || !btn || !menu) return;
-  const set = open => {
+  if (!header || !button || !menu) return;
+  let open = false;
+  function setOpen(next, returnFocus = false) {
+    open = next;
     header.classList.toggle('is-open', open);
-    btn.setAttribute('aria-expanded', String(open));
-    btn.textContent = open ? 'Close' : 'Menu';
-  };
-  btn.addEventListener('click', () => set(!header.classList.contains('is-open')));
-  menu.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && header.classList.contains('is-open')) { set(false); btn.focus(); }
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    button.querySelector('.menu-label').textContent = open ? 'Close' : 'Menu';
+    menu.hidden = !open;
+    if (returnFocus) button.focus();
+  }
+  setOpen(false);
+  header.classList.add('nav-ready');
+  button.addEventListener('click', () => setOpen(!open));
+  menu.addEventListener('click', event => {
+    if (event.target.closest('a')) setOpen(false);
   });
-  const wide = matchMedia('(min-width: 901px)');
-  wide.addEventListener('change', e => { if (e.matches) set(false); });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && open) setOpen(false, true);
+  });
+  document.addEventListener('click', event => {
+    if (open && !header.contains(event.target)) setOpen(false);
+  });
+  header.addEventListener('focusout', event => {
+    if (open && event.relatedTarget && !header.contains(event.relatedTarget)) setOpen(false);
+  });
 })();
