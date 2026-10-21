@@ -17,7 +17,13 @@ Teaching uses approved material, instructions and reviewed corrections. Shared k
 
 ## Assets
 
-Current pages use `assets/muneron.css` and the self-hosted Hanken Grotesk font. `assets/ui.js` controls mobile navigation, `assets/ask-panel.js` switches the homepage examples, and `assets/verify-demo.js` runs the reference audit demonstration. Logo direction 072 is in `assets/hai-072.png`. Existing illustrations, photographs, favicon and OpenGraph image are retained. Older asset files are retained for historical compatibility.
+Current pages use `assets/muneron.css` and the self-hosted Hanken Grotesk font. `assets/ui.js` controls the navigation disclosure at all viewport sizes, `assets/ask-panel.js` switches the homepage examples, and `assets/verify-demo.js` runs the reference audit demonstration. Logo direction 072 is in `assets/hai-072.png`. Existing illustrations, photographs, favicon and OpenGraph image are retained. Older asset files are retained for historical compatibility.
+
+## Visual direction
+
+The 21 October redesign takes its composition cues from microagi.ai: a full-height image-led opening, bold typography, an inset navigation bar, generous spacing, thin rules and open rows. Muneron retains its own identity, approved architecture illustration and company-wide product content. Seven department examples use native disclosures. The menu remains in normal document flow without JavaScript and gains a compact disclosure when JavaScript is available.
+
+Motion is limited to short transform-based control feedback, with hover effects limited to fine pointers and reduced-motion support. Evidence for the four-route responsive and interaction review is kept outside this repository at `outputs/muneron/microagi-redesign-2026-10-21/qa/`.
 
 ## Verification and publishing
 
