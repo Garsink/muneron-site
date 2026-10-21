@@ -4,19 +4,23 @@ Static site for MUNERON, the company behind HAI. Deployed via GitHub Pages from 
 
 ## Pages
 
-- `/` - HAI by MUNERON: the product, owner outcomes, a comparison with using AI for a task, an illustrative walkthrough, the six parts, origin, the offer (starter vs connected deployment), FAQ.
-- `/start-here/` - for companies at the chat stage: what HAI offers today, the six parts, what to have in place before day one, the order to build in.
-- `/aviation/` - the reference implementation inside the founding group: wiring, functions, outbound channels, controls, dated registry figures, the live demo and the audit record.
-- `/start/` - contact. Opens the visitor's own email application with three prompts. No form backend, no analytics, nothing is sent from the page.
+- `/` — HAI Seed: shared company knowledge and rules, cross-team examples, seven departmental use cases, teaching, role expansion, delivery choices and FAQ.
+- `/start-here/` — company deployment: discovery, source/access review, knowledge and rules, first workflow, validation and handover. Includes preparation, teaching, expansion and data processing.
+- `/aviation/` — the internal reference deployment: five-stage validation process and dated audit record, interactive verification example, operational timeline, functions, controls, channels and registry figures.
+- `/start/` — company enquiry. Opens the visitor’s email application with company/team context, priority work, source outline, optional hardware preference and contact details. No form backend or analytics; the page does not send the message.
 
 ## Claim boundaries
 
-No customers, ROI figures, adoption counts, certifications or turnkey integrations are claimed. Scale numbers are dated and describe the internal reference implementation, not what every new customer gets. The starter is described as read-only (it does not send, write to company systems or move money); a connected deployment is scoped per company. No prices.
+No customer counts, ROI figures, certifications, prices or guaranteed installation timelines are claimed. Scale and audit figures are dated and describe the internal reference implementation. HAI Seed starts with approved information, analysis and preparation; connected actions and additional role environments are scoped and validated separately. Stage outputs are examples, with deliverables agreed in the proposal.
+
+Teaching uses approved material, instructions and reviewed corrections. Shared knowledge does not imply identical access. Company memory is stored on the deployment machine; connected AI services process task information under the chosen accounts and service terms. Own-machine installation and a supplied preconfigured machine are both offered, with hardware and support terms agreed before delivery.
 
 ## Assets
 
-`assets/site.css` (tokens, light and dark themes), `assets/sales.css` (page components), `assets/fonts.css` + `assets/fonts/` (Poppins woff2, swap), `assets/hero-field.js` (home hero renderer, respects reduced motion), `assets/verify-demo.js` (the demo on `/aviation/`), `assets/hai-map.svg` (wiring diagram, also inlined on `/aviation/`), `assets/card.png` (OpenGraph card).
+Current pages use `assets/muneron.css` and the self-hosted Hanken Grotesk font. `assets/ui.js` controls mobile navigation, `assets/ask-panel.js` switches the homepage examples, and `assets/verify-demo.js` runs the reference audit demonstration. Logo direction 072 is in `assets/hai-072.png`. Existing illustrations, photographs, favicon and OpenGraph image are retained. Older asset files are retained for historical compatibility.
 
-## Before publishing
+## Verification and publishing
 
-Check JavaScript syntax (`node --check`), internal links and anchors, both themes, 320 / 390 / 1440 layouts, reduced motion, and the impeccable detector. Rollback: `git tag -l 'live-baseline-*'`; the exact live baseline is also zipped under `outputs/muneron/refresh-<date>/` outside this repository.
+Check JavaScript syntax, internal links and anchors, layouts at 320 / 390 / 1440px, navigation, example selection, FAQ, contact link, reduced-motion support and the impeccable detector. The current design has one light theme; it has no theme toggle. Do not submit a contact enquiry during QA.
+
+The 21 October content review and its evidence are outside this repository at `outputs/muneron/content-refresh-2026-10-21/`. The pre-refresh commit is `128df41`. Roll back by reverting the refresh commit; do not force-push over later work.
