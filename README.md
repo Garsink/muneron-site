@@ -11,13 +11,13 @@ Static site for MUNERON, the company behind HAI. Deployed via GitHub Pages from 
 
 ## Claim boundaries
 
-No customer counts, ROI figures, certifications, prices or guaranteed installation timelines are claimed. Scale and audit figures are dated and describe the internal reference implementation. HAI Seed starts with approved information, analysis and preparation; connected actions and additional role environments are scoped and validated separately. Stage outputs are examples, with deliverables agreed in the proposal.
+Published pricing is €3,000 setup and €490/month for use and care, excluding VAT, with the first 30 days included from accepted working handover and paid continuation by explicit choice. No customer counts, ROI figures, certifications or guaranteed installation timelines are claimed. Scale and audit figures are dated and describe the internal reference implementation. HAI Seed starts with approved information, analysis and preparation; connected actions and additional role environments are scoped and validated separately. Stage outputs are examples, with deliverables agreed in the proposal.
 
 Teaching uses approved material, instructions and reviewed corrections. Shared knowledge does not imply identical access. Company memory is stored on the deployment machine; connected AI services process task information under the chosen accounts and service terms. Own-machine installation and a supplied preconfigured machine are both offered, with hardware and support terms agreed before delivery.
 
 ## Assets
 
-Current pages use `assets/muneron.css` and the self-hosted Hanken Grotesk font. `assets/ui.js` controls the navigation disclosure at all viewport sizes, `assets/ask-panel.js` switches the homepage examples, and `assets/verify-demo.js` runs the reference audit demonstration. Logo direction 072 is in `assets/hai-072.png`. Existing illustrations, photographs, favicon and OpenGraph image are retained. Older asset files are retained for historical compatibility.
+Current pages use `assets/muneron.css` and the self-hosted Hanken Grotesk font. `assets/ui.js` controls the navigation disclosure at all viewport sizes, `assets/ask-panel.js` switches the homepage examples, and `assets/verify-demo.js` runs the reference audit demonstration. Approved HAI Seed master logos are in `assets/brand/`; root favicons and the social image use the same approved package. The old 072 mark is retired from active pages. Existing illustrations and photographs are retained. Older asset files are retained for historical compatibility.
 
 ## Visual direction
 
@@ -34,3 +34,9 @@ The 21 October content review and its evidence are outside this repository at `o
 ## Homepage distillation — 22 October 2026
 
 The homepage was reduced from 11 to five sections and from 1,028 to 366 initially visible main-content words. The guide consolidates detailed roles, teaching, architecture and FAQs; repeated introductory and comparison copy was removed. Existing homepage fragments remain valid, with useful links for relocated topics. No interactive scripts, contact behavior or hosting configuration changed. Review evidence is at `outputs/muneron/homepage-distill-2026-10-22/qa/`.
+
+## Pricing and approved identity — 22 October 2026
+
+The homepage and enquiry page show the price summary; `/start-here/#pricing` lists included scope and commercial conditions, with separate additional costs at `#extras`. One installation, up to three defined source sets, one recurring workflow and two training sessions form the setup scope. The monthly total of two service hours includes the 30-minute review; our promised-functionality defects do not consume these hours. No DNS, CNAME, legal entity or mailbox changes are part of this release.
+
+The approved one-page Lithuanian offer is available at `/downloads/HAI-Seed-commercial-offer-LT.docx`; the source document remains owned by the marketing coordination chat.
